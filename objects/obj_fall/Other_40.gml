@@ -1,0 +1,2 @@
+/// @description Deactivate
+active = false;
