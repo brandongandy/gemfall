@@ -10,11 +10,28 @@
 #macro TRANSITION_OUT 0
 #macro TRANSITION_IN 1
 
-enum INVENTORY_ITEM
+enum ITEM
 {
 	BOMB,
 	BOW,
 	TOTAL // not used as an item, but used for counting enum size
+}
+
+enum GEM
+{
+	EXEMPLAR,
+	STRENGTH,
+	STAMINA,
+	SKYRIDER,
+	SCREAMING,
+	SIREN,
+	TRAVELER,
+	SPELLSLINGER,
+	ARCANE_STEEL,
+	VOIDSTEEL,
+	SPELLGUARD,
+	STRONEHEART,
+	TOTAL // not used except to count enum size
 }
 
 enum INVENTORY_STAT
@@ -23,7 +40,17 @@ enum INVENTORY_STAT
 	USES_AMMO,
 	AMMO,
 	OWNED,
+	MANA_TYPE,
+	MANA_COST,
 	TOTAL // not used as an item, but used for counting enum size
+}
+
+enum MANA_TYPE
+{
+	RUBY,
+	SAPPHIRE,
+	EMERALD,
+	TOTAL
 }
 
 enum MOB_STATE

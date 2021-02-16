@@ -41,12 +41,12 @@ function scr_use_key(_dungeon)
 }
 
 /// @function			scr_get_sprite_for_item(_item)
-/// @param {INVENTORY_ITEM} _item 
+/// @param {ITEM} _item 
 function scr_get_sprite_for_item(_item)
 {
 	switch (_item)
 	{
-		case INVENTORY_ITEM.BOMB:
+		case ITEM.BOMB:
 			return spr_bomb;
 		break;
 		default:
@@ -58,8 +58,8 @@ function scr_get_ammo(_item)
 {
 	switch (_item)
 	{
-		case INVENTORY_ITEM.BOMB:
-			return obj_inventory.inv_items[# INVENTORY_ITEM.BOMB, INVENTORY_STAT.AMMO];
+		case ITEM.BOMB:
+			return obj_inventory.inv_items[# ITEM.BOMB, INVENTORY_STAT.AMMO];
 		break;
 		default:
 			return -1;
