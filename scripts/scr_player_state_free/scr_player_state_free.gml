@@ -114,9 +114,7 @@ function scr_player_state_free()
 	{
 		if (global.i_lifted != noone)
 		{
-
-				scr_player_throw();
-				
+			scr_player_throw();	
 		}
 		else if (obj_inventory.equipped != -1)
 		{
