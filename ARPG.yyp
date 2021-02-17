@@ -169,6 +169,7 @@
     {"id":{"name":"spr_slime_die","path":"sprites/spr_slime_die/spr_slime_die.yy",},"order":2,},
     {"id":{"name":"rm_dungeon01_boss","path":"rooms/rm_dungeon01_boss/rm_dungeon01_boss.yy",},"order":6,},
     {"id":{"name":"scr_spawn_chest","path":"scripts/scr_spawn_chest/scr_spawn_chest.yy",},"order":3,},
+    {"id":{"name":"scr_gems","path":"scripts/scr_gems/scr_gems.yy",},"order":4,},
     {"id":{"name":"spr_signpost","path":"sprites/spr_signpost/spr_signpost.yy",},"order":0,},
     {"id":{"name":"obj_signpost","path":"objects/obj_signpost/obj_signpost.yy",},"order":4,},
     {"id":{"name":"scr_health","path":"scripts/scr_health/scr_health.yy",},"order":0,},

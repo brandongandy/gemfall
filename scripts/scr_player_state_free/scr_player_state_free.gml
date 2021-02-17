@@ -76,16 +76,14 @@ function scr_player_state_free()
 		if (activate == noone)
 		{
 			// if we're carrying something, throw it
-			// or else roll
+			// or else use gem ability
 			if (global.i_lifted != noone)
 			{
-					scr_player_throw();
-				
+				scr_player_throw();
 			}
 			else
 			{
-				state = scr_player_state_roll;
-				move_distance_remaining = roll_distance;
+				scr_use_equipped_gem();
 			}
 		}
 		else

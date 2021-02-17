@@ -18,3 +18,7 @@ draw_set_alpha(1);
 draw_text(1, 180, "H: " + string(obj_player.player_height));
 draw_text(1, 160, "X: " + string(floor(obj_player.x)));
 draw_text(1, 170, "Y: " + string(floor(obj_player.y)));
+
+draw_text(32, 160, "R Mana: " + string(global.i_inv.r_mana));
+draw_text(32, 170, "G Mana: " + string(global.i_inv.g_mana));
+draw_text(32, 180, "B Mana: " + string(global.i_inv.b_mana));

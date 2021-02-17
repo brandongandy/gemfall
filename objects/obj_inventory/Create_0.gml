@@ -8,6 +8,14 @@ player_heart_pieces = 0;
 player_health_max = 3.0 + (1 * player_heart_pieces);
 player_health = player_health_max;
 
+// mana
+r_mana_max = 100;
+g_mana_max = 100;
+b_mana_max = 100;
+r_mana = r_mana_max;
+g_mana = g_mana_max;
+b_mana = b_mana_max;
+
 // moneys
 player_money = 0;
 
@@ -37,7 +45,7 @@ inv_items[# ITEM.BOW, INVENTORY_STAT.MANA_COST] = -1;
 // gems
 equipped_gem = -1;
 
-inv_gems = ds_grid_create(ITEM.TOTAL, INVENTORY_STAT.TOTAL);
+inv_gems = ds_grid_create(GEM.TOTAL, INVENTORY_STAT.TOTAL);
 
 inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.DAMAGE] = -1;
 inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.USES_AMMO] = false;
@@ -45,7 +53,7 @@ inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.AMMO] = -1;
 inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.OWNED] = false;
 inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.MANA_TYPE] = MANA_TYPE.EMERALD;
 inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.MANA_COST] = 1;
-		
+
 inv_gems[# GEM.STRENGTH, INVENTORY_STAT.DAMAGE] = -1;
 inv_gems[# GEM.STRENGTH, INVENTORY_STAT.USES_AMMO] = false;
 inv_gems[# GEM.STRENGTH, INVENTORY_STAT.AMMO] = -1;
