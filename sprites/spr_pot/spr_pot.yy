@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ff1de011-3e31-47ec-897d-4cbebd0188b9","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "entities",
+    "path": "folders/Sprites/entities.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_pot",

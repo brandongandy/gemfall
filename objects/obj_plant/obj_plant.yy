@@ -35,6 +35,9 @@
     {"propertyId":{"name":"entity_fragment","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"obj_plant_fragment","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"entity_drop_list","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"[obj_coin]","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"entity_drop_chance","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"0.05","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"entity_activate_args","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"[id]","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"entity_activate_script","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"scr_activate_liftable","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"entity_throw_break","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "entities",

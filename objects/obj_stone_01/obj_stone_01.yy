@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_pot",
-    "path": "sprites/spr_pot/spr_pot.yy",
+    "name": "spr_stone_01",
+    "path": "sprites/spr_stone_01/spr_stone_01.yy",
   },
   "solid": false,
   "visible": true,
@@ -23,25 +23,20 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"parent":{"name":"obj_pot","path":"objects/obj_pot/obj_pot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_pot","path":"objects/obj_pot/obj_pot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"entity_activate_script","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"scr_activate_liftable","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"entity_activate_args","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"[id]","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"entity_hit_script","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"scr_entity_hit_solid","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"entity_collides","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"entity_shadow","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"entity_throw_break","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"entity_hit_script","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"scr_entity_hit_solid","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "entities",
     "path": "folders/Objects/entities.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_pot",
+  "name": "obj_stone_01",
   "tags": [],
   "resourceType": "GMObject",
 }

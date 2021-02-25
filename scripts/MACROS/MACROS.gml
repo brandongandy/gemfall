@@ -14,6 +14,7 @@ enum ITEM
 {
 	BOMB,
 	BOW,
+	FOCUS,
 	TOTAL // not used as an item, but used for counting enum size
 }
 
@@ -30,7 +31,7 @@ enum GEM
 	ARCANE_STEEL,
 	VOIDSTEEL,
 	SPELLGUARD,
-	STRONEHEART,
+	STONEHEART,
 	TOTAL // not used except to count enum size
 }
 
