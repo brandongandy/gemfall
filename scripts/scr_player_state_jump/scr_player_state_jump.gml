@@ -8,15 +8,13 @@ function scr_player_state_jump()
 	var _iteration = 0;
 	while (true)
 	{
-		if (direction == 0)
+		if (jump_direction == 10)
 		{
 			_target_x = bbox_right + (COL_TILE * _iteration);
 			_target_y = y;
 			move_distance_remaining = point_distance(bbox_right, y, _target_x, _target_y);
 			var _tile = tile_get_index(tilemap_get_at_pixel(height_map, _target_x, _target_y));
-			if (_tile == 5) ||
-				 (_tile == 6) ||
-				 (_tile == 7) // ignore walls and doors -- everything else is
+			if (_tile >= 5 && _tile <= 12) // ignore walls and doors -- everything else is
 			{								// a potential target
 				if (_iteration > 6)
 				{
@@ -35,15 +33,13 @@ function scr_player_state_jump()
 				break;
 			}
 		}
-		else if (direction == 90)
+		else if (jump_direction == 11)
 		{
 			_target_x = x;
 			_target_y = bbox_top - (COL_TILE * _iteration);
 			move_distance_remaining = point_distance(x, bbox_top, _target_x, _target_y);
 			var _tile = tile_get_index(tilemap_get_at_pixel(height_map, _target_x, _target_y));
-			if (_tile == 5) ||
-				 (_tile == 6) ||
-				 (_tile == 7) // ignore walls and doors -- everything else is
+			if (_tile >= 5 && _tile <= 12) // ignore walls and doors -- everything else is
 			{								// a potential target
 				if (_iteration > 6)
 				{
@@ -62,15 +58,13 @@ function scr_player_state_jump()
 				break;
 			}		
 		}
-		else if (direction == 180)
+		else if (jump_direction == 12)
 		{
 			_target_x = bbox_left - (COL_TILE * _iteration);
 			_target_y = y;
 			move_distance_remaining = point_distance(bbox_left, y, _target_x, _target_y);
 			var _tile = tile_get_index(tilemap_get_at_pixel(height_map, _target_x, _target_y));
-			if (_tile == 5) ||
-				 (_tile == 6) ||
-				 (_tile == 7) // ignore walls and doors -- everything else is
+			if (_tile >= 5 && _tile <= 12) // ignore walls and doors -- everything else is
 			{								// a potential target
 				if (_iteration > 6)
 				{
@@ -89,13 +83,13 @@ function scr_player_state_jump()
 				break;
 			}
 		}
-		else if (direction == 270)
+		else if (jump_direction == 9)
 		{
 			_target_x = x;
 			_target_y = bbox_bottom + (COL_TILE * _iteration + 1);
 			move_distance_remaining = point_distance(x, bbox_bottom, _target_x, _target_y);
 			var _tile = tile_get_index(tilemap_get_at_pixel(height_map, _target_x, _target_y));
-			if (_tile >= 5 && _tile <= 7) // ignore walls and doors -- everything else is
+			if (_tile >= 5 && _tile <= 12) // ignore walls and doors -- everything else is
 			{								// a potential target
 				if (_iteration > 8)
 				{
@@ -123,10 +117,26 @@ function scr_player_state_jump()
 	// if it's walkable, go to free
 	if (_target_tile >= 1 && _target_tile <= 5)
 	{
+		var _target_dir;
+		switch (jump_direction)
+		{
+			case 9:
+				_target_dir = 270;
+				break;
+			case 10:
+				_target_dir = 0;
+				break;
+			case 11:
+				_target_dir = 90;
+				break;
+			case 12:
+			  _target_dir = 180;
+				break;
+		}
 		move_distance_remaining = max(0, move_distance_remaining - walk_speed);
 		z = sin(((move_distance_remaining / 32) * pi)) * 12;
-		h_speed = lengthdir_x(walk_speed, direction);
-		v_speed = lengthdir_y(walk_speed, direction);
+		h_speed = lengthdir_x(walk_speed, _target_dir);
+		v_speed = lengthdir_y(walk_speed, _target_dir);
 		x += h_speed;
 		y += v_speed;
 				

@@ -233,7 +233,6 @@ function scr_entity_collide_at_points()
 /// in the tileset.
 function scr_check_player_height_collision(_collision_map)
 {	
-	
 	// Horizontal Tiles
 	var _newX = x + h_speed;
 	var _collisionX = false;
@@ -407,13 +406,14 @@ function scr_tile_collide_at_points_height(_tilemap)
 			case 6:
 			case 7:
 				{
-					if (player_height == 4)
+					if (player_height >= 9) && (player_height <= 12)
 					{
 						time_to_jump--;
 						if (time_to_jump <= 0)
 						{
 							// change state
 							time_to_jump = 60;
+							jump_direction = player_height;
 							state = scr_player_state_jump;
 							_found = false;
 						}
