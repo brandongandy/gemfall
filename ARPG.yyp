@@ -281,7 +281,7 @@
     {"folderPath":"folders/Shaders/CRT Shader.yy","order":2,"resourceVersion":"1.0","name":"CRT Shader","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/CRT Shader.yy","order":18,"resourceVersion":"1.0","name":"CRT Shader","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/entities/gems.yy","order":11,"resourceVersion":"1.0","name":"gems","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Rooms/acaxoci_village.yy","order":11,"resourceVersion":"1.0","name":"acaxoci_village","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Rooms/acaxochi_village.yy","order":11,"resourceVersion":"1.0","name":"acaxochi_village","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
