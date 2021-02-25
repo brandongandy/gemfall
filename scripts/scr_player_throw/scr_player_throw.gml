@@ -2,18 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_player_throw()
 {
-	var throw_distance;
-	if (h_speed == 0 && v_speed == 0)
-	{
-		throw_distance = 16;
-	}
-	else
-	{
-		if (global.i_lifted != noone)
-		{
-			throw_distance = global.i_lifted.entity_throw_distance;
-		}
-	}
+	var throw_distance = global.i_lifted.entity_throw_distance;
+
 	with (global.i_lifted)
 	{
 		entity_throw_distance = throw_distance;

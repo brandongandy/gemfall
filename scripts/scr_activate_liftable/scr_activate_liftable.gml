@@ -20,6 +20,17 @@ function scr_activate_liftable(_id)
 	}
 }
 
+function scr_activate_heavy_liftable(_id)
+{
+	if (scr_player_has_gem(GEM.STRENGTH))
+	{
+		if (scr_spend_mana(MANA_TYPE.EMERALD, 1))
+		{
+			scr_activate_liftable(_id);
+		}
+	}
+}
+
 function scr_activate_liftable_with_message(_id, _message)
 {
 	var _item = _id.object_index;

@@ -9,12 +9,14 @@ player_health_max = 3.0 + (1 * player_heart_pieces);
 player_health = player_health_max;
 
 // mana
-r_mana_max = 100;
-g_mana_max = 100;
-b_mana_max = 100;
-r_mana = r_mana_max;
-g_mana = g_mana_max;
-b_mana = b_mana_max;
+inv_mana = ds_grid_create(MANA_TYPE.TOTAL, MANA_STAT.TOTAL);
+inv_mana[# MANA_TYPE.RUBY, MANA_STAT.MAX_MANA] = 100;
+inv_mana[# MANA_TYPE.RUBY, MANA_STAT.CURRENT_MANA] = 100;
+inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.MAX_MANA] = 100;
+inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.CURRENT_MANA] = 100;
+inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.MAX_MANA] = 100;
+inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.CURRENT_MANA] = 100;
+
 
 // moneys
 player_money = 0;
@@ -57,7 +59,7 @@ inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.MANA_COST] = 1;
 inv_gems[# GEM.STRENGTH, INVENTORY_STAT.DAMAGE] = -1;
 inv_gems[# GEM.STRENGTH, INVENTORY_STAT.USES_AMMO] = false;
 inv_gems[# GEM.STRENGTH, INVENTORY_STAT.AMMO] = -1;
-inv_gems[# GEM.STRENGTH, INVENTORY_STAT.OWNED] = false;
+inv_gems[# GEM.STRENGTH, INVENTORY_STAT.OWNED] = true;
 inv_gems[# GEM.STRENGTH, INVENTORY_STAT.MANA_TYPE] = MANA_TYPE.EMERALD;
 inv_gems[# GEM.STRENGTH, INVENTORY_STAT.MANA_COST] = 1;
 		

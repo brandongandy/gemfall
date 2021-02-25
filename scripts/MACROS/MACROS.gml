@@ -54,6 +54,13 @@ enum MANA_TYPE
 	TOTAL
 }
 
+enum MANA_STAT
+{
+	MAX_MANA,
+	CURRENT_MANA,
+	TOTAL
+}
+
 enum MOB_STATE
 {
 	IDLE,

@@ -37,9 +37,11 @@ function scr_player_state_free()
 	// "Use" key logic
 	if (key_activate)
 	{
+		var centerX = x - sprite_get_xoffset(sprite_index) + sprite_width / 2;
+		var centerY = y - sprite_get_yoffset(sprite_index) + sprite_height / 2;
 		// check for an entity to activate/use
-		var _activateX = x + lengthdir_x(10, direction);
-		var _activateY = y + lengthdir_y(10, direction);
+		var _activateX = centerX + lengthdir_x(10, direction);
+		var _activateY = centerY + lengthdir_y(10, direction);
 		// rect size for activation check
 		var _activate_size = 4;
 		var _activate_list = ds_list_create();

@@ -66,3 +66,26 @@ function scr_get_ammo(_item)
 		break;
 	}
 }
+
+function scr_spend_mana(_mana_type, _amount)
+{
+	if (_mana_type == undefined)
+	{
+		return false;
+	}
+	
+	if (_mana_type >= MANA_TYPE.TOTAL) || (_mana_type < 0)
+	{
+		return false;
+	}
+	
+	if (global.i_inv.inv_mana[# _mana_type, MANA_STAT.CURRENT_MANA] - _amount >= 0)
+	{
+		global.i_inv.inv_mana[# _mana_type, MANA_STAT.CURRENT_MANA] -= _amount;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
