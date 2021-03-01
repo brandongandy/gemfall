@@ -3,6 +3,7 @@ event_inherited();
 
 // basic variables
 state = MOB_STATE.IDLE;
+local_frame = 0;
 h_speed = 0;
 v_speed = 0;
 x_to = xstart;
