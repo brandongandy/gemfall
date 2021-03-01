@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"853e7e22-0d58-4b8d-9f4c-29623814e127","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "sprite",
-    "path": "folders/Sprites/entities/mobs/sprite.yy",
+    "name": "slime",
+    "path": "folders/Sprites/entities/mobs/slime.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_slime_hurt",

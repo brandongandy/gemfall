@@ -80,8 +80,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5aae2a54-3648-4dc4-80cb-ed1dfa34b5b9","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "sprite",
-    "path": "folders/Sprites/entities/mobs/sprite.yy",
+    "name": "slime",
+    "path": "folders/Sprites/entities/mobs/slime.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_slime",

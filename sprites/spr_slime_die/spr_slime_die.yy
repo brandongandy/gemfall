@@ -88,8 +88,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d76d9cf4-f936-498d-9698-67faff6a01a2","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "sprite",
-    "path": "folders/Sprites/entities/mobs/sprite.yy",
+    "name": "slime",
+    "path": "folders/Sprites/entities/mobs/slime.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_slime_die",

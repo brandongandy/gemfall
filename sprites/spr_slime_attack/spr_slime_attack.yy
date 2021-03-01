@@ -88,8 +88,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"79c7da32-6603-4fc4-b1c3-1cc45ed52b10","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "sprite",
-    "path": "folders/Sprites/entities/mobs/sprite.yy",
+    "name": "slime",
+    "path": "folders/Sprites/entities/mobs/slime.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_slime_attack",
