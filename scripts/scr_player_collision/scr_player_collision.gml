@@ -353,13 +353,7 @@ function scr_check_player_height_collision(_collision_map)
 		y = _newY;
 	}
 	
-	var _collision = (_collisionX || _collisionY || _mobCollisionX || _mobCollisionY)
-	
-	if (!_collision)
-	{
-	}
-	
-	return _collision;
+	return (_collisionX || _collisionY || _mobCollisionX || _mobCollisionY);
 }
 
 function scr_tile_collide_at_points_height(_tilemap)
