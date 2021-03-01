@@ -34,26 +34,35 @@ function scr_mob_tile_collision()
 			_collisionX = true;
 		}
 	}
-	if (!_collisionX)
+	
+	var _entityCollisionX = false;
+	if (h_speed > 0)
+	{
+		var _entity_right = collision_rectangle(bbox_left + h_speed, bbox_top + 1,
+			bbox_right + h_speed, bbox_bottom - 1, obj_p_entity, false, true);
+		if (_entity_right != noone) && (_entity_right.entity_collides)
+		{
+			h_speed = 0;
+			_entityCollisionX = true;
+		}
+	}
+	else if (h_speed < 0)
+	{
+		var _entity_left = collision_rectangle(bbox_left + h_speed, bbox_top + 1, 
+			bbox_right + h_speed, bbox_bottom - 1, obj_p_entity, false, true);
+		if (_entity_left != noone) && (_entity_left.entity_collides)
+		{
+			h_speed = 0;
+			_entityCollisionX = true;
+		}
+	}
+	
+	if (!_collisionX) && (!_entityCollisionX)
 	{
 		x = _newX;
 	}
-	//if (tilemap_get_at_pixel(collision_map, x + h_speed, y))
-	//{
-	//	// put back at edge of tile.
-	//	x -= x mod TILE_SIZE;
-	//	if (sign(h_speed) == 1)
-	//	{
-	//		x += TILE_SIZE - 1;
-	//	}
-	//	h_speed = 0;
-	//	_collision = true;
-	//}
-	
 	
 	// Vertical Tiles
-	// vertical movement
-	
 	var _newY = y + v_speed;
 	var _collisionY = false;
 	if (v_speed > 0)
@@ -82,12 +91,36 @@ function scr_mob_tile_collision()
 			_collisionY = true;
 		}
 	}
-	if (!_collisionY)
+	
+	var _entityCollisionY = false;
+	if (v_speed > 0)
 	{
-		y += v_speed;
+		var _entity_bottom = collision_rectangle(bbox_left + 1, bbox_top + 1, bbox_right - 1, bbox_bottom + v_speed, obj_p_entity, false, true);
+		if (_entity_bottom != noone) && (_entity_bottom.entity_collides)
+		{
+			_newY = _entity_bottom.bbox_top - (bbox_bottom - bbox_top);
+			v_speed = 0;
+			_entityCollisionY = true;
+		}
+	}
+	else
+	if (v_speed < 0)
+	{
+		var _entity_top = collision_rectangle(bbox_left + 1, bbox_top + v_speed, bbox_right - 1, bbox_bottom - 1, obj_p_entity, false, true);
+		if (_entity_top != noone) && (_entity_top.entity_collides)
+		{
+			//show_debug_message("Ex: " + string(_entity_top.x) + ", Ey: " + string(_entity_top.y) + ", Px: , " + string(x) +"Py: " + string(y));
+			v_speed = 0;
+			_entityCollisionY = true;
+		}
+	}
+	
+	if (!_collisionY) && (!_entityCollisionY)
+	{
+		y = _newY;
 	}	
 	
-	return (_collisionX || _collisionY);
+	return (_collisionX || _entityCollisionX || _collisionY || _entityCollisionY);
 }
 
 /// @desc gets collision for mob aabb -- prevents elevation changes
@@ -104,9 +137,29 @@ function scr_tile_collide_at_points_mob(_tilemap)
 		var _tile = tilemap_get_at_pixel(_tilemap, _point[_vec2_x], _point[_vec2_y]);
 		var _tile_index = tile_get_index(_tile);		
 		//_found = _found || ;
-		if (_tile_index != elevation)
+		switch (_tile_index)
 		{
-			_found = true;
+			case 1:
+				_found = false;
+				break;
+			case 2:
+				_found = true;
+				break;
+			case 3:
+				_found = false;
+				break;
+			case 5:
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+			case 10:
+			case 11:
+			case 12:
+			  _found = true;
+				break;
+			default:
+				break;
 		}
 	}
 	
