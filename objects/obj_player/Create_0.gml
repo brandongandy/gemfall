@@ -21,6 +21,10 @@ time_to_jump = 60;
 //if (layer_exists(layer_get_id("TilesLowerDecoration")))
 //{
 //}
+if (layer_exists(layer_get_id("TilesLowerDecoration")))
+{
+	layer_depth(layer_get_id("TilesLowerDecoration"), -(room_height));
+}
 
 // stop spinning / going through animation
 image_speed = 0;
