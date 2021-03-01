@@ -50,7 +50,8 @@ function scr_mob_tile_collision()
 	{
 		var _entity_left = collision_rectangle(bbox_left + h_speed, bbox_top + 1, 
 			bbox_right + h_speed, bbox_bottom - 1, obj_p_entity, false, true);
-		if (_entity_left != noone) && (_entity_left.entity_collides)
+		if (_entity_left != noone) &&
+			 (_entity_left.entity_collides)
 		{
 			h_speed = 0;
 			_entityCollisionX = true;
@@ -96,7 +97,8 @@ function scr_mob_tile_collision()
 	if (v_speed > 0)
 	{
 		var _entity_bottom = collision_rectangle(bbox_left + 1, bbox_top + 1, bbox_right - 1, bbox_bottom + v_speed, obj_p_entity, false, true);
-		if (_entity_bottom != noone) && (_entity_bottom.entity_collides)
+		if (_entity_bottom != noone) && 
+			 (_entity_bottom.entity_collides)
 		{
 			_newY = _entity_bottom.bbox_top - (bbox_bottom - bbox_top);
 			v_speed = 0;
@@ -107,9 +109,10 @@ function scr_mob_tile_collision()
 	if (v_speed < 0)
 	{
 		var _entity_top = collision_rectangle(bbox_left + 1, bbox_top + v_speed, bbox_right - 1, bbox_bottom - 1, obj_p_entity, false, true);
-		if (_entity_top != noone) && (_entity_top.entity_collides)
+		if (_entity_top != noone) &&
+			 (_entity_top.entity_collides)
 		{
-			//show_debug_message("Ex: " + string(_entity_top.x) + ", Ey: " + string(_entity_top.y) + ", Px: , " + string(x) +"Py: " + string(y));
+			
 			v_speed = 0;
 			_entityCollisionY = true;
 		}
