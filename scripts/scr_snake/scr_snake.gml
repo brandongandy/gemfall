@@ -1,7 +1,7 @@
 // Scrip
 function scr_snake_idle()
 {
-
+	mob_wander_distance = irandom_range(base_distance * 0.75, base_distance * 2);
 	dir = choose(0, 90, 180, 270);
 	x_to = x + lengthdir_x(mob_wander_distance, dir);
 	y_to = y + lengthdir_y(mob_wander_distance, dir);

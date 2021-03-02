@@ -27,12 +27,15 @@ wait = 0;
 
 // sprites
 sprite_move = spr_slime;
+sprite_die = spr_death_anim;
+
+start_death_anim = false;
 
 // mob functions
 mob_script[MOB_STATE.IDLE] = -1;
 mob_script[MOB_STATE.WANDER] = -1;
 mob_script[MOB_STATE.CHASE] = -1;
 mob_script[MOB_STATE.ATTACK] = -1;
-mob_script[MOB_STATE.HURT] = -1;
-mob_script[MOB_STATE.DIE] = -1;
+mob_script[MOB_STATE.HURT] = scr_mob_hurt;
+mob_script[MOB_STATE.DIE] = scr_mob_die;
 mob_script[MOB_STATE.WAIT] = scr_mob_wait;

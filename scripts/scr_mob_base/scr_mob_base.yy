@@ -6,7 +6,7 @@
     "path": "folders/Scripts/mobs.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_mob_wait",
+  "name": "scr_mob_base",
   "tags": [],
   "resourceType": "GMScript",
 }
