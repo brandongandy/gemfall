@@ -1,8 +1,3 @@
-// Scrip
-function scr_skull_legs(){
-
-}
-
 function scr_skull_legs_idle()
 {
 	dir = choose(0, 90, 180, 270);
@@ -29,6 +24,7 @@ function scr_skull_legs_wander()
 		}
 		else
 		{
+			local_frame = 0;
 			state = MOB_STATE.IDLE;
 		}
 	}
