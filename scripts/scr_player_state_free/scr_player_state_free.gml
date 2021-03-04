@@ -5,7 +5,19 @@ function scr_player_state_free()
 	h_speed = lengthdir_x(input_magnitude * walk_speed, input_direction);
 	v_speed = lengthdir_y(input_magnitude * walk_speed, input_direction);
 
-	scr_player_collision();
+	if (scr_player_collision())
+	{
+		time_to_push--;
+	}
+	else
+	{
+		time_to_push = 60;
+	}
+	
+	if (time_to_push <= 0)
+	{
+		state = scr_player_state_push;
+	}
 
 	// Sprite update
 	var old_sprite = sprite_index;
@@ -71,8 +83,6 @@ function scr_player_state_free()
 		}
 		
 		ds_list_destroy(_activate_list);
-		
-		//activate = instance_position(x + _activateX, y + _activateY, obj_p_entity);
 		
 		// if nothing, or something but no script
 		if (activate == noone)

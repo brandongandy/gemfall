@@ -96,7 +96,8 @@ function scr_mob_tile_collision()
 	var _entityCollisionY = false;
 	if (v_speed > 0)
 	{
-		var _entity_bottom = collision_rectangle(bbox_left + 1, bbox_top + 1, bbox_right - 1, bbox_bottom + v_speed, obj_p_entity, false, true);
+		var _entity_bottom = collision_rectangle(bbox_left + 1, bbox_top + 1, 
+			bbox_right - 1, bbox_bottom + v_speed, obj_p_entity, false, true);
 		if (_entity_bottom != noone) && 
 			 (_entity_bottom.entity_collides)
 		{

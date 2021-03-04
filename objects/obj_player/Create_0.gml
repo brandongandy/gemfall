@@ -10,6 +10,7 @@ attacking = false;
 collision_map = layer_tilemap_get_id(layer_get_id("ColLower"));
 height_map = layer_tilemap_get_id(layer_get_id("ColHeight"));
 time_to_jump = 60;
+time_to_push = 60;
 
 //if (layer_exists(layer_get_id("TilesLowerMain")))
 //{	
