@@ -1,7 +1,7 @@
 {
   "resources": [
     {"id":{"name":"obj_snake","path":"objects/obj_snake/obj_snake.yy",},"order":5,},
-    {"id":{"name":"rm_zilaoxte_village","path":"rooms/rm_zilaoxte_village/rm_zilaoxte_village.yy",},"order":1,},
+    {"id":{"name":"rm_zilaoxte_village","path":"rooms/rm_zilaoxte_village/rm_zilaoxte_village.yy",},"order":0,},
     {"id":{"name":"obj_plant_fragment","path":"objects/obj_plant_fragment/obj_plant_fragment.yy",},"order":5,},
     {"id":{"name":"spr_ui_buttons","path":"sprites/spr_ui_buttons/spr_ui_buttons.yy",},"order":1,},
     {"id":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},"order":7,},
@@ -63,7 +63,6 @@
     {"id":{"name":"spr_shadow","path":"sprites/spr_shadow/spr_shadow.yy",},"order":2,},
     {"id":{"name":"spr_player_dead","path":"sprites/spr_player_dead/spr_player_dead.yy",},"order":7,},
     {"id":{"name":"rm_start_village_home_00","path":"rooms/rm_start_village_home_00/rm_start_village_home_00.yy",},"order":1,},
-    {"id":{"name":"rm_zilaoxte_player_house","path":"rooms/rm_zilaoxte_player_house/rm_zilaoxte_player_house.yy",},"order":0,},
     {"id":{"name":"spr_textbox_bg","path":"sprites/spr_textbox_bg/spr_textbox_bg.yy",},"order":1,},
     {"id":{"name":"spr_dust_up","path":"sprites/spr_dust_up/spr_dust_up.yy",},"order":15,},
     {"id":{"name":"scr_crystal_slime_minion","path":"scripts/scr_crystal_slime_minion/scr_crystal_slime_minion.yy",},"order":8,},
@@ -132,6 +131,7 @@
     {"id":{"name":"scr_mob_base","path":"scripts/scr_mob_base/scr_mob_base.yy",},"order":4,},
     {"id":{"name":"ts_house_interior_01","path":"tilesets/ts_house_interior_01/ts_house_interior_01.yy",},"order":8,},
     {"id":{"name":"spr_house_interior_01","path":"sprites/spr_house_interior_01/spr_house_interior_01.yy",},"order":5,},
+    {"id":{"name":"rm_village_outskirts_upper","path":"rooms/rm_village_outskirts_upper/rm_village_outskirts_upper.yy",},"order":1,},
     {"id":{"name":"scr_CRT_turn_off_effect","path":"scripts/scr_CRT_turn_off_effect/scr_CRT_turn_off_effect.yy",},"order":2,},
     {"id":{"name":"rm_dungeon01_03","path":"rooms/rm_dungeon01_03/rm_dungeon01_03.yy",},"order":2,},
     {"id":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"order":0,},
@@ -170,6 +170,7 @@
     {"id":{"name":"rm_dungeon01_05","path":"rooms/rm_dungeon01_05/rm_dungeon01_05.yy",},"order":5,},
     {"id":{"name":"spr_bow_inv","path":"sprites/spr_bow_inv/spr_bow_inv.yy",},"order":1,},
     {"id":{"name":"ts_col","path":"tilesets/ts_col/ts_col.yy",},"order":0,},
+    {"id":{"name":"rm_player_house","path":"rooms/rm_player_house/rm_player_house.yy",},"order":2,},
     {"id":{"name":"spr_stone_01","path":"sprites/spr_stone_01/spr_stone_01.yy",},"order":14,},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},"order":2,},
     {"id":{"name":"scr_bomb","path":"scripts/scr_bomb/scr_bomb.yy",},"order":3,},
@@ -240,8 +241,9 @@
     {"roomId":{"name":"rm_dungeon01_boss","path":"rooms/rm_dungeon01_boss/rm_dungeon01_boss.yy",},},
     {"roomId":{"name":"rm_dungeon01_00_secret","path":"rooms/rm_dungeon01_00_secret/rm_dungeon01_00_secret.yy",},},
     {"roomId":{"name":"rm_CRT_Room","path":"rooms/rm_CRT_Room/rm_CRT_Room.yy",},},
-    {"roomId":{"name":"rm_zilaoxte_player_house","path":"rooms/rm_zilaoxte_player_house/rm_zilaoxte_player_house.yy",},},
     {"roomId":{"name":"rm_zilaoxte_village","path":"rooms/rm_zilaoxte_village/rm_zilaoxte_village.yy",},},
+    {"roomId":{"name":"rm_village_outskirts_upper","path":"rooms/rm_village_outskirts_upper/rm_village_outskirts_upper.yy",},},
+    {"roomId":{"name":"rm_player_house","path":"rooms/rm_player_house/rm_player_house.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
