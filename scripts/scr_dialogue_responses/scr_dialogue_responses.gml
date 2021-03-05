@@ -19,7 +19,6 @@ function scr_dialogue_responses(_response)
 			{
 				scr_new_textbox("Thanks!", 2);
 				scr_new_textbox("I think I left it in that scary cave to\nthe north-east!", 2);
-				global.quest_status[? "TheHatQuest"] = 1;
 			}
 			break;
 		case 5:

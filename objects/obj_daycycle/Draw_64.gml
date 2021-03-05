@@ -15,8 +15,10 @@ if (draw_daylight)
 	{
 		with (obj_player)
 		{
+			var _xpos = x + lengthdir_x(24, direction);
+			var _ypos = y + lengthdir_y(24, direction);
 			gpu_set_blendmode(bm_src_color);
-			draw_sprite_ext(spr_glow, 0, floor(x - _vx), floor(y - _vy),
+			draw_sprite_ext(spr_glow, 0, floor(_xpos - _vx), floor(_ypos - _vy),
 				1,
 				1,
 				0,

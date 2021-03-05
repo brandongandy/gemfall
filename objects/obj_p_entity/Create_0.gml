@@ -14,6 +14,8 @@ thrown = false;
 orig_x = x;
 orig_y = y;
 
+pushed = true;
+
 collision_map = layer_tilemap_get_id(layer_get_id("ColHeight"));
 
 // elevation - used for drawing and for logic sometimes

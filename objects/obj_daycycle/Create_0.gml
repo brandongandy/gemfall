@@ -11,7 +11,7 @@ year = 1;
 
 // seconds per step
 time_increment = 100;
-time_paused = true;
+time_paused = false;
 
 max_darkness = 0.99;
 darkness = 0;
