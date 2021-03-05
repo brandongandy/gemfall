@@ -17,3 +17,38 @@ if (moving)
 		y = lerp(y, y_to, 0.05);
 	}
 }
+
+if (pushed && !script_executed)
+{
+	if (push_success_script == -1)
+	{
+		script_executed = true;
+		return;
+	}
+	
+	var _can_execute = false;
+	
+	if (push_success_dir == -1)
+	{
+		_can_execute = true;
+	}
+	else
+	{
+		if (push_dir == push_success_dir)
+		{
+			_can_execute = true;
+		}
+	}
+	
+	if (_can_execute)
+	{
+		scr_execute_array(push_success_script, push_success_script_args);
+		script_executed = true;
+	}
+	else
+	{
+		// we can't execute the script, but we've already been pushed
+		// so quit trying, until the room reloads and we can try again
+		script_executed = true;
+	}
+}

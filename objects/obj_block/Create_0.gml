@@ -5,6 +5,8 @@
 event_inherited();
 
 pushed = false;
+push_dir = -1;
+script_executed = false;
 x_to = -1;
 y_to = -1;
 moving = false;

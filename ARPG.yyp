@@ -158,6 +158,7 @@
     {"id":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"order":3,},
     {"id":{"name":"rm_dungeon01_01","path":"rooms/rm_dungeon01_01/rm_dungeon01_01.yy",},"order":0,},
     {"id":{"name":"spr_coin","path":"sprites/spr_coin/spr_coin.yy",},"order":1,},
+    {"id":{"name":"scr_utils","path":"scripts/scr_utils/scr_utils.yy",},"order":23,},
     {"id":{"name":"scr_player_state_lock","path":"scripts/scr_player_state_lock/scr_player_state_lock.yy",},"order":3,},
     {"id":{"name":"scr_CRT_turn_on_effect","path":"scripts/scr_CRT_turn_on_effect/scr_CRT_turn_on_effect.yy",},"order":3,},
     {"id":{"name":"spr_col","path":"sprites/spr_col/spr_col.yy",},"order":0,},

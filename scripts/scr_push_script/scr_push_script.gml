@@ -10,6 +10,7 @@ function scr_push_script(_id, _direction, _length)
 	{
 		x_to = x + lengthdir_x(_length, _direction);
 		y_to = y + lengthdir_y(_length, _direction);
+		push_dir = snap_to_compass_point(point_direction(x, y, x_to, y_to));
 		
 		var _bbox_width = bbox_right - bbox_left;
 		var _bbox_height = bbox_bottom - bbox_top;
