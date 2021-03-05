@@ -21,7 +21,7 @@ global.quest_status[? "Dungeon01"] = 0;
 surface_resize(application_surface, RESOLUTION_W, RESOLUTION_H);
 // player
 global.i_inv = instance_create_layer(0, 0, layer, obj_inventory);
-//global.i_ui = instance_create_layer(0, 0, layer, obj_ui);
+global.i_ui = instance_create_layer(0, 0, layer, obj_ui);
 global.input = instance_create_layer(0, 0, layer, obj_input);
 
 // instance ID of a lifted object
@@ -35,4 +35,4 @@ global.i_camera = instance_create_layer(0, 0, layer, obj_camera);
 // other
 global.previous_room = -1;
 
-room_goto(rm_player_house);
+room_goto(rm_debug);

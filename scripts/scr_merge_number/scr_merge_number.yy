@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "quests",
-    "path": "folders/Scripts/quests.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_hat_quest",
+  "name": "scr_merge_number",
   "tags": [],
   "resourceType": "GMScript",
 }
