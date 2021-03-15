@@ -26,21 +26,23 @@ keys = ds_map_create();
 keys[? "Dungeon01"] = 0;
 
 // inventory items
-equipped = ITEM.BOMB;
+equipped = ITEM.BOW;
 
 inv_items = ds_grid_create(ITEM.TOTAL, INVENTORY_STAT.TOTAL);
 
 inv_items[# ITEM.BOMB, INVENTORY_STAT.DAMAGE] = 5;
 inv_items[# ITEM.BOMB, INVENTORY_STAT.USES_AMMO] = true;
 inv_items[# ITEM.BOMB, INVENTORY_STAT.AMMO] = 1;
+inv_items[# ITEM.BOMB, INVENTORY_STAT.MAX_AMMO] = 10;
 inv_items[# ITEM.BOMB, INVENTORY_STAT.OWNED] = true;
 inv_items[# ITEM.BOMB, INVENTORY_STAT.MANA_TYPE] = -1;
 inv_items[# ITEM.BOMB, INVENTORY_STAT.MANA_COST] = -1;
 
 inv_items[# ITEM.BOW, INVENTORY_STAT.DAMAGE] = 5;
 inv_items[# ITEM.BOW, INVENTORY_STAT.USES_AMMO] = true;
-inv_items[# ITEM.BOW, INVENTORY_STAT.AMMO] = 0;
-inv_items[# ITEM.BOW, INVENTORY_STAT.OWNED] = false;
+inv_items[# ITEM.BOW, INVENTORY_STAT.AMMO] = 20;
+inv_items[# ITEM.BOW, INVENTORY_STAT.MAX_AMMO] = 20;
+inv_items[# ITEM.BOW, INVENTORY_STAT.OWNED] = true;
 inv_items[# ITEM.BOW, INVENTORY_STAT.MANA_TYPE] = -1;
 inv_items[# ITEM.BOW, INVENTORY_STAT.MANA_COST] = -1;
 

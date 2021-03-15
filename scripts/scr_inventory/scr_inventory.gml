@@ -49,6 +49,8 @@ function scr_get_sprite_for_item(_item)
 		case ITEM.BOMB:
 			return spr_bomb;
 		break;
+		case ITEM.BOW:
+			return spr_bow_inv;
 		default:
 		break;
 	}
@@ -61,9 +63,35 @@ function scr_get_ammo(_item)
 		case ITEM.BOMB:
 			return obj_inventory.inv_items[# ITEM.BOMB, INVENTORY_STAT.AMMO];
 		break;
+		case ITEM.BOW:
+			return obj_inventory.inv_items[# ITEM.BOW, INVENTORY_STAT.AMMO];
 		default:
 			return -1;
 		break;
+	}
+}
+
+function scr_spend_ammo(_item_type, _amount)
+{
+	if (_item_type == undefined)
+	{
+		return false;
+	}
+	
+	if (global.i_inv.inv_items[# _item_type, INVENTORY_STAT.USES_AMMO] == false)
+	{
+		// just let us use it if it doesn't use ammo
+		return true;
+	}
+	
+	if (global.i_inv.inv_items[# _item_type, INVENTORY_STAT.AMMO] - _amount >= 0)
+	{
+		global.i_inv.inv_items[# _item_type, INVENTORY_STAT.AMMO] -= _amount;
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }
 

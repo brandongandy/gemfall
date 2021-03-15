@@ -170,6 +170,8 @@ function scr_tile_collide_at_points_mob(_tilemap)
 	return _found;
 }
 
+// non-strict projectile checking - only impacts on tile 7, otherwise passes
+// over 
 function scr_tile_collide_at_points_bullet(_tilemap)
 {
 	var _found = false;
@@ -184,6 +186,30 @@ function scr_tile_collide_at_points_bullet(_tilemap)
 		var _tile_index = tile_get_index(_tile);		
 		//_found = _found || ;
 		if (_tile_index == 7)
+		{
+			_found = true;
+		}
+	}
+	
+	return _found;
+}
+
+// used for non-bullets, ie, things that do not float and should "hit"
+// the first valid tile
+function scr_tile_collide_at_points_projectile(_tilemap)
+{
+	var _found = false;
+	
+	var _vec2_x = 0;
+	var _vec2_y = 1;
+	
+	for (var i = 1; i < argument_count; i++)
+	{
+		var _point = argument[i];
+		var _tile = tilemap_get_at_pixel(_tilemap, _point[_vec2_x], _point[_vec2_y]);
+		var _tile_index = tile_get_index(_tile);		
+		//_found = _found || ;
+		if (_tile_index >= 5) && (_tile_index <= 7)
 		{
 			_found = true;
 		}

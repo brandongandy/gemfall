@@ -40,7 +40,7 @@ function scr_turret_block_attack()
 		target = noone;
 	}
 	
-		image_index = 0;
+	image_index = 0;
 	state_target = MOB_STATE.IDLE;
 	state = MOB_STATE.WAIT;
 }
