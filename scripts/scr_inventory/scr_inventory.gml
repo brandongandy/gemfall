@@ -117,3 +117,22 @@ function scr_spend_mana(_mana_type, _amount)
 		return false;
 	}
 }
+
+function scr_add_mana(_mana_type, _amount)
+{
+	if (_mana_type == undefined)
+	{
+		return false;
+	}
+	
+	if (_mana_type >= MANA_TYPE.TOTAL) || (_mana_type < 0)
+	{
+		return false;
+	}
+	
+	global.i_inv.inv_mana[# _mana_type, MANA_STAT.CURRENT_MANA] += _amount;
+
+	global.i_inv.inv_mana[# _mana_type, MANA_STAT.CURRENT_MANA] =
+		clamp(global.i_inv.inv_mana[# _mana_type, MANA_STAT.CURRENT_MANA], 0,
+			global.i_inv.inv_mana[# _mana_type, MANA_STAT.MAX_MANA]);
+}

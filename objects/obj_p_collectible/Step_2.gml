@@ -29,7 +29,7 @@ if (instance_exists(obj_player))
 	var _py = obj_player.y;
 	var _dist = point_distance(x, y, _px, _py);
 	
-	if (_dist < 16) // magnet radius
+	if (_dist < magnet_radius) // magnet radius
 	{
 		spd += 0.25;
 		direction = point_direction(x, y, _px, _py);

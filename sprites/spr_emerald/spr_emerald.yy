@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"07b9a875-ef34-4078-9569-1209ea3c3031","path":"sprites/spr_emerald_01/spr_emerald_01.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"07b9a875-ef34-4078-9569-1209ea3c3031","path":"sprites/spr_emerald_01/spr_emerald_01.yy",},"LayerId":{"name":"747b15ca-80ae-490a-9cef-c9448b3ad399","path":"sprites/spr_emerald_01/spr_emerald_01.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_emerald_01","path":"sprites/spr_emerald_01/spr_emerald_01.yy",},"resourceVersion":"1.0","name":"07b9a875-ef34-4078-9569-1209ea3c3031","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"7ba12e2d-8a97-4cfe-bd8c-dc97dc1123c7","path":"sprites/spr_emerald/spr_emerald.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"7ba12e2d-8a97-4cfe-bd8c-dc97dc1123c7","path":"sprites/spr_emerald/spr_emerald.yy",},"LayerId":{"name":"4402363a-0f9e-4b9e-8251-3c28ecc5edc2","path":"sprites/spr_emerald/spr_emerald.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_emerald","path":"sprites/spr_emerald/spr_emerald.yy",},"resourceVersion":"1.0","name":"7ba12e2d-8a97-4cfe-bd8c-dc97dc1123c7","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_emerald_01","path":"sprites/spr_emerald_01/spr_emerald_01.yy",},
+    "spriteId": {"name":"spr_emerald","path":"sprites/spr_emerald/spr_emerald.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"c67fbd2b-f3d3-44e9-b426-95263f662c27","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"07b9a875-ef34-4078-9569-1209ea3c3031","path":"sprites/spr_emerald_01/spr_emerald_01.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"8aa0d4b3-d22c-4339-9394-697c8c0bd77a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7ba12e2d-8a97-4cfe-bd8c-dc97dc1123c7","path":"sprites/spr_emerald/spr_emerald.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 4,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_emerald_01","path":"sprites/spr_emerald_01/spr_emerald_01.yy",},
+    "parent": {"name":"spr_emerald","path":"sprites/spr_emerald/spr_emerald.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_emerald_01",
+    "name": "spr_emerald",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"747b15ca-80ae-490a-9cef-c9448b3ad399","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4402363a-0f9e-4b9e-8251-3c28ecc5edc2","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "gems",
-    "path": "folders/Sprites/entities/gems.yy",
+    "path": "folders/Sprites/entities/pickups/gems.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_emerald_01",
+  "name": "spr_emerald",
   "tags": [],
   "resourceType": "GMSprite",
 }

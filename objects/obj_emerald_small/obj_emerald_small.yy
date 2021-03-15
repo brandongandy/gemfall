@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_emerald_01",
-    "path": "sprites/spr_emerald_01/spr_emerald_01.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
