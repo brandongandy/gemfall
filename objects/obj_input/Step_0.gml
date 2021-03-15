@@ -21,6 +21,7 @@ else
 	button_x = keyboard_check_pressed(vk_left);
 	button_y = keyboard_check_pressed(vk_up);
 }
+
 start = keyboard_check_pressed(vk_enter);
 pause = keyboard_check_pressed(vk_escape);
 

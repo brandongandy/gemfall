@@ -93,10 +93,6 @@ function scr_player_state_free()
 			{
 				scr_player_throw();
 			}
-			else
-			{
-				scr_use_equipped_gem();
-			}
 		}
 		else
 		{
@@ -130,5 +126,10 @@ function scr_player_state_free()
 		{
 			scr_player_use_equipped();
 		}
+	}
+	
+	if (key_gem)
+	{
+		scr_use_equipped_gem();
 	}
 }

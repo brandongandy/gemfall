@@ -6,6 +6,7 @@ key_down = obj_input.down;
 key_activate = obj_input.button_a;
 key_attack = obj_input.button_b;
 key_item = obj_input.button_x;
+key_gem = obj_input.button_y;
 
 // movement
 input_direction = point_direction(0, 0, key_right - key_left, key_down - key_up);
