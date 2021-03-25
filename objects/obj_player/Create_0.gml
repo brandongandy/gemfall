@@ -12,16 +12,7 @@ height_map = layer_tilemap_get_id(layer_get_id("ColHeight"));
 time_to_jump = 60;
 time_to_push = 60;
 
-//if (layer_exists(layer_get_id("TilesLowerMain")))
-//{	
-//	lower_depth = layer_get_depth(layer_get_id("TilesLowerMain"));
-//	layer_depth(layer_get_id("TilesLowerDoodads"), -(lower_depth + 17));
-//	layer_depth(layer_get_id("TilesLowerDecoration"), -(lower_depth  + 17 + 16));
-//	layer_depth(layer_get_id("TilesUpperMain"), -(lower_depth + room_height));
-//}
-//if (layer_exists(layer_get_id("TilesLowerDecoration")))
-//{
-//}
+
 if (layer_exists(layer_get_id("TilesLowerDecoration")))
 {
 	layer_depth(layer_get_id("TilesLowerDecoration"), -(room_height));
@@ -72,3 +63,9 @@ if (global.target_x != -1)
 	//global.target_y = -1;
 	//global.target_dir = 0;
 }
+
+// status effects
+status_effect = -1;
+// how long, in seconds, the status lasts
+status_duration = 0;
+status_counter = 0;

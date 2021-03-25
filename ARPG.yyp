@@ -146,6 +146,7 @@
     {"id":{"name":"scr_door_trigger","path":"scripts/scr_door_trigger/scr_door_trigger.yy",},"order":1,},
     {"id":{"name":"scr_room_transition","path":"scripts/scr_room_transition/scr_room_transition.yy",},"order":12,},
     {"id":{"name":"scr_bow","path":"scripts/scr_bow/scr_bow.yy",},"order":5,},
+    {"id":{"name":"scr_player_status_effects","path":"scripts/scr_player_status_effects/scr_player_status_effects.yy",},"order":5,},
     {"id":{"name":"scr_CRT_appy_to_surface","path":"scripts/scr_CRT_appy_to_surface/scr_CRT_appy_to_surface.yy",},"order":0,},
     {"id":{"name":"scr_auto_check","path":"scripts/scr_auto_check/scr_auto_check.yy",},"order":0,},
     {"id":{"name":"MACROS","path":"scripts/MACROS/MACROS.yy",},"order":0,},

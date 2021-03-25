@@ -20,6 +20,11 @@ if (!global.game_paused)
 		invulnerable = max(invulnerable - 1, 0);
 		flash = max(flash - 0.05, 0);
 	}
+	
+	if (status_effect != -1)
+	{
+		script_execute(status_effect);
+	}
 }
 
 depth = -(bbox_bottom - player_height);

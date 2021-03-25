@@ -10,7 +10,7 @@ season = 1;
 year = 1;
 
 // seconds per step
-time_increment = 100;
+time_increment = 24;
 time_paused = false;
 
 max_darkness = 0.99;

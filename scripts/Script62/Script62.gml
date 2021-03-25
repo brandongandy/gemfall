@@ -1,4 +1,0 @@
-// Scrip
-function Script62(){
-
-}
