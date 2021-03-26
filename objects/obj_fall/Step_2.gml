@@ -3,50 +3,30 @@ if (!global.game_paused) && (active)
 {
 	if (player_entered) && (!fallen)
 	{
-		fall_countdown--;
-		
-		if (fall_countdown <= 8)
+		fallen = true;
+		global.target_room = target_room;
+		global.target_x = target_x;
+		global.target_y = target_y;
+		if (target_dir != -1)
 		{
-			entity_collides = false;
+			global.target_dir = target_dir;
 		}
-		
-		if (fall_countdown <= 0)
+		else
 		{
-			fallen = true;
-			global.target_room = target_room;
-			global.target_x = target_x;
-			global.target_y = target_y;
-			if (target_dir != -1)
-			{
-				global.target_dir = target_dir;
-			}
-			else
-			{
-				global.target_dir = obj_player.direction;
-			}
+			global.target_dir = obj_player.direction;
+		}
 			
-			if (is_pit)
+		if (is_pit)
+		{
+			with (obj_player)
 			{
-				with (obj_player)
-				{
-					scr_player_act_animation(spr_player_fall, scr_fall_and_respawn);
-				}
-			}
-			
-			if !(position_meeting(obj_player.x, obj_player.x, id))
-			{
-				fallen = false;
-				entity_collides = true;
-				fall_countdown = 30;
-				player_entered = false;
+				scr_player_act_animation(spr_player_fall, scr_fall_and_respawn);
 			}
 		}
 	}
-	else
+	else if (!position_meeting(obj_player.x, obj_player.y, id))
 	{
 		fallen = false;
-		entity_collides = true;
-		fall_countdown = 30;
 		player_entered = false;
 	}
 }

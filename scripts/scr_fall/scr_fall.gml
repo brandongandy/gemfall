@@ -16,5 +16,4 @@ function scr_fall_and_respawn()
 				
 	scr_hurt_player(direction, 0, 0.5);
 	direction += 180;
-	show_debug_message(string(direction));
 }

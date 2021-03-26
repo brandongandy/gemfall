@@ -5,5 +5,4 @@ active = true;
 player_entered = false;
 
 // steps from initial collision to player falling
-fall_countdown = 30;
 fallen = false;
