@@ -152,6 +152,28 @@ function scr_tile_collide_at_points_mob(_tilemap)
 			case 3:
 				_found = false;
 				break;
+			case 4:
+				{
+					if (state != undefined)
+					{
+						if (state == MOB_STATE.HURT)
+						{
+							// if the state is hurt, then we're being knocked back - so
+							// fall and die
+							// TODO: Animate fall
+							instance_destroy();
+						}
+						else
+						{
+							_found = true;
+						}
+					}
+					else
+					{
+						_found = true;
+					}
+				}
+				break;
 			case 5:
 			case 6:
 			case 7:
