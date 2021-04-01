@@ -55,6 +55,8 @@ function scr_use_equipped_gem()
 		}
 		case GEM.SKYRIDER:
 		{
+			start_x = x;
+			start_y = y;
 			state = scr_player_state_float;
 			break;
 		}

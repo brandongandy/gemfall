@@ -12,7 +12,6 @@ height_map = layer_tilemap_get_id(layer_get_id("ColHeight"));
 time_to_jump = 60;
 time_to_push = 60;
 
-
 if (layer_exists(layer_get_id("TilesLowerDecoration")))
 {
 	layer_depth(layer_get_id("TilesLowerDecoration"), -(room_height));
@@ -63,6 +62,10 @@ if (global.target_x != -1)
 	//global.target_y = -1;
 	//global.target_dir = 0;
 }
+
+// respawn
+start_x = x;
+start_y = y;
 
 // status effects
 status_effect = -1;
