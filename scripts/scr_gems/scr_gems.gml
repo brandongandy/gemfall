@@ -45,6 +45,18 @@ function scr_use_equipped_gem()
 			}
 			break;
 		}
+		case GEM.STRENGTH:
+		{
+			break;
+		}
+		case GEM.STAMINA:
+		{
+			break;
+		}
+		case GEM.SKYRIDER:
+		{
+			break;
+		}
 		default:
 			break;
 	}
