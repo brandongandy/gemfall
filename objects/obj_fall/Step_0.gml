@@ -3,5 +3,8 @@
 if (position_meeting(obj_player.x, obj_player.y, id)) &&
 	(!fallen)
 {
-	player_entered = true;
+	if (obj_player.state != scr_player_state_float)
+	{
+		player_entered = true;
+	}
 }

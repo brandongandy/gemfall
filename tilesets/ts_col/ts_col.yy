@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_col",
-    "path": "sprites/spr_col/spr_col.yy",
-  },
+  "spriteId": null,
   "tileWidth": 8,
   "tileHeight": 8,
   "tilexoff": 0,

@@ -1,11 +1,18 @@
 function scr_player_collision()
 {
-	return scr_check_player_height_collision(height_map);
+	if (state = scr_player_state_float)
+	{
+		return scr_check_player_height_collision(height_map, false);
+	}
+	else
+	{
+		return scr_check_player_height_collision(height_map, true);
+	}
 }
 
 /// @desc Does collision detection based on tile "height", as set by the tile index
 /// in the tileset.
-function scr_check_player_height_collision(_collision_map)
+function scr_check_player_height_collision(_collision_map, _mobs_collide)
 {	
 	// Horizontal Tiles
 	var _newX = x + h_speed;
@@ -40,22 +47,25 @@ function scr_check_player_height_collision(_collision_map)
 	// Horizontal Entity List
 	//_newX = x + h_speed;
 	var _mobCollisionX = false;
-	if (h_speed > 0)
+	if (_mobs_collide)
 	{
-		var _entity_right = collision_rectangle(bbox_left + h_speed, bbox_top + 1, bbox_right + h_speed, bbox_bottom - 1, obj_p_entity, false, true);
-		if (_entity_right != noone) && (_entity_right.entity_collides)
+		if (h_speed > 0)
 		{
-			h_speed = 0;
-			_mobCollisionX = true;
+			var _entity_right = collision_rectangle(bbox_left + h_speed, bbox_top + 1, bbox_right + h_speed, bbox_bottom - 1, obj_p_entity, false, true);
+			if (_entity_right != noone) && (_entity_right.entity_collides)
+			{
+				h_speed = 0;
+				_mobCollisionX = true;
+			}
 		}
-	}
-	else if (h_speed < 0)
-	{
-		var _entity_left = collision_rectangle(bbox_left + h_speed, bbox_top + 1, bbox_right + h_speed, bbox_bottom - 1, obj_p_entity, false, true);
-		if (_entity_left != noone) && (_entity_left.entity_collides)
+		else if (h_speed < 0)
 		{
-			h_speed = 0;
-			_mobCollisionX = true;
+			var _entity_left = collision_rectangle(bbox_left + h_speed, bbox_top + 1, bbox_right + h_speed, bbox_bottom - 1, obj_p_entity, false, true);
+			if (_entity_left != noone) && (_entity_left.entity_collides)
+			{
+				h_speed = 0;
+				_mobCollisionX = true;
+			}
 		}
 	}
 	
@@ -98,25 +108,28 @@ function scr_check_player_height_collision(_collision_map)
 	
 	// Vertical Entity List
 	var _mobCollisionY = false;
-	if (v_speed > 0)
+	if (_mobs_collide)
 	{
-		var _entity_bottom = collision_rectangle(bbox_left + 1, bbox_top + 1, bbox_right - 1, bbox_bottom + v_speed, obj_p_entity, false, true);
-		if (_entity_bottom != noone) && (_entity_bottom.entity_collides)
+		if (v_speed > 0)
 		{
-			_newY = _entity_bottom.bbox_top - (bbox_bottom - bbox_top);
-			v_speed = 0;
-			_mobCollisionY = true;
+			var _entity_bottom = collision_rectangle(bbox_left + 1, bbox_top + 1, bbox_right - 1, bbox_bottom + v_speed, obj_p_entity, false, true);
+			if (_entity_bottom != noone) && (_entity_bottom.entity_collides)
+			{
+				_newY = _entity_bottom.bbox_top - (bbox_bottom - bbox_top);
+				v_speed = 0;
+				_mobCollisionY = true;
+			}
 		}
-	}
-	else
-	if (v_speed < 0)
-	{
-		var _entity_top = collision_rectangle(bbox_left + 1, bbox_top + v_speed, bbox_right - 1, bbox_bottom - 1, obj_p_entity, false, true);
-		if (_entity_top != noone) && (_entity_top.entity_collides)
+		else
+		if (v_speed < 0)
 		{
-			//show_debug_message("Ex: " + string(_entity_top.x) + ", Ey: " + string(_entity_top.y) + ", Px: , " + string(x) +"Py: " + string(y));
-			v_speed = 0;
-			_mobCollisionY = true;
+			var _entity_top = collision_rectangle(bbox_left + 1, bbox_top + v_speed, bbox_right - 1, bbox_bottom - 1, obj_p_entity, false, true);
+			if (_entity_top != noone) && (_entity_top.entity_collides)
+			{
+				//show_debug_message("Ex: " + string(_entity_top.x) + ", Ey: " + string(_entity_top.y) + ", Px: , " + string(x) +"Py: " + string(y));
+				v_speed = 0;
+				_mobCollisionY = true;
+			}
 		}
 	}
 	
@@ -141,63 +154,77 @@ function scr_tile_collide_at_points_height(_tilemap)
 	{
 		var _point = argument[i];
 		var _tile = tilemap_get_at_pixel(_tilemap, _point[_vec2_x], _point[_vec2_y]);
-		var _tile_index = tile_get_index(_tile);		
-		//_found = _found || ;
-		switch (_tile_index)
+		var _tile_index = tile_get_index(_tile);
+		
+		if (state = scr_player_state_float)
 		{
-			case 1:
-				_found = false;
-				break;
-			case 2:
-				{
-					if !(player_height >= 1 || player_height <= 3)
+			switch (_tile_index)
+			{
+				case 7:
+					_found = true;
+					break;
+				default:
+					break;
+			}
+		}
+		else
+		{
+			switch (_tile_index)
+			{
+				case 1:
+					_found = false;
+					break;
+				case 2:
 					{
-						_found = true;
-					}
-				}
-				break;
-			case 3:
-				_found = false;
-				break;
-			case 5:
-				{
-					if (instance_place(_point[_vec2_x], _point[_vec2_y], obj_door))
-					{
-						_found = true;
-					}
-					else
-					{
-						_found = false;
-					}
-				}
-				break;
-			case 6:
-			case 7:
-				{
-					if (player_height >= 9) && (player_height <= 12)
-					{
-						time_to_jump--;
-						if (time_to_jump <= 0)
-						{
-							// change state
-							time_to_jump = 60;
-							jump_direction = player_height;
-							state = scr_player_state_jump;
-							_found = false;
-						}
-						else
+						if !(player_height >= 1 || player_height <= 3)
 						{
 							_found = true;
 						}
 					}
-					else
+					break;
+				case 3:
+					_found = false;
+					break;
+				case 5:
 					{
-					  _found = true;
+						if (instance_place(_point[_vec2_x], _point[_vec2_y], obj_door))
+						{
+							_found = true;
+						}
+						else
+						{
+							_found = false;
+						}
 					}
-				}
-				break;
-			default:
-				break;
+					break;
+				case 6:
+				case 7:
+					{
+						if (player_height >= 9) && (player_height <= 12)
+						{
+							time_to_jump--;
+							if (time_to_jump <= 0)
+							{
+								// change state
+								time_to_jump = 60;
+								jump_direction = player_height;
+								state = scr_player_state_jump;
+								_found = false;
+							}
+							else
+							{
+								_found = true;
+							}
+						}
+						else
+						{
+						  _found = true;
+						}
+					}
+					break;
+				default:
+					break;
+			}
 		}
 		
 		//if (_tile_index > player_height + 1)

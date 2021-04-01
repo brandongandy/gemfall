@@ -30,6 +30,7 @@ else
 		u_flash = shader_get_uniform(flash_shader, "flash");
 		shader_set_uniform_f(u_flash, flash);
 	}
+
 	draw_sprite_ext(sprite_index,
 		image_index,
 		floor(x),
@@ -40,6 +41,7 @@ else
 		image_blend,
 		image_alpha
 	);
+	
 	if (shader_current() != -1)
 	{
 		shader_reset();
