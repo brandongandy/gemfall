@@ -22,13 +22,7 @@ function scr_player_state_float()
 				global.i_inv.inv_gems[# GEM.SKYRIDER, INVENTORY_STAT.MANA_TYPE],
 				global.i_inv.inv_gems[# GEM.SKYRIDER, INVENTORY_STAT.MANA_COST]))
 			{
-				z = 0;
-				if (player_height == 6 || player_height == 7)
-				{
-					x = start_x;
-					y = start_y;
-				}
-				state = scr_player_state_free;
+				scr_player_state_float_exit();
 			}
 		}
 		direction = input_direction;
@@ -54,12 +48,18 @@ function scr_player_state_float()
 	
 	if (global.input.button_y)
 	{
-		z = 0;
-		if (player_height >= 5 && player_height <= 7)
-		{
-			x = start_x;
-			y = start_y;
-		}
-		state = scr_player_state_free;
+		scr_player_state_float_exit();
 	}
+}
+
+function scr_player_state_float_exit()
+{
+	z = 0;
+	if (player_height >= 5 && player_height <= 7)
+	{
+		// over bad terrain
+		x = start_x;
+		y = start_y;
+	}
+	state = scr_player_state_free;
 }
