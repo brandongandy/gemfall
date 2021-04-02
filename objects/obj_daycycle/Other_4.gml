@@ -27,7 +27,7 @@ switch (room)
 			{
 				time_paused = false;
 			}
-			draw_daylight = true;
+			draw_daylight = false;
 		}
 		break;
 	default:

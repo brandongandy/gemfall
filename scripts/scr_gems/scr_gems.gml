@@ -60,6 +60,20 @@ function scr_use_equipped_gem()
 			state = scr_player_state_float;
 			break;
 		}
+		case GEM.TRAVELER:
+		{
+			var centerX = x - sprite_get_xoffset(sprite_index) + sprite_width / 2;
+			var centerY = y - sprite_get_yoffset(sprite_index) + sprite_height / 2;
+			// check for an entity to activate/use
+			var _activateX = centerX + lengthdir_x(TILE_SIZE, direction);
+			var _activateY = centerY + lengthdir_y(TILE_SIZE, direction);
+			instance_create_layer(_activateX, _activateY, "Instances",
+				obj_tile_selector);
+			start_x = x;
+			start_y = y;
+			state = scr_player_state_teleport;
+			break;
+		}
 		default:
 			break;
 	}

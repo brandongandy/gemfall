@@ -20,3 +20,11 @@ collision_map = layer_tilemap_get_id(layer_get_id("ColHeight"));
 
 // elevation - used for drawing and for logic sometimes
 elevation = tile_get_index(tilemap_get_at_pixel(collision_map, x, y));
+
+start_x = x;
+start_y = y;
+
+shake_enabled = false;
+shake_length = 0;
+shake_magnitude = 0;
+shake_remain = 0;

@@ -72,3 +72,8 @@ status_effect = -1;
 // how long, in seconds, the status lasts
 status_duration = 0;
 status_counter = 0;
+
+shake_enabled = false;
+shake_length = 0;
+shake_magnitude = 0;
+shake_remain = 0;

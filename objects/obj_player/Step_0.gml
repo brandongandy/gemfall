@@ -25,6 +25,23 @@ if (!global.game_paused)
 	{
 		script_execute(status_effect);
 	}
+	
+	// entity shake
+	if (shake_enabled)
+	{
+		x += random_range(-shake_remain, shake_remain);
+		y += random_range(-shake_remain, shake_remain);
+
+		shake_remain = max(0, shake_remain - ((1 / shake_length) * shake_magnitude));
+		if (shake_remain <= 0)
+		{
+			x = start_x;
+			y = start_y;
+			start_x = 0;
+			start_y = 0;
+			shake_enabled = false;
+		}
+	}
 }
 
 depth = -(bbox_bottom - player_height);
