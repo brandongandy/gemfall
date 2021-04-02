@@ -14,6 +14,6 @@ function scr_fall_and_respawn()
 		scr_room_transition(TRANSITION_TYPE.FADE, global.target_room);
 	}
 				
-	scr_hurt_player(direction, 0, 0.5);
+	scr_hurt_player(direction, 0, 1);
 	direction += 180;
 }

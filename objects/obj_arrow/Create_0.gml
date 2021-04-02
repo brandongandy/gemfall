@@ -6,4 +6,4 @@ event_inherited();
 
 collision_map = layer_tilemap_get_id(layer_get_id("ColHeight"));
 speed = 4;
-base_damage = 5;
+base_damage = 2;

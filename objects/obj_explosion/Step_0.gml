@@ -54,7 +54,7 @@ if (harmful)
 		if (ds_list_find_index(entities_hit_by_attack, _hit_player) == -1)
 		{
 				ds_list_add(entities_hit_by_attack, _hit_player);
-				scr_hurt_player(point_direction(x, y, obj_player.x, obj_player.y), TILE_SIZE, 1.5);
+				scr_hurt_player(point_direction(x, y, obj_player.x, obj_player.y), TILE_SIZE, 3);
 		}
 	}
 	

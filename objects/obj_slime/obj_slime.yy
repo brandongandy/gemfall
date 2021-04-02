@@ -24,8 +24,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_slime","path":"objects/obj_slime/obj_slime.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"parent":{"name":"obj_slime","path":"objects/obj_slime/obj_slime.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [
     {"varType":3,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"mob_execute_death_script","tags":[],"resourceType":"GMObjectProperty",},
@@ -35,7 +35,7 @@
   "overriddenProperties": [
     {"propertyId":{"name":"mob_attack_radius","path":"objects/obj_p_mob/obj_p_mob.yy",},"objectId":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"value":"24","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"mob_aggro_radius","path":"objects/obj_p_mob/obj_p_mob.yy",},"objectId":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"value":"64","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"mob_hp","path":"objects/obj_p_mob/obj_p_mob.yy",},"objectId":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"value":"15","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"mob_hp","path":"objects/obj_p_mob/obj_p_mob.yy",},"objectId":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"value":"4","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"mob_force_touch","path":"objects/obj_p_mob/obj_p_mob.yy",},"objectId":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"value":"16","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"entity_drop_list","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"[obj_coin, obj_bomb_drop, obj_bomb_drop]","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],

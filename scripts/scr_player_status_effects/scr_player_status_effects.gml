@@ -13,7 +13,7 @@ function player_poisoned()
 		}
 		else
 		{
-			scr_hurt_player(direction, 0.25, 0.5);
+			scr_hurt_player(direction, 0.25, 1);
 		}
 	}
 }

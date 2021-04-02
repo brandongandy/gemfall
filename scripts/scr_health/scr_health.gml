@@ -4,8 +4,8 @@ function scr_increase_max_hearts()
 	with (global.i_inv)
 	{
 		player_heart_pieces++;
-		player_health_max += 1.0;
-		player_health += 1.0;
+		player_health_max += 2;
+		player_health += 2;
 	}
 }
 

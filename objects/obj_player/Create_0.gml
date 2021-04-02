@@ -34,7 +34,7 @@ player_height = 0;
 move_distance_remaining = 0;
 
 // attack stuff
-base_damage = 5;
+base_damage = 2;
 base_knockback = 32;
 //damage_mod = 0;
 

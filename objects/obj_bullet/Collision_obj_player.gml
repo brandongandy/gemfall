@@ -15,7 +15,7 @@ if (instance_exists(obj_player))
 
 if (_can_hurt)
 {
-	scr_hurt_player(point_direction(x, y, obj_player.x, obj_player.y), 8, 0.5);
+	scr_hurt_player(point_direction(x, y, obj_player.x, obj_player.y), mob_force_touch, mob_damage_touch);
 }
 
 instance_destroy();

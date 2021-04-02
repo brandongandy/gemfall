@@ -24,11 +24,12 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_skull_legs","path":"objects/obj_skull_legs/obj_skull_legs.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"mob_wander_distance","path":"objects/obj_p_mob/obj_p_mob.yy",},"objectId":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"value":"48","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"mob_hp","path":"objects/obj_p_mob/obj_p_mob.yy",},"objectId":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"value":"6","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "mobs",

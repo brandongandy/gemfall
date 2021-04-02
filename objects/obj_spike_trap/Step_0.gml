@@ -18,7 +18,7 @@ if (spikes_out)
 	{
 		if (obj_player.state != scr_player_state_roll)
 		{
-			scr_hurt_player(point_direction(x, y, obj_player.x, obj_player.y), 16, 0.5, 5, 0.5);
+			scr_hurt_player(point_direction(x, y, obj_player.x, obj_player.y), 16, 1);
 		}
 	}
 }
