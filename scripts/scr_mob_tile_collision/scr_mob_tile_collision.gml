@@ -231,7 +231,7 @@ function scr_tile_collide_at_points_projectile(_tilemap)
 		var _tile = tilemap_get_at_pixel(_tilemap, _point[_vec2_x], _point[_vec2_y]);
 		var _tile_index = tile_get_index(_tile);		
 		//_found = _found || ;
-		if (_tile_index >= 5) && (_tile_index <= 7)
+		if (_tile_index >= 5 && _tile_index <= 7)
 		{
 			_found = true;
 		}
