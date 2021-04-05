@@ -42,6 +42,8 @@ else
 		image_alpha
 	);
 	
+	// if height == 13, draw water splashing at feet
+	
 	if (shader_current() != -1)
 	{
 		shader_reset();

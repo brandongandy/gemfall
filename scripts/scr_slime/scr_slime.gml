@@ -185,7 +185,7 @@ function slime_hurt()
 	var _distance_to_go = point_distance(x, y, x_to, y_to);
 	
 	// if we've got further to go than we would move in a single frame
-	if (_distance_to_go > mob_speed)
+	if (round(_distance_to_go) > round(mob_speed))
 	{
 		image_speed = 1.0;
 		dir = point_direction(x, y, x_to, y_to);
@@ -208,13 +208,31 @@ function slime_hurt()
 		x = x_to;
 		y = y_to;
 		// dont go right back to attack
-		if (state_previous != MOB_STATE.ATTACK)
+		if (stunned)
 		{
-			state = state_previous;
+			stunned = false;
+			if (state_previous != MOB_STATE.ATTACK)
+			{
+				state_target = state_previous;
+			}
+			else
+			{
+				state_target = MOB_STATE.CHASE;
+			}
+			state = MOB_STATE.WAIT;
 		}
 		else
 		{
-			state = MOB_STATE.CHASE;
+			if (state_previous != MOB_STATE.ATTACK)
+			{
+				state = state_previous;
+			}
+			else
+			{
+				// chase always leads into attack, so if we were attacking
+				// then go back to it
+				state = MOB_STATE.CHASE;
+			}
 		}
 	}
 }

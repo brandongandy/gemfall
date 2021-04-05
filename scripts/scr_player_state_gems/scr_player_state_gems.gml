@@ -1,3 +1,22 @@
+#region Teleport
+// Scrip
+function scr_player_state_teleport()
+{
+	if (key_attack)
+	{
+		if (instance_exists(obj_tile_selector))
+		{
+			with (obj_tile_selector)
+			{
+				instance_destroy();
+			}
+		}
+		state = scr_player_state_free;
+	}
+}
+#endregion
+
+#region Float
 // Scrip
 function scr_player_state_float()
 {
@@ -63,3 +82,24 @@ function scr_player_state_float_exit()
 	}
 	state = scr_player_state_free;
 }
+#endregion
+
+#region Screaming
+function scr_player_state_screaming()
+{
+	var centerX = x - sprite_get_xoffset(sprite_index) + sprite_width / 2;
+	var centerY = y - sprite_get_yoffset(sprite_index) + sprite_height / 2;
+	
+	if (scr_spend_mana(
+				global.i_inv.inv_gems[# GEM.SCREAMING, INVENTORY_STAT.MANA_TYPE],
+				global.i_inv.inv_gems[# GEM.SCREAMING, INVENTORY_STAT.MANA_COST]))
+	{
+	// check for an entity to activate/use
+	scr_push_back_enemies_from(centerX, centerY);
+	}
+	
+	// animate!
+	
+	state = scr_player_state_free;
+}
+#endregion

@@ -139,13 +139,10 @@ function hurt_slime_minion(_damage, _source, _knockback)
 		{
 			state = MOB_STATE.DIE;
 		}
-
-		if (_knockback != 0)
-		{
-			var _knock_dir = point_direction(x, y, (_source).x, (_source).y);
-			// subtracting moves away from the source
-			x_to = x - lengthdir_x(_knockback, _knock_dir);
-			y_to = y - lengthdir_y(_knockback, _knock_dir);
-		}
+		
+		scr_knockback_mob(_source.x, _source.y, _knockback);
+		//var _knock_dir = point_direction(x, y, (_source).x, (_source).y);
+		//// subtracting moves away from the source
+		//x_to = x - lengthdir_x(_knockback, _knock_dir);
 	}
 }

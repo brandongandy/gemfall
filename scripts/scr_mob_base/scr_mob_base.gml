@@ -43,15 +43,31 @@ function scr_mob_hurt()
 		x = x_to;
 		y = y_to;
 		// dont go right back to attack
-		if (state_previous != MOB_STATE.ATTACK)
+		if (stunned)
 		{
-			state = state_previous;
+			stunned = false;
+			if (state_previous != MOB_STATE.ATTACK)
+			{
+				state_target = state_previous;
+			}
+			else
+			{
+				state_target = MOB_STATE.CHASE;
+			}
+			state = MOB_STATE.WAIT;
 		}
 		else
 		{
-			// chase always leads into attack, so if we were attacking
-			// then go back to it
-			state = MOB_STATE.CHASE;
+			if (state_previous != MOB_STATE.ATTACK)
+			{
+				state = state_previous;
+			}
+			else
+			{
+				// chase always leads into attack, so if we were attacking
+				// then go back to it
+				state = MOB_STATE.CHASE;
+			}
 		}
 	}
 }

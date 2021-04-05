@@ -74,6 +74,11 @@ function scr_use_equipped_gem()
 			state = scr_player_state_teleport;
 			break;
 		}
+		case GEM.SCREAMING:
+		{
+			state = scr_player_state_screaming;
+			break;
+		}
 		default:
 			break;
 	}

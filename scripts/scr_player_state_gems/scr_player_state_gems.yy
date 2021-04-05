@@ -6,7 +6,7 @@
     "path": "folders/Scripts/player_state_machine.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_player_state_float",
+  "name": "scr_player_state_gems",
   "tags": [],
   "resourceType": "GMScript",
 }

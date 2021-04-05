@@ -15,6 +15,7 @@ state_target = state;
 state_previous = state;
 state_wait_elapsed = 0;
 state_wait_duration = 0;
+stunned = false;
 
 target = noone;
 
