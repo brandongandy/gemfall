@@ -79,6 +79,11 @@ function scr_use_equipped_gem()
 			state = scr_player_state_screaming;
 			break;
 		}
+		case GEM.SIREN:
+		{
+			state = scr_player_state_siren;
+			break;
+		}
 		default:
 			break;
 	}

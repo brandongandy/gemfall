@@ -94,12 +94,33 @@ function scr_player_state_screaming()
 				global.i_inv.inv_gems[# GEM.SCREAMING, INVENTORY_STAT.MANA_TYPE],
 				global.i_inv.inv_gems[# GEM.SCREAMING, INVENTORY_STAT.MANA_COST]))
 	{
-	// check for an entity to activate/use
-	scr_push_back_enemies_from(centerX, centerY);
+		// check for an entity to activate/use
+		scr_push_back_enemies_from(centerX, centerY);
 	}
 	
 	// animate!
 	
 	state = scr_player_state_free;
 }
+#endregion
+
+#region Siren
+function scr_player_state_siren()
+{
+	var centerX = x - sprite_get_xoffset(sprite_index) + sprite_width / 2;
+	var centerY = y - sprite_get_yoffset(sprite_index) + sprite_height / 2;
+	
+	if (scr_spend_mana(
+				global.i_inv.inv_gems[# GEM.SIREN, INVENTORY_STAT.MANA_TYPE],
+				global.i_inv.inv_gems[# GEM.SIREN, INVENTORY_STAT.MANA_COST]))
+	{
+		// check for an entity to activate/use
+		scr_pull_entities_toward(centerX, centerY);
+	}
+	
+	// animate!
+	
+	state = scr_player_state_free;
+}
+
 #endregion

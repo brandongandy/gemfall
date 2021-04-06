@@ -57,7 +57,7 @@ inv_items[# ITEM.FOCUS, INVENTORY_STAT.MANA_TYPE] = -1;
 inv_items[# ITEM.FOCUS, INVENTORY_STAT.MANA_COST] = -1;
 
 // gems
-equipped_gem = GEM.SCREAMING;
+equipped_gem = GEM.SIREN;
 
 inv_gems = ds_grid_create(GEM.TOTAL, INVENTORY_STAT.TOTAL);
 
