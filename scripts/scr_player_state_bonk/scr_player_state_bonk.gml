@@ -7,8 +7,11 @@ function scr_player_state_bonk()
 	v_speed = lengthdir_y(bonk_speed, direction - 180);
 
 	move_distance_remaining = max(0, move_distance_remaining - bonk_speed);
-
-	scr_player_collision();
+	
+	if (scr_player_collision())
+	{
+		move_distance_remaining = 0;
+	}
 	
 	// update sprite
 	sprite_index = spr_player_hurt;
