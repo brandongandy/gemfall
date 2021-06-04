@@ -10,10 +10,11 @@ function scr_bat_idle()
 			(point_distance(x, y, obj_player.x, obj_player.y) <= mob_aggro_radius)
 		{
 			// player's in the circle, let's get em
-			x_to = center_x + lengthdir_x(flight_radius, theta);
-			y_to = center_y + lengthdir_y(flight_radius, theta);
+			x_to = obj_player.x + lengthdir_x(flight_radius, theta);
+			y_to = obj_player.y + lengthdir_y(flight_radius, theta);
 			state = MOB_STATE.ATTACK;
 			target = obj_player;
+			z = 16;
 		}
 	}
 }
@@ -100,11 +101,19 @@ function scr_bat_fly_to_point()
 	}
 	else
 	{
-		state = MOB_STATE.CHASE;
+		h_speed = lengthdir_x(_distance_to_go, dir);
+		v_speed = lengthdir_y(_distance_to_go, dir);
 	}
 	
-	x += h_speed;
-	y += v_speed;
+	if (scr_mob_tile_collision() ||
+		_distance_to_go <= 0)
+	{
+		center_x = obj_player.x;
+		center_y = obj_player.y;
+		flight_radius = point_distance(x, y, obj_player.x, obj_player.y);
+		theta = point_direction(x, y, obj_player.x, obj_player.y) - 180;
+		state = MOB_STATE.CHASE;
+	}
 }
 
 function scr_bat_chase()
@@ -118,48 +127,27 @@ function scr_bat_chase()
 		theta -= 360;
 	}
 	
+	if (zooming_in)
+	{
+		flight_radius--;
+		
+		if (flight_radius <= 8)
+		{
+			zooming_in = false;
+		}
+	}
+	else
+	{
+		flight_radius++;
+		if (flight_radius >= 64)
+		{
+			zooming_in = true;
+		}
+	}
+	
 	x = center_x + lengthdir_x(flight_radius, theta);
 	y = center_y + lengthdir_y(flight_radius, theta);
 	
-	depth = -(bbox_bottom - z);
-	
-	/*
-	if (target != noone) && (instance_exists(target))
-	{
-		x_to = target.x;
-		y_to = target.y;
-		var _distance_to_go = point_distance(x, y, x_to, y_to);
-		image_speed = 1.0;
-		dir = point_direction(x, y, x_to, y_to);
-		if (_distance_to_go > mob_speed)
-		{
-			h_speed = lengthdir_x(mob_speed, dir);
-			v_speed = lengthdir_y(mob_speed, dir);
-		}
-		else
-		{
-			h_speed = lengthdir_x(_distance_to_go, dir);
-			v_speed = lengthdir_y(_distance_to_go, dir);
-		}
-		
-		if (h_speed != 0)
-		{
-			image_xscale = sign(h_speed);
-		}
-		
-		scr_mob_tile_collision();
-	}
-	
-	// if the player is outside our attack radius, cool down
-	if (target != noone) && (instance_exists(target))
-	{
-		if (point_distance(x, y, target.x, target.y) >= mob_attack_radius)
-		{
-			if (++aggro_check_elapsed >= aggro_check_duration)
-			{
-				state = MOB_STATE.IDLE;
-			}
-		}
-	}
-	*/
+	center_x = lerp(center_x, obj_player.x, 0.2);
+	center_y = lerp(center_y, obj_player.y, 0.2);
 }
