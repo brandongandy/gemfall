@@ -20,27 +20,6 @@ draw_text(hud_key_xpos, hud_key_ypos - 1, "0" + string(_keys));
 draw_set_color(c_white);
 draw_text(hud_key_xpos, hud_key_ypos, "0" + string(_keys));
 
-if (global.input.show_scheme_in_overlay)
-{
-	var _control_scheme;
-	if (global.input.alt_scheme)
-	{
-		_control_scheme = "ALT";
-	}
-	else
-	{
-		_control_scheme = "DEFAULT";
-	}
-
-	draw_set_color(c_black);
-	draw_text(4 + 1, RESOLUTION_H - 16, "CTRL: " + _control_scheme);
-	draw_text(4 - 1, RESOLUTION_H - 16, "CTRL: " + _control_scheme);
-	draw_text(4, RESOLUTION_H - 16 + 1, "CTRL: " + _control_scheme);
-	draw_text(4, RESOLUTION_H - 16 - 1, "CTRL: " + _control_scheme);
-	draw_set_color(c_white);
-	draw_text(4, RESOLUTION_H - 16, "CTRL: " + _control_scheme);
-}
-
 #endregion
 
 #region Money
@@ -101,10 +80,8 @@ var _player_health = global.i_inv.player_health;
 var _total_hearts = global.i_inv.player_health_max / 2;
 // get the fraction after the real number to determine full heart count
 var _player_health_frac = _player_health mod 2;
-show_debug_message("Frac: " + string(_player_health_frac));
 // set to whole number player health
 _player_health -= _player_health_frac;
-show_debug_message("Total: " + string(_player_health));
 
 for (var i = 1; i <= _total_hearts; i++)
 {

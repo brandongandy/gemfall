@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-show_debug_message("starting room");
+//show_debug_message("starting room");
 switch (room)
 {
 	case rm_village_outskirts_upper:

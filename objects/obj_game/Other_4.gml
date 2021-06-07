@@ -5,6 +5,8 @@
 /// past the starting area
 layer_set_visible("ColHeight", false);
 
+show_debug_message(string(room));
+
 switch (room)
 {
 	case rm_village_outskirts_upper:

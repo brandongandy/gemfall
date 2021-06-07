@@ -7,7 +7,7 @@ next_state = -1;
 attacking = false;
 
 // collision
-collision_map = layer_tilemap_get_id(layer_get_id("ColLower"));
+collision_map = layer_tilemap_get_id(layer_get_id("ColHeight"));
 height_map = layer_tilemap_get_id(layer_get_id("ColHeight"));
 time_to_jump = 60;
 time_to_push = 60;

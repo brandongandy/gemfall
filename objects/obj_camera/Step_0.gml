@@ -90,14 +90,14 @@ switch (state)
 			// pause while transitioning
 			if (_x_to != x) || (_y_to != y)
 			{
-				global.game_paused = true;
+				scr_toggle_pause_game(true);
 				transitioning = true;
 			}
 			else
 			{
-				global.game_paused = false;
 				if (transitioning)
 				{
+					scr_toggle_pause_game(false);
 					transitioning = false;
 					if (next_state != "")
 					{

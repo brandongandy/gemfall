@@ -29,6 +29,7 @@
     {"id":{"name":"spr_slime_attack","path":"sprites/spr_slime_attack/spr_slime_attack.yy",},"order":1,},
     {"id":{"name":"obj_char_yoshi","path":"objects/obj_char_yoshi/obj_char_yoshi.yy",},"order":0,},
     {"id":{"name":"spr_skull_legs","path":"sprites/spr_skull_legs/spr_skull_legs.yy",},"order":3,},
+    {"id":{"name":"spr_inv_item","path":"sprites/spr_inv_item/spr_inv_item.yy",},"order":4,},
     {"id":{"name":"scr_player_attack","path":"scripts/scr_player_attack/scr_player_attack.yy",},"order":0,},
     {"id":{"name":"scr_entity_hit_destroy","path":"scripts/scr_entity_hit_destroy/scr_entity_hit_destroy.yy",},"order":7,},
     {"id":{"name":"spr_trigger","path":"sprites/spr_trigger/spr_trigger.yy",},"order":8,},

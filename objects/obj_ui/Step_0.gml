@@ -8,7 +8,7 @@ switch (game_state)
 		// process as normal -- 
 		if (obj_input.start)
 		{
-			scr_pause_game();
+			scr_toggle_pause_game();
 			game_state = "INV_TRANSITION";
 		}
 		break;
@@ -50,7 +50,7 @@ switch (game_state)
 	{
 		if (obj_input.start)
 		{
-			scr_pause_game();
+			scr_toggle_pause_game();
 			game_state = "INV_TRANSITION";
 		}
 		break;
