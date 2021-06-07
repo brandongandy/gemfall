@@ -14,7 +14,7 @@ hud_key_ypos = ypos + RESOLUTION_H + 10;
 hud_equipped_xpos = xpos + 198 + 8;
 hud_equipped_ypos = ypos + RESOLUTION_H + 8 + 16; 
 
-hud_heart_xpos =  xpos + 216;
+hud_heart_xpos =  xpos + 208;
 hud_heart_ypos = ypos + RESOLUTION_H + 12;
 
 surf = surface_create(RESOLUTION_W, RESOLUTION_H);

@@ -129,7 +129,9 @@ function scr_bat_chase()
 	
 	if (zooming_in)
 	{
-		flight_radius--;
+		flight_radius = lerp(flight_radius, flight_radius - 1, 0.5);
+		//flight_radius--;
+		//theta_speed -= 0.1;
 		
 		if (flight_radius <= 8)
 		{
@@ -138,7 +140,8 @@ function scr_bat_chase()
 	}
 	else
 	{
-		flight_radius++;
+		flight_radius = lerp(flight_radius, flight_radius + 1, 0.5);
+		//theta_speed += 0.1;
 		if (flight_radius >= 64)
 		{
 			zooming_in = true;

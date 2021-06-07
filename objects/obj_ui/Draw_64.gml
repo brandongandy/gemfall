@@ -96,18 +96,23 @@ if (object_exists(obj_inventory))
 #endregion
 
 #region Health
+
 var _player_health = global.i_inv.player_health;
 var _total_hearts = global.i_inv.player_health_max / 2;
 // get the fraction after the real number to determine full heart count
 var _player_health_frac = _player_health mod 2;
+show_debug_message("Frac: " + string(_player_health_frac));
 // set to whole number player health
 _player_health -= _player_health_frac;
+show_debug_message("Total: " + string(_player_health));
 
 for (var i = 1; i <= _total_hearts; i++)
 {
 	// determine whole or empty heart, based on 1 (true) or 0 (false)
-	var _image_index = (i >  _player_health);
-	if (i == _player_health + 1)
+	var _image_index = (i > _player_health / 2);
+	
+	// half hearts
+	if (i == _player_health / 2 + 1)
 	{
 		_image_index += (_player_health_frac > 0);
 	}
@@ -115,6 +120,7 @@ for (var i = 1; i <= _total_hearts; i++)
 	// draw them starting at 8px, 16px apart
 	draw_sprite(spr_health, _image_index, hud_heart_xpos + (i * 8), hud_heart_ypos);
 }
+
 #endregion
 
 //scr_CRT_appy_to_surface(surf, view_camera[0]);

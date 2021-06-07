@@ -26,7 +26,6 @@ center_x = x;
 center_y = y;
 flight_radius = 64;
 zooming_in = true;
-zoom_duration = 128;
 theta = 0;
 theta_speed = 2;
 elevation -= 32; // make sure that it's rendered "above" everything
