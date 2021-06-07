@@ -20,8 +20,8 @@ button_y_released = keyboard_check_released(vk_space);
 #endregion
 
 #region Secondary Actions
-button_l1 = keyboard_check(vk_shift);
-button_l2 = keyboard_check(vk_tab);
+button_l1 = keyboard_check_pressed(vk_shift);
+button_l2 = keyboard_check_pressed(vk_tab);
 #endregion
 
 start = keyboard_check_pressed(vk_enter);
@@ -31,6 +31,7 @@ pause = keyboard_check_pressed(vk_escape);
 if (pause)
 {
 	//show_debug_message("pausing");
-	scr_toggle_pause_game();
+	//scr_toggle_pause_game(undefined);
+	game_end();
 }
 #endregion

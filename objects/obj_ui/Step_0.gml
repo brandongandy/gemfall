@@ -8,8 +8,13 @@ switch (game_state)
 		// process as normal -- 
 		if (obj_input.start)
 		{
-			scr_toggle_pause_game();
+			scr_toggle_pause_game(undefined);
 			game_state = "INV_TRANSITION";
+		}
+		if (obj_input.button_l1)
+		{
+			scr_toggle_pause_game(true);
+			game_state = "GEM_TRANSITION";
 		}
 		break;
 	}
@@ -50,9 +55,38 @@ switch (game_state)
 	{
 		if (obj_input.start)
 		{
-			scr_toggle_pause_game();
+			scr_toggle_pause_game(undefined);
 			game_state = "INV_TRANSITION";
 		}
 		break;
+	}
+	case "GEM_TRANSITION":
+	{
+		for (i = 0; i < total_items; i++)
+		{
+			var _offset = 2.0 * pi * i / total_items;
+			var _xx = _center_x + cos(_offset) * 64;
+			var _yy = _center_y + sin(_offset) * 64;
+			with (instance_create_layer(_center_x, _center_y, "Instances", obj_inv_item))
+			{
+				x_to = _xx;
+				y_to = _yy
+			}
+			//instance_create_layer(_xx, _yy, "Instances", obj_inv_item);
+		}
+		game_state = "IN_GEM_INV";
+		break;
+	}
+	case "IN_GEM_INV":
+	{
+		if (obj_input.button_l1)
+		{
+			with (obj_inv_item)
+			{
+				instance_destroy();
+			}
+			scr_toggle_pause_game(false);
+			game_state = "IN_GAME";
+		}
 	}
 }

@@ -102,7 +102,6 @@ for (var i = 1; i <= _total_hearts; i++)
 
 //scr_CRT_appy_to_surface(surf, view_camera[0]);
 
-
 if (image_alpha != 1.0)
 {
 	image_alpha = 1.0;
@@ -110,3 +109,38 @@ if (image_alpha != 1.0)
 
 surface_reset_target();
 draw_surface(surf, 0, 0);
+
+#region Overlay
+surface_set_target(overlay_surface);
+
+switch (game_state)
+{
+	case "GEM_TRANSITION":
+	case "IN_GEM_INV":
+	{
+		draw_set_alpha(0.8);
+		draw_rectangle_color(0, 0, RESOLUTION_W, RESOLUTION_H,
+			c_black, c_black, c_black, c_black, false);
+		with (obj_inv_item)
+		{
+			gpu_set_blendmode(bm_src_color);
+			draw_sprite_ext(spr_inv_item, 0, floor(x), floor(y),
+				1,
+				1,
+				0,
+				c_black,
+				1);
+			gpu_set_blendmode(bm_normal);
+		}
+		draw_set_alpha(1);
+		break;
+	}
+	default:
+		draw_clear_alpha(c_black, 0);
+		//draw_set_alpha(1);
+		break;
+}
+
+surface_reset_target();
+draw_surface(overlay_surface, 0, 0);
+#endregion
