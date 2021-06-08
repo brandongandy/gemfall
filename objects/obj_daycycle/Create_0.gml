@@ -31,3 +31,4 @@ enum phase
 
 // surface
 daycycle_surf = surface_create(RESOLUTION_W + 16, RESOLUTION_H + 16);
+daycycle_buffer = buffer_create(4 * room_width * room_height, buffer_grow, 1);

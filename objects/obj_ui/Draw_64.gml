@@ -12,13 +12,7 @@ draw_sprite(spr_inv, 0, xpos, ypos);
 
 var _keys = global.i_inv.keys[? "Dungeon01"];
 
-draw_set_color(c_black);
-draw_text(hud_key_xpos + 1, hud_key_ypos, "0" + string(_keys));
-draw_text(hud_key_xpos - 1, hud_key_ypos, "0" + string(_keys));
-draw_text(hud_key_xpos, hud_key_ypos + 1, "0" + string(_keys));
-draw_text(hud_key_xpos, hud_key_ypos - 1, "0" + string(_keys));
-draw_set_color(c_white);
-draw_text(hud_key_xpos, hud_key_ypos, "0" + string(_keys));
+draw_text_outlined(hud_key_xpos, hud_key_ypos, "0" + string(_keys), c_black);
 
 #endregion
 
@@ -41,13 +35,7 @@ if (global.i_inv.player_money > 0)
 	}
 }
 
-draw_set_color(c_black);
-draw_text(hud_money_xpos + 1, hud_money_ypos, _money_text);
-draw_text(hud_money_xpos - 1, hud_money_ypos, _money_text);
-draw_text(hud_money_xpos, hud_money_ypos + 1, _money_text);
-draw_text(hud_money_xpos, hud_money_ypos - 1, _money_text);
-draw_set_color(c_white);
-draw_text(hud_money_xpos, hud_money_ypos, _money_text);
+draw_text_outlined(hud_money_xpos, hud_money_ypos, _money_text, c_black);
 
 #endregion
 
@@ -63,11 +51,11 @@ if (object_exists(obj_inventory))
 		var _ammo = scr_get_ammo(obj_inventory.equipped);
 		if (_ammo != -1)
 		{
-			draw_text_transformed(
+			draw_text_outlined(
 			  hud_equipped_xpos + 6,
-				hud_equipped_ypos - 8,
+				hud_equipped_ypos + 8,
 				string(_ammo),
-				1, 1, 0);
+				c_black);
 		}
 	}
 	
@@ -76,7 +64,7 @@ if (object_exists(obj_inventory))
 		draw_sprite(
 			scr_get_sprite_for_gem(obj_inventory.equipped_gem),
 			0,
-			hud_equipped_xpos + 32,
+			hud_equipped_xpos + 36,
 			hud_equipped_ypos + 8);
 	}
 }
@@ -103,8 +91,15 @@ for (var i = 1; i <= _total_hearts; i++)
 		_image_index += (_player_health_frac > 0);
 	}
 	
+	var _new_ypos = hud_heart_ypos;
+	var _new_xpos = hud_heart_xpos + (i * 8);
 	// draw them starting at 8px, 16px apart
-	draw_sprite(spr_health, _image_index, hud_heart_xpos + (i * 8), hud_heart_ypos);
+	if (i > 10)
+	{
+		_new_ypos += 8;
+		_new_xpos = hud_heart_xpos + ((i - 10) * 8);
+	}
+	draw_sprite(spr_health, _image_index, _new_xpos, _new_ypos);
 }
 
 #endregion

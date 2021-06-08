@@ -43,10 +43,10 @@ switch (game_state)
 			}
 		}
 		
-		hud_key_ypos = ypos + RESOLUTION_H + 10;
-		hud_equipped_ypos = ypos + RESOLUTION_H + 8 + 16;
-		hud_heart_ypos = ypos + RESOLUTION_H + 12;
-		hud_money_ypos = ypos + RESOLUTION_H + 10;
+		hud_key_ypos = ypos + RESOLUTION_H + 14;
+		hud_equipped_ypos = ypos + RESOLUTION_H + 12;
+		hud_heart_ypos = ypos + RESOLUTION_H + 8;
+		hud_money_ypos = ypos + RESOLUTION_H + 14;
 		
 		break;
 	}

@@ -4,7 +4,7 @@
 // player health modifiers
 player_heart_pieces = 0;
 
-// player health
+// player health - num hearts * 2
 player_health_max = 6 + (2 * player_heart_pieces);
 player_health = player_health_max;
 

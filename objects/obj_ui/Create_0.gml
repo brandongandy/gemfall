@@ -6,16 +6,16 @@ inv_open = false;
 xpos = 0;
 ypos = -RESOLUTION_H;
 
-hud_money_xpos = xpos + 4;
-hud_money_ypos = ypos + RESOLUTION_H + 10;
-hud_key_xpos = xpos + 30;
-hud_key_ypos = ypos + RESOLUTION_H + 10;
+hud_money_xpos = xpos + 107;
+hud_money_ypos = ypos + RESOLUTION_H + 14;
+hud_key_xpos = xpos + 138;
+hud_key_ypos = ypos + RESOLUTION_H + 14;
 
-hud_equipped_xpos = xpos + 198 + 8;
-hud_equipped_ypos = ypos + RESOLUTION_H + 8 + 16; 
+hud_equipped_xpos = xpos + 48;
+hud_equipped_ypos = ypos + RESOLUTION_H + 12; 
 
-hud_heart_xpos =  xpos + 216;
-hud_heart_ypos = ypos + RESOLUTION_H + 12;
+hud_heart_xpos =  xpos + 160;
+hud_heart_ypos = ypos + RESOLUTION_H + 8;
 
 #region Gem HUD
 
