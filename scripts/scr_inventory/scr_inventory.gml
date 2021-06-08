@@ -52,6 +52,7 @@ function scr_get_sprite_for_item(_item)
 		case ITEM.BOW:
 			return spr_bow_inv;
 		default:
+			return spr_bomb;
 		break;
 	}
 }

@@ -36,7 +36,6 @@
     {"id":{"name":"spr_trigger","path":"sprites/spr_trigger/spr_trigger.yy",},"order":8,},
     {"id":{"name":"obj_inv_item","path":"objects/obj_inv_item/obj_inv_item.yy",},"order":23,},
     {"id":{"name":"scr_entity_utils","path":"scripts/scr_entity_utils/scr_entity_utils.yy",},"order":24,},
-    {"id":{"name":"Sequence1","path":"sequences/Sequence1/Sequence1.yy",},"order":5,},
     {"id":{"name":"scr_CRT_init_shader","path":"scripts/scr_CRT_init_shader/scr_CRT_init_shader.yy",},"order":1,},
     {"id":{"name":"obj_arrow","path":"objects/obj_arrow/obj_arrow.yy",},"order":3,},
     {"id":{"name":"spr_heart_container","path":"sprites/spr_heart_container/spr_heart_container.yy",},"order":0,},

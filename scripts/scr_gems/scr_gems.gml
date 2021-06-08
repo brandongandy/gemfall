@@ -88,3 +88,76 @@ function scr_use_equipped_gem()
 			break;
 	}
 }
+
+function scr_get_sprite_for_gem(_gem)
+{
+	switch (_gem)
+	{
+		case GEM.ARCANE_STEEL:
+			// TODO
+			break;
+		case GEM.EXEMPLAR:
+			return spr_gem_exemplar;
+			break;
+		case GEM.SCREAMING:
+			return spr_gem_screaming;
+			break;
+		case GEM.SIREN:
+			return spr_gem_siren;
+			break;
+		case GEM.SKYRIDER:
+			return spr_gem_skyrider;
+			break;
+		case GEM.SPELLGUARD:
+			// TODO
+			break;
+		case GEM.SPELLSLINGER:
+			// TODO
+			break;
+		case GEM.STAMINA:
+			// TODO
+			break;
+		case GEM.STONEHEART:
+			// TODO
+			break;
+		case GEM.TRAVELER:
+			return spr_gem_traveler;
+			break;
+		case GEM.VERDIGRIS:
+			// TODO
+			break;
+		case GEM.VOIDSTEEL:
+			// TODO
+			break;
+		default:
+			return -1;
+			break;
+	}
+}
+
+// Used only for getting specific gems by a fake index, for instance in
+// obj_inv_item
+function scr_get_equippable_gem_by_index(_index)
+{
+	switch (_index)
+	{
+		case 0:
+			return GEM.EXEMPLAR;
+			break;
+		case 1:
+			return GEM.SCREAMING;
+			break;
+		case 2:
+			return GEM.SIREN;
+			break;
+		case 3:
+			return GEM.SKYRIDER;
+			break;
+		case 4:
+			return GEM.TRAVELER;
+			break;
+		default:
+			return -1;
+			break;
+	}
+}

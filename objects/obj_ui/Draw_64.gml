@@ -70,6 +70,15 @@ if (object_exists(obj_inventory))
 				1, 1, 0);
 		}
 	}
+	
+	if (obj_inventory.equipped_gem != -1)
+	{
+		draw_sprite(
+			scr_get_sprite_for_gem(obj_inventory.equipped_gem),
+			0,
+			hud_equipped_xpos + 32,
+			hud_equipped_ypos + 8);
+	}
 }
 
 #endregion

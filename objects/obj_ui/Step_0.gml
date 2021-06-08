@@ -5,7 +5,6 @@ switch (game_state)
 {
 	case "IN_GAME":
 	{
-		// process as normal -- 
 		if (obj_input.start)
 		{
 			scr_toggle_pause_game(undefined);
@@ -81,8 +80,9 @@ switch (game_state)
 	}
 	case "IN_GEM_INV":
 	{
-		if (obj_input.button_l1)
+		if (obj_input.button_l1 || exit_gem_inv)
 		{
+			exit_gem_inv = false;
 			with (obj_inv_item)
 			{
 				instance_destroy();

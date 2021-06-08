@@ -16,6 +16,11 @@ if (x_to > 0)
 var _mouse_pos_x = device_mouse_x_to_gui(0);
 var _mouse_pos_y = device_mouse_y_to_gui(0);
 
+var _gem = -1;
+if (gem_index != -1)
+{
+	var _gem = scr_get_equippable_gem_by_index(gem_index);
+}
 if (point_in_rectangle(_mouse_pos_x, _mouse_pos_y,
 	bbox_left, bbox_top, bbox_right, bbox_bottom))
 {
@@ -25,6 +30,18 @@ if (point_in_rectangle(_mouse_pos_x, _mouse_pos_y,
 	{
 		image_index = 0;
 	}
+	
+	if (mouse_check_button_released(mb_left))
+	{
+		if (gem_index != -1)
+		{
+			if (scr_player_has_gem(_gem))
+			{
+				obj_inventory.equipped_gem = _gem;
+				obj_ui.exit_gem_inv = true;
+			}
+		}
+	}
 }
 else
 {
@@ -33,40 +50,11 @@ else
 
 if (for_gem_pick)
 {
-	switch (gem_index)
+	if (gem_index != -1)
 	{
-		case 0:
-			if (scr_player_has_gem(GEM.EXEMPLAR))
-			{
-				item_sprite = spr_gem_exemplar;
-			}
-			break;
-		case 1:
-			if (scr_player_has_gem(GEM.SCREAMING))
-			{
-				item_sprite = spr_gem_screaming;
-			}
-			break;
-		case 2:
-			if (scr_player_has_gem(GEM.SIREN))
-			{
-				item_sprite = spr_gem_siren;
-			}
-			break;
-		case 3:
-			if (scr_player_has_gem(GEM.SKYRIDER))
-			{
-				item_sprite = spr_gem_skyrider;
-			}
-			break;
-		case 4:
-			if (scr_player_has_gem(GEM.TRAVELER))
-			{
-				item_sprite = spr_gem_traveler;
-			}
-			break;
-		default:
-			item_sprite = -1;
-			break;
+		if (scr_player_has_gem(_gem))
+		{
+			item_sprite = scr_get_sprite_for_gem(_gem);
+		}
 	}
 }
