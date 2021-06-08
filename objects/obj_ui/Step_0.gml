@@ -64,11 +64,13 @@ switch (game_state)
 	{
 		for (i = 0; i < total_items; i++)
 		{
-			var _offset = 2.0 * pi * i / total_items;
+			var _offset = -pi * i / total_items - 0.315;
 			var _xx = _center_x + cos(_offset) * 64;
 			var _yy = _center_y + sin(_offset) * 64;
 			with (instance_create_layer(_center_x, _center_y, "Instances", obj_inv_item))
 			{
+				for_gem_pick = true;
+				gem_index = other.i;
 				x_to = _xx;
 				y_to = _yy
 			}

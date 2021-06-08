@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-//surface_set_target(obj_ui.overlay_surface);
 draw_sprite_ext(sprite_index,
 	image_index,
 	floor(x),
@@ -12,5 +11,7 @@ draw_sprite_ext(sprite_index,
 	image_alpha
 );
 
-//surface_reset_target();
-//draw_surface(obj_ui.overlay_surface, 0, 0);
+if (item_sprite != -1)
+{
+	draw_sprite(item_sprite, 0, floor(x), floor(y));
+}

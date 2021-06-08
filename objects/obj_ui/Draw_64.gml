@@ -102,17 +102,6 @@ for (var i = 1; i <= _total_hearts; i++)
 
 //scr_CRT_appy_to_surface(surf, view_camera[0]);
 
-if (image_alpha != 1.0)
-{
-	image_alpha = 1.0;
-}
-
-surface_reset_target();
-draw_surface(surf, 0, 0);
-
-#region Overlay
-surface_set_target(overlay_surface);
-
 switch (game_state)
 {
 	case "GEM_TRANSITION":
@@ -123,12 +112,15 @@ switch (game_state)
 			c_black, c_black, c_black, c_black, false);
 		with (obj_inv_item)
 		{
-			gpu_set_blendmode(bm_src_color);
-			draw_sprite_ext(spr_inv_item, 0, floor(x), floor(y),
-				1,
-				1,
-				0,
-				c_black,
+			gpu_set_blendmode(bm_subtract);
+			draw_sprite_ext(spr_inv_item, 
+				image_index, 
+				floor(x), 
+				floor(y),
+				image_xscale - 0.025,
+				image_yscale - 0.025,
+				image_angle,
+				image_blend,
 				1);
 			gpu_set_blendmode(bm_normal);
 		}
@@ -136,11 +128,17 @@ switch (game_state)
 		break;
 	}
 	default:
-		draw_clear_alpha(c_black, 0);
-		//draw_set_alpha(1);
+		//draw_clear_alpha(c_black, 0);
+		draw_set_alpha(1);
 		break;
+}
+if (image_alpha != 1.0)
+{
+	image_alpha = 1.0;
 }
 
 surface_reset_target();
-draw_surface(overlay_surface, 0, 0);
+draw_surface(surf, 0, 0);
+
+#region Overlay
 #endregion
