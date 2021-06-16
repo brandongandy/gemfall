@@ -32,15 +32,9 @@ if (_keys > 0)
 	}
 }
 
-mana_g_percent = 
-	(obj_inventory.inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.CURRENT_MANA] /
-	 obj_inventory.inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.MAX_MANA]) * 30;
-mana_r_percent = 
-	(obj_inventory.inv_mana[# MANA_TYPE.RUBY, MANA_STAT.CURRENT_MANA] /
-	 obj_inventory.inv_mana[# MANA_TYPE.RUBY, MANA_STAT.MAX_MANA]) * 30;
-mana_b_percent = 
-	(obj_inventory.inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.CURRENT_MANA] /
-	 obj_inventory.inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.MAX_MANA]) * 30;
+mana_g_percent = obj_inventory.mana[MANA_TYPE.EMERALD].Percent() * 30;
+mana_r_percent = obj_inventory.mana[MANA_TYPE.RUBY].Percent() * 30;
+mana_b_percent = obj_inventory.mana[MANA_TYPE.SAPPHIRE].Percent() * 30;
 
 #endregion
 

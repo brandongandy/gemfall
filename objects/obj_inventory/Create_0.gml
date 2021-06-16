@@ -9,13 +9,18 @@ player_health_max = 6 + (2 * player_heart_pieces);
 player_health = player_health_max;
 
 // mana
-inv_mana = ds_grid_create(MANA_TYPE.TOTAL, MANA_STAT.TOTAL);
-inv_mana[# MANA_TYPE.RUBY, MANA_STAT.MAX_MANA] = 100;
-inv_mana[# MANA_TYPE.RUBY, MANA_STAT.CURRENT_MANA] = 0;
-inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.MAX_MANA] = 100;
-inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.CURRENT_MANA] = 0;
-inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.MAX_MANA] = 100;
-inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.CURRENT_MANA] = 42;
+mana = array_create(MANA_TYPE.TOTAL);
+mana[MANA_TYPE.RUBY] = new Mana();
+mana[MANA_TYPE.SAPPHIRE] = new Mana();
+mana[MANA_TYPE.EMERALD] = new Mana();
+
+//inv_mana = ds_grid_create(MANA_TYPE.TOTAL, MANA_STAT.TOTAL);
+//inv_mana[# MANA_TYPE.RUBY, MANA_STAT.MAX_MANA] = 100;
+//inv_mana[# MANA_TYPE.RUBY, MANA_STAT.CURRENT_MANA] = 0;
+//inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.MAX_MANA] = 100;
+//inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.CURRENT_MANA] = 0;
+//inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.MAX_MANA] = 100;
+//inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.CURRENT_MANA] = 42;
 
 // moneys
 player_money = 42;
@@ -63,7 +68,7 @@ inventory[8].item_index = ITEM.POTION_HEALTH;
 #endregion
 
 #region Gems
-equipped_gem = -1;
+equipped_gem = GEM.EXEMPLAR;
 
 inv_gems = ds_grid_create(GEM.TOTAL, INVENTORY_STAT.TOTAL);
 

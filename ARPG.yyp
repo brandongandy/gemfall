@@ -207,6 +207,7 @@
     {"id":{"name":"rm_CRT_Room","path":"rooms/rm_CRT_Room/rm_CRT_Room.yy",},"order":0,},
     {"id":{"name":"obj_CRT_controller","path":"objects/obj_CRT_controller/obj_CRT_controller.yy",},"order":1,},
     {"id":{"name":"spr_heart","path":"sprites/spr_heart/spr_heart.yy",},"order":2,},
+    {"id":{"name":"scr_mana","path":"scripts/scr_mana/scr_mana.yy",},"order":7,},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},"order":0,},
     {"id":{"name":"obj_explosion","path":"objects/obj_explosion/obj_explosion.yy",},"order":16,},
     {"id":{"name":"scr_camera_states","path":"scripts/scr_camera_states/scr_camera_states.yy",},"order":2,},

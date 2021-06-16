@@ -20,6 +20,6 @@ draw_text(1, 180, "H: " + string(obj_player.player_height));
 draw_text(1, 160, "X: " + string(floor(obj_player.x)));
 draw_text(1, 170, "Y: " + string(floor(obj_player.y)));
 
-draw_text(32, 160, "R Mana: " + string(global.i_inv.inv_mana[# MANA_TYPE.RUBY , MANA_STAT.CURRENT_MANA]));
-draw_text(32, 170, "G Mana: " + string(global.i_inv.inv_mana[# MANA_TYPE.EMERALD , MANA_STAT.CURRENT_MANA]));
-draw_text(32, 180, "B Mana: " + string(global.i_inv.inv_mana[# MANA_TYPE.SAPPHIRE , MANA_STAT.CURRENT_MANA]));
+draw_text(32, 160, "R Mana: " + string(obj_inventory.mana[MANA_TYPE.RUBY].mana));
+draw_text(32, 170, "G Mana: " + string(obj_inventory.mana[MANA_TYPE.EMERALD].mana));
+draw_text(32, 180, "B Mana: " + string(obj_inventory.mana[MANA_TYPE.SAPPHIRE].mana));
