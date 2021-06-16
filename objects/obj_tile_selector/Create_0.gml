@@ -8,5 +8,5 @@ x = (x div TILE_SIZE) * TILE_SIZE + (TILE_SIZE / 2);
 y = (y div TILE_SIZE) * TILE_SIZE + (TILE_SIZE / 2);
 
 // cost per tile of traversal
-base_cost = global.i_inv.inv_gems[# GEM.TRAVELER, INVENTORY_STAT.MANA_COST];
-base_mana = global.i_inv.inv_gems[# GEM.TRAVELER, INVENTORY_STAT.MANA_TYPE];
+base_cost = obj_inventory.gems[GEM.TRAVELER].mana_cost;
+base_mana = obj_inventory.gems[GEM.TRAVELER].mana_type;

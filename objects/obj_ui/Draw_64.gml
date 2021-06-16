@@ -26,13 +26,13 @@ if (object_exists(obj_inventory))
 		draw_sprite(spr_items, obj_inventory.equipped,
 			hud_equipped_xpos, hud_equipped_ypos);
 		
-		var _ammo = obj_inventory.items[obj_inventory.equipped].ammo;
-		if (_ammo != -1)
+		var _item = obj_inventory.items[obj_inventory.equipped];
+		if (_item.uses_ammo)
 		{
 			draw_text_outlined(
 			  hud_equipped_xpos + 6,
-				hud_equipped_ypos + 8,
-				string(_ammo),
+				hud_equipped_ypos,
+				string(_item.ammo),
 				c_black);
 		}
 	}
@@ -40,10 +40,10 @@ if (object_exists(obj_inventory))
 	if (obj_inventory.equipped_gem != -1)
 	{
 		draw_sprite(
-			scr_get_sprite_for_gem(obj_inventory.equipped_gem),
-			0,
-			hud_equipped_xpos + 36,
-			hud_equipped_ypos + 8);
+			spr_gems,
+			obj_inventory.equipped_gem,
+			hud_equipped_xpos + 28,
+			hud_equipped_ypos);
 	}
 }
 

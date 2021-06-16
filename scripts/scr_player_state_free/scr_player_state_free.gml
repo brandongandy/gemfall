@@ -133,6 +133,12 @@ function scr_player_state_free()
 	
 	if (key_gem)
 	{
-		scr_use_equipped_gem();
+		with (obj_inventory)
+		{
+			if (equipped_gem != -1)
+			{
+				gems[equipped_gem].Use();
+			}
+		}
 	}
 }

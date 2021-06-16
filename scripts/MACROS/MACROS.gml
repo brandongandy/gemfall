@@ -27,6 +27,7 @@ enum ITEM
 
 enum GEM
 {
+	VERDIGRIS,
 	EXEMPLAR,
 	STRENGTH,
 	STAMINA,
@@ -39,7 +40,6 @@ enum GEM
 	VOIDSTEEL,
 	SPELLGUARD,
 	STONEHEART,
-	VERDIGRIS,
 	TOTAL // not used except to count enum size
 }
 

@@ -38,8 +38,8 @@ function scr_player_state_float()
 			show_debug_message(string(move_distance_remaining));
 			move_distance_remaining = 0;
 			if (!scr_spend_mana(
-				global.i_inv.inv_gems[# GEM.SKYRIDER, INVENTORY_STAT.MANA_TYPE],
-				global.i_inv.inv_gems[# GEM.SKYRIDER, INVENTORY_STAT.MANA_COST]))
+				obj_inventory.gems[GEM.SKYRIDER].mana_type,
+				obj_inventory.gems[GEM.SKYRIDER].mana_cost))
 			{
 				scr_player_state_float_exit();
 			}
@@ -91,8 +91,8 @@ function scr_player_state_screaming()
 	var centerY = y - sprite_get_yoffset(sprite_index) + sprite_height / 2;
 	
 	if (scr_spend_mana(
-				global.i_inv.inv_gems[# GEM.SCREAMING, INVENTORY_STAT.MANA_TYPE],
-				global.i_inv.inv_gems[# GEM.SCREAMING, INVENTORY_STAT.MANA_COST]))
+				obj_inventory.gems[GEM.SCREAMING].mana_type,
+				obj_inventory.gems[GEM.SCREAMING].mana_cost))
 	{
 		// check for an entity to activate/use
 		scr_push_back_enemies_from(centerX, centerY);
@@ -111,8 +111,8 @@ function scr_player_state_siren()
 	var centerY = y - sprite_get_yoffset(sprite_index) + sprite_height / 2;
 	
 	if (scr_spend_mana(
-				global.i_inv.inv_gems[# GEM.SIREN, INVENTORY_STAT.MANA_TYPE],
-				global.i_inv.inv_gems[# GEM.SIREN, INVENTORY_STAT.MANA_COST]))
+				obj_inventory.gems[GEM.SIREN].mana_type,
+				obj_inventory.gems[GEM.SIREN].mana_cost))
 	{
 		// check for an entity to activate/use
 		scr_pull_entities_toward(centerX, centerY);

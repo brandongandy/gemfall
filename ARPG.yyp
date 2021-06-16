@@ -110,6 +110,7 @@
     {"id":{"name":"shd_CRT_shader","path":"shaders/shd_CRT_shader/shd_CRT_shader.yy",},"order":0,},
     {"id":{"name":"spr_turret_block","path":"sprites/spr_turret_block/spr_turret_block.yy",},"order":1,},
     {"id":{"name":"scr_drop_items","path":"scripts/scr_drop_items/scr_drop_items.yy",},"order":11,},
+    {"id":{"name":"spr_gems","path":"sprites/spr_gems/spr_gems.yy",},"order":5,},
     {"id":{"name":"obj_coin","path":"objects/obj_coin/obj_coin.yy",},"order":1,},
     {"id":{"name":"obj_bomb","path":"objects/obj_bomb/obj_bomb.yy",},"order":0,},
     {"id":{"name":"spr_nes_bezel","path":"sprites/spr_nes_bezel/spr_nes_bezel.yy",},"order":1,},
