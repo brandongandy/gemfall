@@ -30,10 +30,12 @@ switch (room)
 			draw_daylight = false;
 		}
 		break;
+	case rm_player_house:
+		draw_daylight = false;
+		break;
 	default:
 		{
 			draw_daylight = false;
 		}
-		break;
 		break;
 }

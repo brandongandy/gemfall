@@ -12,7 +12,7 @@ function scr_add_item(_item)
 			scr_increase_max_hearts();
 			break;
 		case obj_bomb:
-			scr_pickup_bomb(1);
+			obj_inventory.items[ITEM.BOMB].PickUp(1);
 			break;
 		case obj_emerald_small:
 			break;
@@ -42,59 +42,59 @@ function scr_use_key(_dungeon)
 
 /// @function			scr_get_sprite_for_item(_item)
 /// @param {ITEM} _item 
-function scr_get_sprite_for_item(_item)
-{
-	switch (_item)
-	{
-		case ITEM.BOMB:
-			return spr_bomb;
-		break;
-		case ITEM.BOW:
-			return spr_bow_inv;
-		default:
-			return spr_bomb;
-		break;
-	}
-}
+//function scr_get_sprite_for_item(_item)
+//{
+//	switch (_item)
+//	{
+//		case ITEM.BOMB:
+//			return spr_bomb;
+//		break;
+//		case ITEM.BOW:
+//			return spr_bow_inv;
+//		default:
+//			return spr_bomb;
+//		break;
+//	}
+//}
 
-function scr_get_ammo(_item)
-{
-	switch (_item)
-	{
-		case ITEM.BOMB:
-			return obj_inventory.inv_items[# ITEM.BOMB, INVENTORY_STAT.AMMO];
-		break;
-		case ITEM.BOW:
-			return obj_inventory.inv_items[# ITEM.BOW, INVENTORY_STAT.AMMO];
-		default:
-			return -1;
-		break;
-	}
-}
+//function scr_get_ammo(_item)
+//{
+//	switch (_item)
+//	{
+//		case ITEM.BOMB:
+//			return obj_inventory.inv_items[# ITEM.BOMB, INVENTORY_STAT.AMMO];
+//		break;
+//		case ITEM.BOW:
+//			return obj_inventory.inv_items[# ITEM.BOW, INVENTORY_STAT.AMMO];
+//		default:
+//			return -1;
+//		break;
+//	}
+//}
 
-function scr_spend_ammo(_item_type, _amount)
-{
-	if (_item_type == undefined)
-	{
-		return false;
-	}
+//function scr_spend_ammo(_item_type, _amount)
+//{
+//	if (_item_type == undefined)
+//	{
+//		return false;
+//	}
 	
-	if (global.i_inv.inv_items[# _item_type, INVENTORY_STAT.USES_AMMO] == false)
-	{
-		// just let us use it if it doesn't use ammo
-		return true;
-	}
+//	if (global.i_inv.inv_items[# _item_type, INVENTORY_STAT.USES_AMMO] == false)
+//	{
+//		// just let us use it if it doesn't use ammo
+//		return true;
+//	}
 	
-	if (global.i_inv.inv_items[# _item_type, INVENTORY_STAT.AMMO] - _amount >= 0)
-	{
-		global.i_inv.inv_items[# _item_type, INVENTORY_STAT.AMMO] -= _amount;
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
+//	if (global.i_inv.inv_items[# _item_type, INVENTORY_STAT.AMMO] - _amount >= 0)
+//	{
+//		global.i_inv.inv_items[# _item_type, INVENTORY_STAT.AMMO] -= _amount;
+//		return true;
+//	}
+//	else
+//	{
+//		return false;
+//	}
+//}
 
 function scr_spend_mana(_mana_type, _amount)
 {
@@ -136,4 +136,6 @@ function scr_add_mana(_mana_type, _amount)
 	global.i_inv.inv_mana[# _mana_type, MANA_STAT.CURRENT_MANA] =
 		clamp(global.i_inv.inv_mana[# _mana_type, MANA_STAT.CURRENT_MANA], 0,
 			global.i_inv.inv_mana[# _mana_type, MANA_STAT.MAX_MANA]);
+			
+	return true;
 }

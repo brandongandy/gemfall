@@ -124,7 +124,10 @@ function scr_player_state_free()
 		}
 		else if (obj_inventory.equipped != -1)
 		{
-			scr_player_use_equipped();
+			with (obj_inventory)
+			{
+				items[equipped].Use();
+			}
 		}
 	}
 	

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_inv_item",
-    "path": "sprites/spr_inv_item/spr_inv_item.yy",
+    "name": "spr_item_selector",
+    "path": "sprites/spr_item_selector/spr_item_selector.yy",
   },
   "solid": false,
   "visible": true,

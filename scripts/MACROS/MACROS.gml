@@ -12,9 +12,16 @@
 
 enum ITEM
 {
+	NONE,
 	BOMB,
 	BOW,
 	FOCUS,
+	POTION_EMPTY,
+	POTION_HEALTH,
+	POTION_ANTIVENOM,
+	POTION_SPEED,
+	POTION_SIGHT,
+	POTION_CHARGE,
 	TOTAL // not used as an item, but used for counting enum size
 }
 

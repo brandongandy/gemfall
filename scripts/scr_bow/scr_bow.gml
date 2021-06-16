@@ -20,7 +20,8 @@ function scr_use_bow()
 	
 	if (animation_end)
 	{
-		if (scr_spend_ammo(ITEM.BOW, 1))
+		var _item = obj_inventory.items[ITEM.BOW];
+		if (_item.SpendAmmo(1))
 		{
 			var centerX = x - sprite_get_xoffset(sprite_index) + sprite_width / 2;
 			var centerY = y - sprite_get_yoffset(sprite_index) + sprite_height / 2;

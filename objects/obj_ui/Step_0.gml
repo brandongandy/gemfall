@@ -1,5 +1,49 @@
 /// @description Insert description here
 // You can write your code in this editor
+#region Step Calculation
+// must be performed each step - for regular draw GUI stuff
+
+if (global.i_inv.player_money > 0)
+{
+	if (global.i_inv.player_money < 10)
+	{
+		money_text = "00" + string(global.i_inv.player_money);
+	}
+	else if (global.i_inv.player_money < 100)
+	{
+		money_text = "0" + string(global.i_inv.player_money);
+	}
+	else
+	{
+		money_text = string(global.i_inv.player_money);
+	}
+}
+
+var _keys = global.i_inv.keys[? "Dungeon01"];
+if (_keys > 0)
+{
+	if (_keys >= 10)
+	{
+		key_count = string(_keys);
+	}
+	else
+	{
+		key_count = "0" + string(_keys);
+	}
+}
+
+mana_g_percent = 
+	(obj_inventory.inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.CURRENT_MANA] /
+	 obj_inventory.inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.MAX_MANA]) * 30;
+mana_r_percent = 
+	(obj_inventory.inv_mana[# MANA_TYPE.RUBY, MANA_STAT.CURRENT_MANA] /
+	 obj_inventory.inv_mana[# MANA_TYPE.RUBY, MANA_STAT.MAX_MANA]) * 30;
+mana_b_percent = 
+	(obj_inventory.inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.CURRENT_MANA] /
+	 obj_inventory.inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.MAX_MANA]) * 30;
+
+#endregion
+
 
 switch (game_state)
 {
@@ -12,8 +56,8 @@ switch (game_state)
 		}
 		if (obj_input.button_l1)
 		{
-			scr_toggle_pause_game(true);
-			game_state = "GEM_TRANSITION";
+			//scr_toggle_pause_game(true);
+			//game_state = "GEM_TRANSITION";
 		}
 		break;
 	}
@@ -44,14 +88,17 @@ switch (game_state)
 		}
 		
 		hud_key_ypos = ypos + RESOLUTION_H + 14;
-		hud_equipped_ypos = ypos + RESOLUTION_H + 12;
+		hud_equipped_ypos = ypos + RESOLUTION_H + 20;
 		hud_heart_ypos = ypos + RESOLUTION_H + 8;
 		hud_money_ypos = ypos + RESOLUTION_H + 14;
+		mana_bar_y = ypos + RESOLUTION_H + 11;
 		
 		break;
 	}
 	case "IN_INV":
 	{
+		mouse_pos_x = device_mouse_x_to_gui(0);
+		mouse_pos_y = device_mouse_y_to_gui(0);
 		if (obj_input.start)
 		{
 			scr_toggle_pause_game(undefined);

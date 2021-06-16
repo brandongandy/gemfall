@@ -11,53 +11,59 @@ player_health = player_health_max;
 // mana
 inv_mana = ds_grid_create(MANA_TYPE.TOTAL, MANA_STAT.TOTAL);
 inv_mana[# MANA_TYPE.RUBY, MANA_STAT.MAX_MANA] = 100;
-inv_mana[# MANA_TYPE.RUBY, MANA_STAT.CURRENT_MANA] = 50;
+inv_mana[# MANA_TYPE.RUBY, MANA_STAT.CURRENT_MANA] = 0;
 inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.MAX_MANA] = 100;
-inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.CURRENT_MANA] = 50;
+inv_mana[# MANA_TYPE.SAPPHIRE, MANA_STAT.CURRENT_MANA] = 0;
 inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.MAX_MANA] = 100;
-inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.CURRENT_MANA] = 50;
+inv_mana[# MANA_TYPE.EMERALD, MANA_STAT.CURRENT_MANA] = 42;
 
 // moneys
-player_money = 0;
+player_money = 42;
 
 // keys, per dungeon
 keys = ds_map_create();
 keys[? "Dungeon01"] = 0;
 
-// inventory items
+#region Inventory Items
 equipped = ITEM.BOW;
 
-inv_items = ds_grid_create(ITEM.TOTAL, INVENTORY_STAT.TOTAL);
+// initialize the item classes first
+items = array_create(ITEM.TOTAL);
+items[ITEM.NONE] = new Item(ITEM.NONE);
+items[ITEM.BOMB] = new Bomb(ITEM.BOMB);
+items[ITEM.BOW] = new Bow(ITEM.BOW);
+items[ITEM.FOCUS] = new Focus(ITEM.FOCUS);
+items[ITEM.POTION_EMPTY] = new PotionEmpty(ITEM.POTION_EMPTY);
+items[ITEM.POTION_HEALTH] = new PotionHealth(ITEM.POTION_HEALTH);
+items[ITEM.POTION_ANTIVENOM] = new PotionAntivenom(ITEM.POTION_ANTIVENOM);
+items[ITEM.POTION_SPEED] = new PotionSpeed(ITEM.POTION_SPEED);
+items[ITEM.POTION_SIGHT] = new PotionSight(ITEM.POTION_SIGHT);
+items[ITEM.POTION_CHARGE] = new PotionCharge(ITEM.POTION_CHARGE);
 
-inv_items[# ITEM.BOMB, INVENTORY_STAT.DAMAGE] = 5;
-inv_items[# ITEM.BOMB, INVENTORY_STAT.USES_AMMO] = true;
-inv_items[# ITEM.BOMB, INVENTORY_STAT.AMMO] = 1;
-inv_items[# ITEM.BOMB, INVENTORY_STAT.MAX_AMMO] = 10;
-inv_items[# ITEM.BOMB, INVENTORY_STAT.OWNED] = true;
-inv_items[# ITEM.BOMB, INVENTORY_STAT.MANA_TYPE] = -1;
-inv_items[# ITEM.BOMB, INVENTORY_STAT.MANA_COST] = -1;
+// now, initialize the inventory for the player
+inventory = array_create(9);
 
-inv_items[# ITEM.BOW, INVENTORY_STAT.DAMAGE] = 5;
-inv_items[# ITEM.BOW, INVENTORY_STAT.USES_AMMO] = true;
-inv_items[# ITEM.BOW, INVENTORY_STAT.AMMO] = 20;
-inv_items[# ITEM.BOW, INVENTORY_STAT.MAX_AMMO] = 20;
-inv_items[# ITEM.BOW, INVENTORY_STAT.OWNED] = true;
-inv_items[# ITEM.BOW, INVENTORY_STAT.MANA_TYPE] = -1;
-inv_items[# ITEM.BOW, INVENTORY_STAT.MANA_COST] = -1;
+for (i = 0; i < 9; i++)
+{
+	inventory[i] = instance_create_layer(0, 0, "Instances", obj_inv_item);
+	inventory[i].persistent = true;
+}
 
-// This one works a little differently than the ones above
-// Its ammo is a Mana type, and its actions are based on the
-// "Equipped" ammo.
-inv_items[# ITEM.FOCUS, INVENTORY_STAT.DAMAGE] = 0;
-inv_items[# ITEM.FOCUS, INVENTORY_STAT.USES_AMMO] = true;
-inv_items[# ITEM.FOCUS, INVENTORY_STAT.AMMO] = 0;
-inv_items[# ITEM.FOCUS, INVENTORY_STAT.MAX_AMMO] = 0;
-inv_items[# ITEM.FOCUS, INVENTORY_STAT.OWNED] = true;
-inv_items[# ITEM.FOCUS, INVENTORY_STAT.MANA_TYPE] = -1;
-inv_items[# ITEM.FOCUS, INVENTORY_STAT.MANA_COST] = -1;
+// TODO: Load from save.
+inventory[0].item_index = ITEM.BOMB;
+inventory[1].item_index = ITEM.BOW;
+inventory[2].item_index = ITEM.NONE;
+inventory[3].item_index = ITEM.NONE;
+inventory[4].item_index = ITEM.NONE;
+inventory[5].item_index = ITEM.NONE;
+inventory[6].item_index = ITEM.NONE;
+inventory[7].item_index = ITEM.NONE;
+inventory[8].item_index = ITEM.POTION_HEALTH;
 
-// gems
-equipped_gem = GEM.EXEMPLAR;
+#endregion
+
+#region Gems
+equipped_gem = -1;
 
 inv_gems = ds_grid_create(GEM.TOTAL, INVENTORY_STAT.TOTAL);
 
@@ -72,7 +78,7 @@ inv_gems[# GEM.VERDIGRIS, INVENTORY_STAT.MANA_COST] = 1;
 inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.DAMAGE] = -1;
 inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.USES_AMMO] = false;
 inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.AMMO] = -1;
-inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.OWNED] = true;
+inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.OWNED] = false;
 inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.MANA_TYPE] = MANA_TYPE.EMERALD;
 inv_gems[# GEM.EXEMPLAR, INVENTORY_STAT.MANA_COST] = 1;
 
@@ -100,7 +106,7 @@ inv_gems[# GEM.SCREAMING, INVENTORY_STAT.MANA_COST] = 5;
 inv_gems[# GEM.SIREN, INVENTORY_STAT.DAMAGE] = -1;
 inv_gems[# GEM.SIREN, INVENTORY_STAT.USES_AMMO] = false;
 inv_gems[# GEM.SIREN, INVENTORY_STAT.AMMO] = -1;
-inv_gems[# GEM.SIREN, INVENTORY_STAT.OWNED] = true;
+inv_gems[# GEM.SIREN, INVENTORY_STAT.OWNED] = false;
 inv_gems[# GEM.SIREN, INVENTORY_STAT.MANA_TYPE] = MANA_TYPE.EMERALD;
 inv_gems[# GEM.SIREN, INVENTORY_STAT.MANA_COST] = 1;
 
@@ -108,7 +114,7 @@ inv_gems[# GEM.SIREN, INVENTORY_STAT.MANA_COST] = 1;
 inv_gems[# GEM.SKYRIDER, INVENTORY_STAT.DAMAGE] = -1;
 inv_gems[# GEM.SKYRIDER, INVENTORY_STAT.USES_AMMO] = false;
 inv_gems[# GEM.SKYRIDER, INVENTORY_STAT.AMMO] = -1;
-inv_gems[# GEM.SKYRIDER, INVENTORY_STAT.OWNED] = true;
+inv_gems[# GEM.SKYRIDER, INVENTORY_STAT.OWNED] = false;
 inv_gems[# GEM.SKYRIDER, INVENTORY_STAT.MANA_TYPE] = MANA_TYPE.SAPPHIRE;
 inv_gems[# GEM.SKYRIDER, INVENTORY_STAT.MANA_COST] = 10;
 
@@ -155,3 +161,5 @@ inv_gems[# GEM.STONEHEART, INVENTORY_STAT.AMMO] = -1;
 inv_gems[# GEM.STONEHEART, INVENTORY_STAT.OWNED] = false;
 inv_gems[# GEM.STONEHEART, INVENTORY_STAT.MANA_TYPE] = MANA_TYPE.EMERALD;
 inv_gems[# GEM.STONEHEART, INVENTORY_STAT.MANA_COST] = 1;
+
+#endregion

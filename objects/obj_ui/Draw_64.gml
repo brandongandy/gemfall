@@ -1,41 +1,18 @@
 /// @description Draw Player UI Stuff
 surface_set_target(surf);
 draw_clear_alpha(c_black, 0);
+
 #region HUD
 draw_set_font(font_text);
 
 draw_sprite(spr_inv, 0, xpos, ypos);
-
 #endregion
 
-#region Keys
+#region Keys and Money
 
-var _keys = global.i_inv.keys[? "Dungeon01"];
+draw_text_outlined(hud_key_xpos, hud_key_ypos, key_count, c_black);
 
-draw_text_outlined(hud_key_xpos, hud_key_ypos, "0" + string(_keys), c_black);
-
-#endregion
-
-#region Money
-
-var _money_text = "000";
-if (global.i_inv.player_money > 0)
-{
-	if (global.i_inv.player_money < 10)
-	{
-		_money_text = "00" + string(global.i_inv.player_money);
-	}
-	else if (global.i_inv.player_money < 100)
-	{
-		_money_text = "0" + string(global.i_inv.player_money);
-	}
-	else
-	{
-		_money_text = string(global.i_inv.player_money);
-	}
-}
-
-draw_text_outlined(hud_money_xpos, hud_money_ypos, _money_text, c_black);
+draw_text_outlined(hud_money_xpos, hud_money_ypos, money_text, c_black);
 
 #endregion
 
@@ -45,10 +22,11 @@ if (object_exists(obj_inventory))
 {
 	if (obj_inventory.equipped != -1)
 	{
-		draw_sprite(scr_get_sprite_for_item(obj_inventory.equipped), 0,
+		// the equipped "index" is also the item_index of the sprite
+		draw_sprite(spr_items, obj_inventory.equipped,
 			hud_equipped_xpos, hud_equipped_ypos);
 		
-		var _ammo = scr_get_ammo(obj_inventory.equipped);
+		var _ammo = obj_inventory.items[obj_inventory.equipped].ammo;
 		if (_ammo != -1)
 		{
 			draw_text_outlined(
@@ -91,20 +69,105 @@ for (var i = 1; i <= _total_hearts; i++)
 		_image_index += (_player_health_frac > 0);
 	}
 	
-	var _new_ypos = hud_heart_ypos;
-	var _new_xpos = hud_heart_xpos + (i * 8);
 	// draw them starting at 8px, 16px apart
 	if (i > 10)
 	{
-		_new_ypos += 8;
-		_new_xpos = hud_heart_xpos + ((i - 10) * 8);
+		draw_sprite(spr_health, _image_index, hud_heart_xpos + ((i - 10) * 8), hud_heart_ypos + 8);
 	}
-	draw_sprite(spr_health, _image_index, _new_xpos, _new_ypos);
+	else
+	{
+		draw_sprite(spr_health, _image_index, hud_heart_xpos + (i * 8), hud_heart_ypos);
+	}
 }
 
 #endregion
 
+#region Mana
+
+draw_sprite(spr_bar_empty_bg,
+	0,
+	mana_bar_x,
+	mana_bar_y);
+	
+draw_sprite_stretched(spr_bar_mana_g,
+	0,
+	mana_bar_x,
+	mana_bar_y,
+	mana_g_percent,
+	4);
+	
+draw_sprite(spr_bar_empty,
+	0,
+	mana_bar_x,
+	mana_bar_y);
+	
+draw_sprite(spr_bar_empty_bg,
+	0,
+	mana_bar_x,
+	mana_bar_y + 8);
+	
+draw_sprite_stretched(spr_bar_mana_b,
+	0,
+	mana_bar_x,
+	mana_bar_y + 8,
+	mana_b_percent,
+	4);
+	
+draw_sprite(spr_bar_empty,
+	0,
+	mana_bar_x,
+	mana_bar_y + 8);
+	
+	
+draw_sprite(spr_bar_empty_bg,
+	0,
+	mana_bar_x,
+	mana_bar_y + 16);
+	
+draw_sprite_stretched(spr_bar_mana_r,
+	0,
+	mana_bar_x,
+	mana_bar_y + 16,
+	mana_r_percent,
+	4);
+	
+draw_sprite(spr_bar_empty,
+	0,
+	mana_bar_x,
+	mana_bar_y + 16);
+
+#endregion
+
+#region Inventory
+if (game_state != "IN_GAME")
+{
+	with (obj_inv_item)
+	{
+		if (hover)
+		{
+			draw_sprite_ext(spr_item_selector,
+				image_index,
+				floor(x),
+				floor(y),
+				image_xscale,
+				image_yscale,
+				image_angle,
+				image_blend,
+				image_alpha
+			);
+		}
+
+		if (item_index != ITEM.NONE)
+		{
+			draw_sprite(spr_items, item_index, floor(x), floor(y));
+		}
+	}
+}
+
+#endregion
 //scr_CRT_appy_to_surface(surf, view_camera[0]);
+
+#region Gem Hot swap
 
 switch (game_state)
 {
@@ -144,5 +207,4 @@ if (image_alpha != 1.0)
 surface_reset_target();
 draw_surface(surf, 0, 0);
 
-#region Overlay
 #endregion
