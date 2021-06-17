@@ -28,10 +28,4 @@ start = keyboard_check_pressed(vk_enter);
 pause = keyboard_check_pressed(vk_escape);
 
 #region Handle Global Input
-if (pause)
-{
-	//show_debug_message("pausing");
-	//scr_toggle_pause_game(undefined);
-	game_end();
-}
 #endregion

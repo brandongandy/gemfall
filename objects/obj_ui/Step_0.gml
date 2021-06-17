@@ -48,10 +48,10 @@ switch (game_state)
 			scr_toggle_pause_game(undefined);
 			game_state = "INV_TRANSITION";
 		}
-		if (obj_input.button_l1)
+		if (obj_input.pause)
 		{
-			//scr_toggle_pause_game(true);
-			//game_state = "GEM_TRANSITION";
+			scr_toggle_pause_game(true);
+			game_state = "PAUSE";
 		}
 		break;
 	}
@@ -100,31 +100,15 @@ switch (game_state)
 		}
 		break;
 	}
-	case "GEM_TRANSITION":
+	case "PAUSE":
 	{
-		for (i = 0; i < total_items; i++)
+		mouse_pos_x = device_mouse_x_to_gui(0);
+		mouse_pos_y = device_mouse_y_to_gui(0);
+		event_user(0);
+		if (obj_input.pause)
 		{
-			var _offset = -pi * i / total_items - 0.315;
-			var _xx = _center_x + cos(_offset) * 64;
-			var _yy = _center_y + sin(_offset) * 64;
-			with (instance_create_layer(_center_x, _center_y, "Instances", obj_inv_item))
-			{
-				for_gem_pick = true;
-				gem_index = other.i;
-				x_to = _xx;
-				y_to = _yy
-			}
-			//instance_create_layer(_xx, _yy, "Instances", obj_inv_item);
-		}
-		game_state = "IN_GEM_INV";
-		break;
-	}
-	case "IN_GEM_INV":
-	{
-		if (obj_input.button_l1 || exit_gem_inv)
-		{
-			exit_gem_inv = false;
-			with (obj_inv_item)
+			pause_menu = false;
+			with(obj_button)
 			{
 				instance_destroy();
 			}

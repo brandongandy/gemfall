@@ -2,11 +2,31 @@
 surface_set_target(surf);
 draw_clear_alpha(c_black, 0);
 
-#region HUD
 draw_set_font(font_text);
 
-draw_sprite(spr_inv, 0, xpos, ypos);
+if (game_state == "PAUSE")
+{
+#region Pause Menu
+
+//draw_set_alpha(0.8);
+//draw_rectangle_color(0, 0, RESOLUTION_W, RESOLUTION_H,
+//	c_black, c_black, c_black, c_black, false);
+//draw_set_alpha(1.0);
+//draw_set_halign(fa_center);
+//draw_set_valign(fa_middle);
+//draw_text_outlined(view_width_half, view_height_half, "PAUSED", c_black);
+//draw_set_halign(fa_left);
+//draw_set_valign(fa_top);
+
+
 #endregion
+
+}
+else 
+{
+#region HUD
+
+draw_sprite(spr_inv, 0, xpos, ypos);
 
 #region Keys and Money
 
@@ -138,42 +158,13 @@ draw_sprite(spr_bar_empty,
 
 #endregion
 
-#region Inventory
 #endregion
+}
+
 //scr_CRT_appy_to_surface(surf, view_camera[0]);
 
-#region Gem Hot swap
+#region Surface and defaults
 
-switch (game_state)
-{
-	case "GEM_TRANSITION":
-	case "IN_GEM_INV":
-	{
-		draw_set_alpha(0.8);
-		draw_rectangle_color(0, 0, RESOLUTION_W, RESOLUTION_H,
-			c_black, c_black, c_black, c_black, false);
-		with (obj_inv_item)
-		{
-			gpu_set_blendmode(bm_subtract);
-			draw_sprite_ext(spr_inv_item, 
-				image_index, 
-				floor(x), 
-				floor(y),
-				image_xscale - 0.025,
-				image_yscale - 0.025,
-				image_angle,
-				image_blend,
-				1);
-			gpu_set_blendmode(bm_normal);
-		}
-		draw_set_alpha(1);
-		break;
-	}
-	default:
-		//draw_clear_alpha(c_black, 0);
-		draw_set_alpha(1);
-		break;
-}
 if (image_alpha != 1.0)
 {
 	image_alpha = 1.0;

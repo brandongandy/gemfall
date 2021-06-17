@@ -1,12 +1,9 @@
 {
-  "spriteId": {
-    "name": "spr_item_selector",
-    "path": "sprites/spr_item_selector/spr_item_selector.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": true,
+  "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
@@ -32,7 +29,7 @@
     "path": "folders/Objects/GUI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_inv_gem",
+  "name": "obj_button",
   "tags": [],
   "resourceType": "GMObject",
 }

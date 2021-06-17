@@ -3,8 +3,11 @@
 depth = -9999;
 game_state = "IN_GAME";
 inv_open = false;
+pause_menu = false;
 xpos = 0;
 ypos = -RESOLUTION_H;
+view_width_half = camera_get_view_width(view_camera[0]) * 0.5;
+view_height_half = camera_get_view_height(view_camera[0]) * 0.5;
 
 mouse_pos_x = 0;
 mouse_pos_y = 0;
@@ -48,15 +51,6 @@ for (i = 0; i < 5; i++)
 
 
 // RGB gems
-
-#endregion
-
-#region Gem HUD
-
-_center_x = camera_get_view_width(view_camera[0]) * 0.5;
-_center_y = camera_get_view_height(view_camera[0]) * 0.5;
-total_items = 5;
-exit_gem_inv = false;
 
 #endregion
 
