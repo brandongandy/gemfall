@@ -30,7 +30,7 @@ keys = ds_map_create();
 keys[? "Dungeon01"] = 0;
 
 #region Inventory Items
-equipped = ITEM.BOW;
+equipped = -1;
 
 // initialize the item classes first
 items = array_create(ITEM.TOTAL);
@@ -48,7 +48,7 @@ items[ITEM.POTION_CHARGE] = new PotionCharge(ITEM.POTION_CHARGE);
 #endregion
 
 #region Gems
-equipped_gem = GEM.EXEMPLAR;
+equipped_gem = -1;
 gems = array_create(GEM.TOTAL);
 gems[GEM.VERDIGRIS] = new Verdigris(GEM.VERDIGRIS);
 gems[GEM.EXEMPLAR] = new Exemplar(GEM.EXEMPLAR);
@@ -180,7 +180,7 @@ inventory[1].item = items[ITEM.BOW];
 inventory[2].item = items[ITEM.NONE];
 inventory[3].item = items[ITEM.NONE];
 inventory[4].item = items[ITEM.NONE];
-inventory[5].item = items[ITEM.POTION_HEALTH];
+inventory[5].item = new PotionHealth(ITEM.POTION_HEALTH);
 inventory[6].item = items[ITEM.NONE];
 inventory[7].item = items[ITEM.NONE];
 inventory[8].item = items[ITEM.POTION_HEALTH];

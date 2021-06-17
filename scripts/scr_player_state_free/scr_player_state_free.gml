@@ -126,7 +126,7 @@ function scr_player_state_free()
 		{
 			with (obj_inventory)
 			{
-				items[equipped].Use();
+				equipped.Use();
 			}
 		}
 	}
@@ -137,7 +137,7 @@ function scr_player_state_free()
 		{
 			if (equipped_gem != -1)
 			{
-				gems[equipped_gem].Use();
+				equipped_gem.Use();
 			}
 		}
 	}

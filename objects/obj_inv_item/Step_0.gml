@@ -24,7 +24,7 @@ if (point_in_rectangle(obj_ui.mouse_pos_x, obj_ui.mouse_pos_y,
 else
 {
 	if (item.item_index != ITEM.NONE &&
-		  obj_inventory.equipped == item.item_index)
+		  obj_inventory.equipped == item)
 	{
 		hover = true;
 	}

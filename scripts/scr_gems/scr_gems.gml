@@ -14,7 +14,7 @@ function Gem(_item_index) constructor
 	{
 		if (owned)
 		{
-			obj_inventory.equipped_gem = item_index;
+			obj_inventory.equipped_gem = self;
 			return true;
 		}
 		else
@@ -43,19 +43,6 @@ function Exemplar(_item_index) : Gem(_item_index) constructor
 				state = scr_player_state_roll;
 				move_distance_remaining = roll_distance;
 			}
-		}
-	}
-	
-	Equip = function()
-	{
-		if (owned)
-		{
-			obj_inventory.equipped_gem = item_index;
-			return true;
-		}
-		else
-		{
-			return false;
 		}
 	}
 }

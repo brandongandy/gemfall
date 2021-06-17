@@ -44,7 +44,7 @@ function Item(_item_index) constructor
 		{
 			// TODO: this causes multiples of the same item to be equipped
 			// fix me
-			obj_inventory.equipped = item_index;
+			obj_inventory.equipped = self;
 			return true;
 		}
 		else

@@ -24,7 +24,7 @@ if (point_in_rectangle(obj_ui.mouse_pos_x, obj_ui.mouse_pos_y,
 else
 {
 	if (gem.owned &&
-		  obj_inventory.equipped_gem == gem.item_index)
+		  obj_inventory.equipped_gem == gem)
 	{
 		hover = true;
 	}

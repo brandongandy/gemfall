@@ -23,10 +23,10 @@ if (object_exists(obj_inventory))
 	if (obj_inventory.equipped != -1)
 	{
 		// the equipped "index" is also the item_index of the sprite
-		draw_sprite(spr_items, obj_inventory.equipped,
+		draw_sprite(spr_items, obj_inventory.equipped.item_index,
 			hud_equipped_xpos, hud_equipped_ypos);
 		
-		var _item = obj_inventory.items[obj_inventory.equipped];
+		var _item = obj_inventory.equipped;
 		if (_item.uses_ammo)
 		{
 			draw_text_outlined(
@@ -41,7 +41,7 @@ if (object_exists(obj_inventory))
 	{
 		draw_sprite(
 			spr_gems,
-			obj_inventory.equipped_gem,
+			obj_inventory.equipped_gem.item_index,
 			hud_equipped_xpos + 28,
 			hud_equipped_ypos);
 	}
