@@ -139,31 +139,6 @@ draw_sprite(spr_bar_empty,
 #endregion
 
 #region Inventory
-if (game_state != "IN_GAME")
-{
-	with (obj_inv_item)
-	{
-		if (hover)
-		{
-			draw_sprite_ext(spr_item_selector,
-				image_index,
-				floor(x),
-				floor(y),
-				image_xscale,
-				image_yscale,
-				image_angle,
-				image_blend,
-				image_alpha
-			);
-		}
-
-		if (item_index != ITEM.NONE)
-		{
-			draw_sprite(spr_items, item_index, floor(x), floor(y));
-		}
-	}
-}
-
 #endregion
 //scr_CRT_appy_to_surface(surf, view_camera[0]);
 

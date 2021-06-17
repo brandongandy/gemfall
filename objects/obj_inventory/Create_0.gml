@@ -45,26 +45,6 @@ items[ITEM.POTION_SPEED] = new PotionSpeed(ITEM.POTION_SPEED);
 items[ITEM.POTION_SIGHT] = new PotionSight(ITEM.POTION_SIGHT);
 items[ITEM.POTION_CHARGE] = new PotionCharge(ITEM.POTION_CHARGE);
 
-// now, initialize the inventory for the player
-inventory = array_create(9);
-
-for (i = 0; i < 9; i++)
-{
-	inventory[i] = instance_create_layer(0, 0, "Instances", obj_inv_item);
-	inventory[i].persistent = true;
-}
-
-// TODO: Load from save.
-inventory[0].item_index = ITEM.BOMB;
-inventory[1].item_index = ITEM.BOW;
-inventory[2].item_index = ITEM.NONE;
-inventory[3].item_index = ITEM.NONE;
-inventory[4].item_index = ITEM.NONE;
-inventory[5].item_index = ITEM.NONE;
-inventory[6].item_index = ITEM.NONE;
-inventory[7].item_index = ITEM.NONE;
-inventory[8].item_index = ITEM.POTION_HEALTH;
-
 #endregion
 
 #region Gems
@@ -84,7 +64,7 @@ gems[GEM.VOIDSTEEL] = new Voidsteel(GEM.VOIDSTEEL);
 gems[GEM.SPELLGUARD] = new Spellguard(GEM.SPELLGUARD);
 gems[GEM.STONEHEART] = new Stoneheart(GEM.STONEHEART);
 
-inv_gems = ds_grid_create(GEM.TOTAL, INVENTORY_STAT.TOTAL);
+//inv_gems = ds_grid_create(GEM.TOTAL, INVENTORY_STAT.TOTAL);
 
 // Verdigris - not equippable, but "allows" Hero to use other gems
 //inv_gems[# GEM.VERDIGRIS, INVENTORY_STAT.DAMAGE] = -1;
@@ -180,5 +160,43 @@ inv_gems = ds_grid_create(GEM.TOTAL, INVENTORY_STAT.TOTAL);
 //inv_gems[# GEM.STONEHEART, INVENTORY_STAT.OWNED] = false;
 //inv_gems[# GEM.STONEHEART, INVENTORY_STAT.MANA_TYPE] = MANA_TYPE.EMERALD;
 //inv_gems[# GEM.STONEHEART, INVENTORY_STAT.MANA_COST] = 1;
+
+#endregion
+
+#region Inventory Items
+
+// now, initialize the inventory for the player
+inventory = array_create(9);
+
+for (i = 0; i < 9; i++)
+{
+	inventory[i] = instance_create_depth(0, 0, -10000, obj_inv_item);
+	inventory[i].persistent = true;
+}
+
+// TODO: Load from save.
+inventory[0].item = items[ITEM.BOMB];
+inventory[1].item = items[ITEM.BOW];
+inventory[2].item = items[ITEM.NONE];
+inventory[3].item = items[ITEM.NONE];
+inventory[4].item = items[ITEM.NONE];
+inventory[5].item = items[ITEM.POTION_HEALTH];
+inventory[6].item = items[ITEM.NONE];
+inventory[7].item = items[ITEM.NONE];
+inventory[8].item = items[ITEM.POTION_HEALTH];
+
+gem_inventory = array_create(5);
+
+for (i = 0; i < 5; i++)
+{
+	gem_inventory[i] = instance_create_depth(0, 0, -10000, obj_inv_gem);
+	gem_inventory[i].persistent = true;
+}
+
+gem_inventory[0].gem = gems[GEM.EXEMPLAR];
+gem_inventory[1].gem = gems[GEM.SCREAMING];
+gem_inventory[2].gem = gems[GEM.SIREN];
+gem_inventory[3].gem = gems[GEM.SKYRIDER];
+gem_inventory[4].gem = gems[GEM.TRAVELER];
 
 #endregion

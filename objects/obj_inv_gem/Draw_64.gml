@@ -19,7 +19,7 @@ if (hover)
 	);
 }
 
-if (item.item_index != ITEM.NONE)
+if (gem.owned)
 {
-	draw_sprite(spr_items, item.item_index, floor(x), floor(y));
+	draw_sprite(spr_gems, gem.item_index, floor(x), floor(y));
 }

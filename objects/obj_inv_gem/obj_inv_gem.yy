@@ -32,7 +32,7 @@
     "path": "folders/Objects/entities.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_inv_item",
+  "name": "obj_inv_gem",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -11,20 +11,20 @@ y = base_y + y_offset;
 if (point_in_rectangle(obj_ui.mouse_pos_x, obj_ui.mouse_pos_y,
 	bbox_left, bbox_top, bbox_right, bbox_bottom))
 {
-	if (item.item_index != ITEM.NONE)
+	if (gem.owned)
 	{
 	  hover = true;
 	
 		if (mouse_check_button_released(mb_left))
 		{
-			item.Equip();
+			gem.Equip();
 		}
 	}
 }
 else
 {
-	if (item.item_index != ITEM.NONE &&
-		  obj_inventory.equipped == item.item_index)
+	if (gem.owned &&
+		  obj_inventory.equipped_gem == gem.item_index)
 	{
 		hover = true;
 	}

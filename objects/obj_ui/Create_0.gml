@@ -23,6 +23,9 @@ hud_heart_ypos = ypos + RESOLUTION_H + 8;
 item_rows = 3;
 item_columns = 3;
 
+#region Item UI Handlers
+
+// Main inventory
 for (i = 0; i < item_columns; i++)
 {
 	for (j = 0; j < item_rows; j++)
@@ -33,6 +36,20 @@ for (i = 0; i < item_columns; i++)
 		obj_inventory.inventory[j + (i * 3)].y_offset = 24 + (24 * i);
 	}
 }
+
+// Active gems
+for (i = 0; i < 5; i++)
+{
+	obj_inventory.gem_inventory[i].base_x = xpos;
+	obj_inventory.gem_inventory[i].base_y = ypos;
+	obj_inventory.gem_inventory[i].x_offset = 32 + (24 * i);
+	obj_inventory.gem_inventory[i].y_offset = 112;
+}
+
+
+// RGB gems
+
+#endregion
 
 #region Gem HUD
 

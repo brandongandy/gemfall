@@ -42,6 +42,8 @@ function Item(_item_index) constructor
 	{
 		if (owned)
 		{
+			// TODO: this causes multiples of the same item to be equipped
+			// fix me
 			obj_inventory.equipped = item_index;
 			return true;
 		}

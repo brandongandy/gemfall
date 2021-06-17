@@ -9,6 +9,19 @@ function Gem(_item_index) constructor
 	{
 		return false;
 	}
+	
+	Equip = function()
+	{
+		if (owned)
+		{
+			obj_inventory.equipped_gem = item_index;
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }
 
 function Verdigris(_item_index) : Gem(_item_index) constructor
@@ -19,6 +32,7 @@ function Exemplar(_item_index) : Gem(_item_index) constructor
 {
 	mana_type = MANA_TYPE.EMERALD;
 	mana_cost = 1;
+	owned = true;
 	
 	Use = function()
 	{
@@ -29,6 +43,19 @@ function Exemplar(_item_index) : Gem(_item_index) constructor
 				state = scr_player_state_roll;
 				move_distance_remaining = roll_distance;
 			}
+		}
+	}
+	
+	Equip = function()
+	{
+		if (owned)
+		{
+			obj_inventory.equipped_gem = item_index;
+			return true;
+		}
+		else
+		{
+			return false;
 		}
 	}
 }
@@ -49,6 +76,7 @@ function Screaming(_item_index) : Gem(_item_index) constructor
 {
 	mana_type = MANA_TYPE.RUBY;
 	mana_cost = 5;
+	owned = true;
 	
 	Use = function()
 	{
