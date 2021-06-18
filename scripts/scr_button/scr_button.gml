@@ -24,3 +24,8 @@ function btn_close_game()
 {
 	game_end();
 }
+
+function btn_save_game()
+{
+	save_game();
+}

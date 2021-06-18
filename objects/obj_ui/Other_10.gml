@@ -26,7 +26,7 @@ if (!pause_menu)
 		_button_width, 
 		_button_height, 
 		"Save Game",
-		btn_close_game);
+		btn_save_game);
 		
 	_yy += (_button_height + _space);
 	
