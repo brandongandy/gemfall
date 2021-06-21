@@ -29,3 +29,8 @@ function btn_save_game()
 {
 	save_game();
 }
+
+function btn_new_game()
+{
+	room_goto(rm_player_house);
+}

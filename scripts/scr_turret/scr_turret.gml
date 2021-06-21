@@ -3,6 +3,7 @@ function scr_turret_block_idle()
 {
 	target = noone;
 	image_index = 0;
+	image_speed = 0;
 	var _centerX = (x + bbox_right) / 2;
 	var _centerY = (y + bbox_bottom) / 2;
 	if (++aggro_check_elapsed >= aggro_check_duration)
@@ -28,26 +29,37 @@ function scr_turret_block_attack()
 {
 	if (target != noone)
 	{
-		image_index = 2;
-		var _centerX = x;
-		var _centerY = y - 8;
-		var bullet_dir = point_direction(_centerX, _centerY, target.x, target.y);
-		var new_bullet = instance_create_layer(_centerX, _centerY, "Instances", obj_bullet);
-		with (new_bullet)
+		image_speed = 1.0;
+		
+		if (image_index >= 5 && image_index <= 7)
 		{
-			direction = bullet_dir;
+			var _centerX = x;
+			var _centerY = y - 8;
+			var bullet_dir = point_direction(_centerX, _centerY, target.x, target.y);
+			var new_bullet = instance_create_layer(_centerX, _centerY, "Instances", obj_bullet);
+			with (new_bullet)
+			{
+				direction = bullet_dir;
+			}
+			target = noone;
 		}
-		target = noone;
 	}
 	
-	image_index = 0;
-	state_target = MOB_STATE.IDLE;
-	state = MOB_STATE.WAIT;
+	if (image_speed > 0)
+	{
+		if (image_index + (sprite_get_speed(sprite_index) / game_get_speed(gamespeed_fps)) >= image_number)
+		{
+			image_speed = 0;
+			image_index = 0;
+			state_target = MOB_STATE.IDLE;
+			state = MOB_STATE.WAIT;
+		}
+	}
 }
 
 function scr_turret_block_die()
 {
-	image_index = 1;
+	instance_destroy();
 }
 
 function scr_turret_hurt()

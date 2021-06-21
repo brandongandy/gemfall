@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_turret_block",
-    "path": "sprites/spr_turret_block/spr_turret_block.yy",
+    "name": "spr_killer_plant",
+    "path": "sprites/spr_killer_plant/spr_killer_plant.yy",
   },
   "solid": false,
   "visible": true,

@@ -29,8 +29,9 @@ wait = 0;
 // sprites
 sprite_move = spr_slime;
 sprite_die = spr_death_anim;
-
+sprite_hurt = -1;
 start_death_anim = false;
+animation_end = false;
 
 // mob functions
 mob_script[MOB_STATE.IDLE] = -1;

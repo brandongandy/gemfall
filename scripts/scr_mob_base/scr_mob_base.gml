@@ -11,17 +11,15 @@ function scr_mob_wait()
 
 function scr_mob_hurt()
 {
-	if (x_to != undefined)
+	if (sprite_hurt != -1)
 	{
-		var _distance_to_go = point_distance(x, y, x_to, y_to);
+		sprite_index = sprite_hurt;
 	}
-	else
-	{
-		var _distance_to_go = 0;
-	}	
-	
+
+	var _distance_to_go = point_distance(x, y, x_to, y_to);
+
 	// if we've got further to go than we would move in a single frame
-	if (_distance_to_go > mob_speed)
+	if (round(_distance_to_go) > round(mob_speed))
 	{
 		dir = point_direction(x, y, x_to, y_to);
 		h_speed = lengthdir_x(mob_speed * 3, dir);
@@ -46,75 +44,52 @@ function scr_mob_hurt()
 		if (stunned)
 		{
 			stunned = false;
-			if (state_previous != MOB_STATE.ATTACK)
+			if (state_previous == MOB_STATE.ATTACK)
 			{
-				state_target = state_previous;
+				state_target = MOB_STATE.CHASE;
 			}
 			else
 			{
-				state_target = MOB_STATE.CHASE;
+				state_target = state_previous;
 			}
 			state = MOB_STATE.WAIT;
 		}
 		else
 		{
-			if (state_previous != MOB_STATE.ATTACK)
-			{
-				state = state_previous;
-			}
-			else
+			if (state_previous == MOB_STATE.ATTACK)
 			{
 				// chase always leads into attack, so if we were attacking
 				// then go back to it
 				state = MOB_STATE.CHASE;
 			}
+			else
+			{
+				state = state_previous;
+			}
+		}
+		
+		if (mob_hp <= 0)
+		{
+			state = MOB_STATE.DIE;
 		}
 	}
 }
 
 function scr_mob_die()
 {
-	var _distance_to_go = point_distance(x, y, x_to, y_to);
-	if (_distance_to_go > mob_speed)
+	if (sprite_index != sprite_die)
 	{
-		dir = point_direction(x, y, x_to, y_to);
-		h_speed = lengthdir_x(mob_speed, dir);
-		v_speed = lengthdir_y(mob_speed, dir);
-		if (h_speed != 0)
-		{
-			image_xscale = -sign(h_speed);
-		}
-		
-		// collide and move
-		if (scr_mob_tile_collision())
-		{
-			start_death_anim = true;
-		}
+		//var centerX = x - sprite_get_xoffset(sprite_index) + sprite_width / 2;
+		//var centerY = y - sprite_get_yoffset(sprite_index) + sprite_height / 2;
+		sprite_index = sprite_die;
+		//x = centerX;
+		//y = centerY;
+		entity_shadow = false;	
+		image_speed = 1.0;	
 	}
-	else
-	{
-		x = x_to;
-		y = y_to;
-		start_death_anim = true;
-	}	
-
-	if (start_death_anim)
-	{
-		if (sprite_index != sprite_die)
-		{
-			var centerX = x - sprite_get_xoffset(sprite_index) + sprite_width / 2;
-			var centerY = y - sprite_get_yoffset( sprite_index) + sprite_height / 2;
-			sprite_index = sprite_die;
-			x = centerX;
-			y = centerY;
-			entity_shadow = false;	
-			image_speed = 1.0;	
-		}
 		
-		if (image_index + (sprite_get_speed(sprite_index) / game_get_speed(gamespeed_fps)) >= image_number)
-		{
-			instance_destroy();
-		}
+	if (image_index + (sprite_get_speed(sprite_index) / game_get_speed(gamespeed_fps)) >= image_number)
+	{
+		instance_destroy();
 	}
-
 }

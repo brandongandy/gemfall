@@ -2,7 +2,7 @@
 // use attack hitbox to check for hits
 function calc_attack(_attack_hitbox)
 {
-	// temporaily use collision mask of htbox sprite
+	// temporarily use collision mask of hitbox sprite
 	mask_index = _attack_hitbox;
 	
 	var _hit_by_attack = ds_list_create();
@@ -52,34 +52,17 @@ function hurt_mob(_mob_id, _damage, _source, _knockback)
 	with(_mob_id)
 	{
 		// if not already dying...
-		if (state != MOB_STATE.DIE)
+		if (state != MOB_STATE.DIE &&
+			  state != MOB_STATE.HURT)
 		{
 			mob_hp -= _damage;
 			flash = 1;
 			
-			// hurt or kill
-			if (mob_hp <= 0)
-			{
-				state = MOB_STATE.DIE;
-			}
-			else
-			{
-				if (state != MOB_STATE.HURT)
-				{
-					state_previous = state;
-				}
-				state = MOB_STATE.HURT;
-			}
+			state_previous = state;
+			state = MOB_STATE.HURT;
 				
 			image_index = 0;
 			scr_knockback_mob(_source.x, _source.y, _knockback);
-			//if (_knockback != 0)
-			//{
-			//	var _knock_dir = point_direction(x, y, (_source).x, (_source).y);
-			//	// subtracting moves away from the source
-			//	x_to = x - lengthdir_x(_knockback, _knock_dir);
-			//	y_to = y - lengthdir_y(_knockback, _knock_dir);
-			//}
 		}
 	}
 }
