@@ -34,7 +34,7 @@ player_height = 0;
 move_distance_remaining = 0;
 
 // attack stuff
-equipped_weapon = -1;
+equipped_weapon = global.i_inv.items[ITEM.SWORD];
 
 // the number of frames we're invulnerable
 invulnerable = 0;

@@ -42,7 +42,7 @@ function scr_player_state_free()
 	// Attack logic
 	if (key_attack)
 	{
-		if (equipped_weapon != -1)
+		if (equipped_weapon != -1 && equipped_weapon.owned)
 		{
 			state = scr_player_state_attack;
 			state_attack = attack_slash;
