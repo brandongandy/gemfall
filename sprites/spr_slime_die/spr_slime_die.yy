@@ -87,6 +87,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d76d9cf4-f936-498d-9698-67faff6a01a2","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "slime",
     "path": "folders/Sprites/entities/mobs/slime.yy",

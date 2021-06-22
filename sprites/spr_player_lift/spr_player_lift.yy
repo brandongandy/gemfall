@@ -79,6 +79,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"670be85c-7b34-4b3c-81cc-9a1c78e02a6f","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "player",
     "path": "folders/Sprites/player.yy",

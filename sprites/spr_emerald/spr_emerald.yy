@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4402363a-0f9e-4b9e-8251-3c28ecc5edc2","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "gems",
     "path": "folders/Sprites/entities/pickups/gems.yy",

@@ -95,6 +95,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"94751ae0-d433-41d2-bc98-360dcf579b6f","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "mobs",
     "path": "folders/Sprites/entities/mobs.yy",

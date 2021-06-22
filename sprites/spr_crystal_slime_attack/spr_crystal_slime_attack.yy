@@ -83,6 +83,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2ef48142-dd67-47e9-be25-d7f9c55a3f74","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "dungeon01",
     "path": "folders/Sprites/entities/mobs/bosses/dungeon01.yy",

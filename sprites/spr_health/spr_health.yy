@@ -83,6 +83,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9a512a5e-3bb8-43be-96a9-92c6f173ca15","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "ui",
     "path": "folders/Sprites/ui.yy",

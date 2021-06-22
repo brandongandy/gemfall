@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e281a3f3-c7d0-43a0-819b-06fd7d893a42","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "CRT Shader",
     "path": "folders/Sprites/CRT Shader.yy",

@@ -143,6 +143,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e4cffeef-c777-4791-89ff-5343aa7c6ae5","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "items",
     "path": "folders/Sprites/items.yy",

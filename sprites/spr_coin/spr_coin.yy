@@ -99,6 +99,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"be03cfc4-03a5-4439-893e-32b86da5ca97","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "pickups",
     "path": "folders/Sprites/entities/pickups.yy",

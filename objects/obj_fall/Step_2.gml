@@ -5,6 +5,10 @@ if (!global.game_paused) && (active)
 	{
 		var _reset_coords = false;
 		fallen = true;
+		if (falls_to_next_floor)
+		{
+			global.take_fall_damage = false;
+		}
 		
 		// set sensible values if they're not there.
 		if (target_room == 0)

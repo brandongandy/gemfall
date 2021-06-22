@@ -11,6 +11,7 @@ global.target_room = -1;
 global.target_x = -1;
 global.target_y = -1;
 global.target_dir = 0;
+global.take_fall_damage = true;
 
 // questing
 global.quest_status = ds_map_create();
@@ -36,4 +37,4 @@ global.i_camera = instance_create_layer(0, 0, layer, obj_camera);
 // other
 global.previous_room = -1;
 
-room_goto(rm_start_cave_01);
+room_goto(rm_village_outskirts_upper);

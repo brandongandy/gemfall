@@ -75,6 +75,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9b4a3804-3783-47eb-a550-df299b927e58","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "turret",
     "path": "folders/Sprites/entities/mobs/turret.yy",
