@@ -14,6 +14,10 @@ function scr_add_item(_item)
 		case obj_bomb:
 			obj_inventory.items[ITEM.BOMB].PickUp(1);
 			break;
+		case obj_sword:
+			obj_inventory.items[ITEM.SWORD].owned = true;
+			obj_player.equipped_weapon = obj_inventory.items[ITEM.SWORD];
+			break;
 		case obj_emerald_small:
 			break;
 	}

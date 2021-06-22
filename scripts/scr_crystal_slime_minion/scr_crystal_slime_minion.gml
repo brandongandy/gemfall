@@ -116,7 +116,8 @@ function scr_crystal_slime_minion_hit()
 		{
 			if (other.object_index == obj_player)
 			{
-				hurt_slime_minion(obj_player.base_damage, obj_player.id, obj_player.base_knockback / 2);
+				var _weapon = obj_player.equipped_weapon;
+				hurt_slime_minion(_weapon.damage, obj_player.id, _weapon.knockback / 2);
 			}
 		}
 		else

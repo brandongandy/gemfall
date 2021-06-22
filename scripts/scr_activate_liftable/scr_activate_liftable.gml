@@ -90,7 +90,15 @@ function scr_show_chest_item(_x, _y, _item, _message)
 			entity_shadow = false;
 			sprite_index = object_get_sprite(_item);
 			image_speed = 0;
-			image_index = 0;
+			if (other.activate != noone)
+			{
+				image_index = other.activate.image_index;
+			}
+			else
+			{
+				image_index = 0;
+			}
+			depth = obj_player.depth - 8;
 		}
 	}
 }

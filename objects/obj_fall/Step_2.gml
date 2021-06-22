@@ -4,6 +4,11 @@ if (!global.game_paused) && (active)
 	if (player_entered) && (!fallen)
 	{
 		fallen = true;
+		// set sensible values if they're not there.
+		if (target_room == 0)
+		{
+			target_room = room;
+		}
 		global.target_room = target_room;
 		global.target_x = target_x;
 		global.target_y = target_y;

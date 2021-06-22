@@ -39,3 +39,20 @@ function scr_open_chest(_item, _count, _message, _quest, _quest_level)
 		}
 	}
 }
+
+function scr_pickup_and_hold(_item, _message, _quest, _quest_level)
+{
+	scr_show_chest_item(obj_player.x, obj_player.y, _item, _message);
+	
+	scr_add_item(_item);
+
+	if (_quest != undefined)
+	{
+		scr_set_quest_status(_quest, _quest_level);
+	}
+	
+	with (activate)
+	{
+		instance_destroy();
+	}
+}

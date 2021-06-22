@@ -34,9 +34,7 @@ player_height = 0;
 move_distance_remaining = 0;
 
 // attack stuff
-base_damage = 2;
-base_knockback = 32;
-//damage_mod = 0;
+equipped_weapon = -1;
 
 // the number of frames we're invulnerable
 invulnerable = 0;

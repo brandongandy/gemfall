@@ -36,6 +36,7 @@ items[ITEM.POTION_ANTIVENOM] = new PotionAntivenom(ITEM.POTION_ANTIVENOM);
 items[ITEM.POTION_SPEED] = new PotionSpeed(ITEM.POTION_SPEED);
 items[ITEM.POTION_SIGHT] = new PotionSight(ITEM.POTION_SIGHT);
 items[ITEM.POTION_CHARGE] = new PotionCharge(ITEM.POTION_CHARGE);
+items[ITEM.SWORD] = new Sword(ITEM.SWORD);
 
 #endregion
 

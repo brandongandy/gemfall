@@ -5,6 +5,7 @@ function Item(_item_index) constructor
 	// set the sprite of the item
 	item_index = _item_index;
 	damage = 0;
+	knockback = 0;
 	uses_ammo = false;
 	ammo = 0;
 	max_ammo = 0;
@@ -54,12 +55,19 @@ function Item(_item_index) constructor
 	}
 }
 
+function Sword(_item_index) : Item(_item_index) constructor
+{
+	damage = 2;
+	knockback = 32;
+	owned = true;
+}
+
 function Bomb(_item_index) : Item(_item_index) constructor
 {
 	damage = 5;
+	knockback = 32;
 	uses_ammo = true;
 	max_ammo = 20;
-	owned = true;
 	
 	Use = function()
 	{

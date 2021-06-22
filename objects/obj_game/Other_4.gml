@@ -42,6 +42,14 @@ switch (room)
 		}
 	}
 	break;
+	case rm_start_cave_01:
+	{
+		if (!global.i_inv.items[ITEM.SWORD].owned)
+		{
+			instance_create_layer(392, 584, "Instances", obj_sword);
+		}
+	}
+	break;
 	default:
 		break;
 }

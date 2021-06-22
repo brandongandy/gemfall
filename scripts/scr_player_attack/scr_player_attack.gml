@@ -33,8 +33,9 @@ function calc_attack(_attack_hitbox)
 					}
 					else if (object_is_ancestor(object_index, obj_p_mob))
 					{
+						var _weapon = other.equipped_weapon;
 						// if nothing, hit them with a default attack
-						hurt_mob(id, other.base_damage, other.id, other.base_knockback);
+						hurt_mob(id, _weapon.damage, other.id, _weapon.knockback);
 					}
 				}
 			}

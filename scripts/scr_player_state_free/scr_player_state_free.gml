@@ -42,8 +42,11 @@ function scr_player_state_free()
 	// Attack logic
 	if (key_attack)
 	{
-		state = scr_player_state_attack;
-		state_attack = attack_slash;
+		if (equipped_weapon != -1)
+		{
+			state = scr_player_state_attack;
+			state_attack = attack_slash;
+		}
 	}
 	
 	// "Use" key logic
