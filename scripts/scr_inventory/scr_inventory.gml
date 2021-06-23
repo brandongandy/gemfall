@@ -1,6 +1,8 @@
 // Scrip
 function scr_add_item(_item)
 {
+	// TODO: use built in item Add() functions instead
+	// of this switch statement.
 	if (_item == undefined)
 	{
 		return;
@@ -27,15 +29,15 @@ function scr_add_key(_dungeon)
 {
 	if (_dungeon != -1)
 	{
-		global.i_inv.keys[? _dungeon]++;
+		global.i_inv.quests[_dungeon].keys++;
 	}
 }
 
 function scr_use_key(_dungeon)
 {
-	if (global.i_inv.keys[? _dungeon] > 0)
+	if (global.i_inv.quests[_dungeon].keys > 0)
 	{
-		global.i_inv.keys[? _dungeon]--;
+		global.i_inv.quests[_dungeon].keys--;
 		return true;
 	}
 	else
@@ -43,62 +45,6 @@ function scr_use_key(_dungeon)
 		return false;
 	}
 }
-
-/// @function			scr_get_sprite_for_item(_item)
-/// @param {ITEM} _item 
-//function scr_get_sprite_for_item(_item)
-//{
-//	switch (_item)
-//	{
-//		case ITEM.BOMB:
-//			return spr_bomb;
-//		break;
-//		case ITEM.BOW:
-//			return spr_bow_inv;
-//		default:
-//			return spr_bomb;
-//		break;
-//	}
-//}
-
-//function scr_get_ammo(_item)
-//{
-//	switch (_item)
-//	{
-//		case ITEM.BOMB:
-//			return obj_inventory.inv_items[# ITEM.BOMB, INVENTORY_STAT.AMMO];
-//		break;
-//		case ITEM.BOW:
-//			return obj_inventory.inv_items[# ITEM.BOW, INVENTORY_STAT.AMMO];
-//		default:
-//			return -1;
-//		break;
-//	}
-//}
-
-//function scr_spend_ammo(_item_type, _amount)
-//{
-//	if (_item_type == undefined)
-//	{
-//		return false;
-//	}
-	
-//	if (global.i_inv.inv_items[# _item_type, INVENTORY_STAT.USES_AMMO] == false)
-//	{
-//		// just let us use it if it doesn't use ammo
-//		return true;
-//	}
-	
-//	if (global.i_inv.inv_items[# _item_type, INVENTORY_STAT.AMMO] - _amount >= 0)
-//	{
-//		global.i_inv.inv_items[# _item_type, INVENTORY_STAT.AMMO] -= _amount;
-//		return true;
-//	}
-//	else
-//	{
-//		return false;
-//	}
-//}
 
 function scr_spend_mana(_mana_type, _amount)
 {

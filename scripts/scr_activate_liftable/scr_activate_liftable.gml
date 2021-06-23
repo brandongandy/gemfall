@@ -49,7 +49,7 @@ function scr_activate_quest_liftable(_id, _message, _quest, _quest_level)
 	
 	if (_quest != undefined)
 	{
-		scr_set_quest_status(_quest, _quest_level);
+		global.i_inv.quests[_quest].SetProgressLevel(_quest_level);
 	}
 }
 

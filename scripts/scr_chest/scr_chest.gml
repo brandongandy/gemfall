@@ -1,15 +1,26 @@
 // Scrip
 function scr_open_chest(_item, _count, _message, _quest, _quest_level)
 {
+	if (_item == undefined || _item == -1)
+	{
+		return;
+	}
+	
+	if (activate.chest_state == CHEST_STATE.OPEN)
+	{
+		return;
+	}
+	
 	if (global.i_lifted == noone)
 	{
-		if (activate.chest_state == CHEST_STATE.OPEN)
-		{
-			return;
-		}
 		if (activate.is_locked)
 		{
 			// check for locked state and make sure player has key
+			if (_quest != undefined && !scr_use_key(_quest))
+			{
+				scr_new_textbox("You need a key to open this chest.", 1);
+				return;
+			}
 		}
 	
 		activate.chest_state = CHEST_STATE.OPEN;
@@ -35,7 +46,7 @@ function scr_open_chest(_item, _count, _message, _quest, _quest_level)
 		
 		if (_quest != undefined)
 		{
-			scr_set_quest_status(_quest, _quest_level);
+			global.i_inv.quests[_quest].SetProgressLevel(_quest_level);
 		}
 	}
 }
@@ -48,7 +59,7 @@ function scr_pickup_and_hold(_item, _message, _quest, _quest_level)
 
 	if (_quest != undefined)
 	{
-		scr_set_quest_status(_quest, _quest_level);
+		global.i_inv.quests[_quest].SetProgressLevel(_quest_level);
 	}
 	
 	with (activate)

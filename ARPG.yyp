@@ -90,6 +90,7 @@
     {"id":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"order":11,},
     {"id":{"name":"obj_camera_snap","path":"objects/obj_camera_snap/obj_camera_snap.yy",},"order":3,},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"order":0,},
+    {"id":{"name":"scr_quest","path":"scripts/scr_quest/scr_quest.yy",},"order":2,},
     {"id":{"name":"obj_emerald_small","path":"objects/obj_emerald_small/obj_emerald_small.yy",},"order":1,},
     {"id":{"name":"spr_tiles","path":"sprites/spr_tiles/spr_tiles.yy",},"order":1,},
     {"id":{"name":"obj_pot","path":"objects/obj_pot/obj_pot.yy",},"order":19,},

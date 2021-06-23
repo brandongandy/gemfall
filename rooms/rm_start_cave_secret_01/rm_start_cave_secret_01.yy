@@ -147,8 +147,8 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Rooms",
-    "path": "folders/Rooms.yy",
+    "name": "dungeon_01",
+    "path": "folders/Rooms/dungeon_01.yy",
   },
   "resourceVersion": "1.0",
   "name": "rm_start_cave_secret_01",

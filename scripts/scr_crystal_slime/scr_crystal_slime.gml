@@ -203,7 +203,7 @@ function scr_crystal_slime_wait()
 
 function scr_crystal_slime_die()
 {
-	scr_set_quest_status("Dungeon01", 9);
+	//scr_set_quest_status("Dungeon01", 9);
 	
 	scr_drop_items(x, y, [obj_emerald_small, obj_heart_container]);
 	

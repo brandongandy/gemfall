@@ -22,11 +22,13 @@ function scr_door_trigger(_trigger_id)
 
 function scr_door_unlock(_quest_name, _quest_level)
 {
-	if (global.i_inv.keys[? _quest_name] > 0)
+	var _quest = global.i_inv.quests[_quest_name];
+	
+	if (_quest.keys > 0)
 	{
-		global.i_inv.keys[? _quest_name]--;
+		_quest.keys--;
 		
-		scr_set_quest_status(_quest_name, _quest_level);
+		_quest.SetProgressLevel(_quest_level);
 		
 		activate.open = true;
 	}

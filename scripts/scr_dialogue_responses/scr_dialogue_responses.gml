@@ -29,13 +29,13 @@ function scr_dialogue_responses(_response)
 		case 6:
 			{
 				scr_new_textbox("None of us can use a sword. Please help us.", 1);
-				global.quest_status[? "Dungeon01"] = 1;
+				//global.quest_status[? "Dungeon01"] = 1;
 			}
 			break;
 		case 7:
 		{
 			scr_new_textbox("Thank you! When we regain access to the south village, we will be sure to repay you.", 1);
-			global.quest_status[? "Dungeon01"] = 2;
+			//global.quest_status[? "Dungeon01"] = 2;
 		}
 		break;
 		default:

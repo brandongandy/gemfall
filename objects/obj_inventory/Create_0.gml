@@ -21,6 +21,14 @@ player_money = 42;
 keys = ds_map_create();
 keys[? "Dungeon01"] = 0;
 
+#region Quests
+current_quest = -1;
+quests = array_create(QUEST.TOTAL);
+quests[QUEST.MAINQUEST] = new MainQuest();
+quests[QUEST.DUNGEON00] = new Quest(2);
+
+#endregion
+
 #region Inventory Items
 equipped = -1;
 

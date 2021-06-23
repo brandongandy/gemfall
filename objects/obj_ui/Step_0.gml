@@ -19,7 +19,7 @@ if (global.i_inv.player_money > 0)
 	}
 }
 
-var _keys = global.i_inv.keys[? "Dungeon01"];
+var _keys = 1;
 if (_keys > 0)
 {
 	if (_keys >= 10)

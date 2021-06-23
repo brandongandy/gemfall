@@ -64,13 +64,6 @@ enum MANA_TYPE
 	TOTAL
 }
 
-enum MANA_STAT
-{
-	MAX_MANA,
-	CURRENT_MANA,
-	TOTAL
-}
-
 enum MOB_STATE
 {
 	IDLE,
@@ -89,6 +82,15 @@ enum CHEST_STATE
 {
 	CLOSED,
 	OPEN
+}
+
+enum QUEST
+{
+	MAINQUEST,
+	DUNGEON00,
+	DUNGEON01,
+	DUNGEON02,
+	TOTAL
 }
 
 #macro GET_HEART_CONTAINER "You got a heart container! Your maximum hearts have increased by 1!"
