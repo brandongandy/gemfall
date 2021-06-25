@@ -8,7 +8,7 @@ state = MOB_STATE.IDLE;
 
 image_speed = 0;
 state_wait_duration = 60;
-aggro_check_duration = 120;
+aggro_check_duration = 60;
 
 mob_script[MOB_STATE.IDLE] = scr_turret_block_idle;
 mob_script[MOB_STATE.ATTACK] = scr_turret_block_attack;

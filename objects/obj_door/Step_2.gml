@@ -4,10 +4,14 @@
 // Inherit the parent event
 event_inherited();
 
-if (auto_check_script) &&
-	(door_activate_script != -1)
+if (inc++ >= 4)
 {
-	scr_execute_array(door_activate_script, door_activate_args);
+	inc = 0;
+	if (auto_check_script) &&
+		(door_activate_script != -1)
+	{
+		scr_execute_array(door_activate_script, door_activate_args);
+	}
 }
 
 if (open)

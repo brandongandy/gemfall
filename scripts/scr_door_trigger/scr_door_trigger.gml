@@ -37,3 +37,18 @@ function scr_door_unlock(_quest_name, _quest_level)
 		scr_new_textbox("You need a key to open this door.", 1);
 	}
 }
+
+/// @desc Checks within the given coordinate rect to see if any entityies are left.
+/// If so, sets the calling door to be Open.
+function scr_door_open_on_last_entity(_startx, _starty, _endx, _endy)
+{
+	var _entity = collision_rectangle(_startx, _starty, _endx, _endy,
+		obj_p_mob,
+		false,
+		true);
+	
+	if (_entity == noone)
+	{
+		open = true;
+	}
+}

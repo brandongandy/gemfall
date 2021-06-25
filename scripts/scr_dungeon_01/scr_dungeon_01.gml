@@ -37,3 +37,21 @@
 //	}
 
 //}
+
+function scr_door_01()
+{
+	var _startx = 256;
+	var _starty = 224;
+	var _endx = 496;
+	var _endy = 432;
+	
+	var _entity = collision_rectangle(_startx, _starty, _endx, _endy,
+		obj_p_mob,
+		false,
+		true);
+	
+	if (_entity == noone)
+	{
+		open = true;
+	}
+}

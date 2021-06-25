@@ -234,6 +234,11 @@ function slime_hurt()
 				state = MOB_STATE.CHASE;
 			}
 		}
+		
+		if (mob_hp <= 0)
+		{
+			state = MOB_STATE.DIE;
+		}
 	}
 }
 
