@@ -5,6 +5,7 @@
 event_inherited();
 
 open = false;
+image_speed = 0;
 
 if (door_dir != -1)
 {

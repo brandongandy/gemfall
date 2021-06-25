@@ -26,7 +26,7 @@
   "eventList": [],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"door_open_anim","path":"objects/obj_door/obj_door.yy",},"objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"value":"spr_dungeon_door_open","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"door_open_anim","path":"objects/obj_door/obj_door.yy",},"objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"value":"spr_dungeon_door","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"entity_shadow","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
