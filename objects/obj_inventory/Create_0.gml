@@ -17,15 +17,11 @@ mana[MANA_TYPE.EMERALD] = new Mana();
 // moneys
 player_money = 42;
 
-// keys, per dungeon
-keys = ds_map_create();
-keys[? "Dungeon01"] = 0;
-
 #region Quests
 current_quest = -1;
 quests = array_create(QUEST.TOTAL);
 quests[QUEST.MAINQUEST] = new MainQuest();
-quests[QUEST.DUNGEON00] = new Quest(2);
+quests[QUEST.DUNGEON00] = new GemshardCaverns();
 
 #endregion
 

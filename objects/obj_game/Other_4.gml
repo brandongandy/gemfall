@@ -5,7 +5,8 @@
 /// past the starting area
 layer_set_visible("ColHeight", false);
 
-show_debug_message(string(room));
+// force to false - set in a room if needed
+obj_daycycle.force_draw = false;
 
 switch (room)
 {
@@ -20,7 +21,7 @@ switch (room)
 	break;
 	case rm_village_outskirts_upper:
 	{
-		if (global.quest_status[? "MainQuest"] == 0)
+		if (global.i_inv.quests[QUEST.MAINQUEST].progress == 0)
 		{
 			// create stones - blocking
 			instance_create_layer(256, 216, "Instances", obj_stone_01);
@@ -39,6 +40,8 @@ switch (room)
 			instance_create_layer(920, 136, "Instances", obj_stone_01);
 			instance_create_layer(528, 336, "Instances", obj_stone_01);
 			instance_create_layer(336, 112, "Instances", obj_stone_01);
+			
+			obj_daycycle.force_draw = true;
 		}
 	}
 	break;

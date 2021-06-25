@@ -18,6 +18,9 @@ darkness = 0;
 light_color = c_black;
 draw_daylight = false;
 
+// used by status effects, dark rooms, etc.
+force_draw = false;
+
 phase_start = phase.daytime;
 phase_end = phase.sunset;
 

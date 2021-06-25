@@ -13,13 +13,6 @@ global.target_y = -1;
 global.target_dir = 0;
 global.take_fall_damage = true;
 
-// questing
-global.quest_status = ds_map_create();
-// determines overall game status, and denotes when dungeons have been cleared
-global.quest_status[? "MainQuest"] = 0;
-// dungeons - still go in the quest map
-global.quest_status[? "Dungeon01"] = 0;
-
 surface_resize(application_surface, RESOLUTION_W, RESOLUTION_H);
 // player
 global.i_inv = instance_create_layer(0, 0, layer, obj_inventory);
@@ -37,4 +30,4 @@ global.i_camera = instance_create_layer(0, 0, layer, obj_camera);
 // other
 global.previous_room = -1;
 
-room_goto(rm_debug);
+room_goto(rm_player_house);

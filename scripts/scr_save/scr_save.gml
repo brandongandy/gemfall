@@ -11,9 +11,14 @@ function save_game()
 			player_health : player_health,
 			mana : mana,
 			player_money : player_money,
-			keys : keys,
+			current_quest : current_quest,
+			quests : quests,
 			equipped : equipped,
-			items : items
+			items : items,
+			equipped_gem : equipped_gem,
+			gems : gems,
+			inventory : inventory,
+			gem_inventory : gem_inventory
 		}
 		array_push(_save_data, _save);
 	}

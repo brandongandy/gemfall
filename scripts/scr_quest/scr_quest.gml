@@ -13,6 +13,9 @@ function Quest(_quest_index) constructor
 	// the name of the quest - for display purposes
 	name = "";
 	
+	// used for HUD overlay
+	is_dungeon = false;
+	
 	// how many keys have been collected for this dungeon or quest
 	keys = 0;
 	
@@ -33,4 +36,10 @@ function Quest(_quest_index) constructor
 function MainQuest() : Quest(QUEST.MAINQUEST) constructor
 {
 	name = "Main Quest";
+}
+
+function GemshardCaverns() : Quest(QUEST.DUNGEON00) constructor
+{
+	name = "Gemshard Caverns";
+	is_dungeon = true;
 }

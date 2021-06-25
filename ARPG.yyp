@@ -273,7 +273,6 @@
     {"roomId":{"name":"rm_debug","path":"rooms/rm_debug/rm_debug.yy",},},
     {"roomId":{"name":"rm_CRT_Room","path":"rooms/rm_CRT_Room/rm_CRT_Room.yy",},},
     {"roomId":{"name":"rm_zilaoxte_village","path":"rooms/rm_zilaoxte_village/rm_zilaoxte_village.yy",},},
-    {"roomId":{"name":"","path":"",},},
     {"roomId":{"name":"rm_player_house","path":"rooms/rm_player_house/rm_player_house.yy",},},
     {"roomId":{"name":"rm_start_screen","path":"rooms/rm_start_screen/rm_start_screen.yy",},},
     {"roomId":{"name":"rm_start_cave_01","path":"rooms/rm_start_cave_01/rm_start_cave_01.yy",},},
