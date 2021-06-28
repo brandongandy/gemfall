@@ -13,6 +13,8 @@ global.target_y = -1;
 global.target_dir = 0;
 global.take_fall_damage = true;
 
+global.current_room = -1;
+
 surface_resize(application_surface, RESOLUTION_W, RESOLUTION_H);
 // player
 global.i_inv = instance_create_layer(0, 0, layer, obj_inventory);

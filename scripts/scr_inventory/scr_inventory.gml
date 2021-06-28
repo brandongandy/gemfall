@@ -27,6 +27,11 @@ function scr_add_item(_item)
 
 function scr_add_key(_dungeon)
 {
+	if (_dungeon == undefined)
+	{
+		_dungeon = global.i_inv.current_quest;
+	}
+	
 	if (_dungeon != -1)
 	{
 		global.i_inv.quests[_dungeon].keys++;

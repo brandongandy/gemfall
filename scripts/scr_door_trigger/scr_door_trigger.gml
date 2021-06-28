@@ -52,3 +52,35 @@ function scr_door_open_on_last_entity(_startx, _starty, _endx, _endy)
 		open = true;
 	}
 }
+
+/// @desc Checks within the given rect to see if any entities are left.
+/// If they're all dead, spawns an item at the given position.
+function scr_spawn_item_on_last_entity(_startx, _starty, _endx, _endy,
+	_item, _itemposx, _itemposy, _open_on_create)
+{
+	var _spawn = false;
+	var _entity = collision_rectangle(_startx, _starty, _endx, _endy,
+		obj_p_mob,
+		false,
+		true);
+	
+	if (_entity == noone)
+	{
+		_spawn = true;
+	}
+	
+	if (_spawn)
+	{
+		with (instance_create_layer(_itemposx, _itemposy, "Instances", _item))
+		{
+			z = 180;
+		}
+		
+		if (_open_on_create)
+		{
+			open = true;
+		}
+		
+		auto_check_script = false;
+	}
+}

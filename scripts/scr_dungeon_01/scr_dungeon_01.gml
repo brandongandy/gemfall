@@ -38,6 +38,11 @@
 
 //}
 
+function scr_door_00()
+{
+	
+}
+
 function scr_door_01()
 {
 	var _startx = 256;
