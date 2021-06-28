@@ -29,7 +29,7 @@ function scr_add_key(_dungeon)
 {
 	if (_dungeon == undefined)
 	{
-		_dungeon = global.i_inv.current_quest;
+		_dungeon = global.i_inv.current_quest.quest_index;
 	}
 	
 	if (_dungeon != -1)

@@ -55,9 +55,21 @@ function scr_door_open_on_last_entity(_startx, _starty, _endx, _endy)
 
 /// @desc Checks within the given rect to see if any entities are left.
 /// If they're all dead, spawns an item at the given position.
-function scr_spawn_item_on_last_entity(_startx, _starty, _endx, _endy,
-	_item, _itemposx, _itemposy, _open_on_create)
+function scr_spawn_item_on_last_entity(_item, _itemposx, _itemposy, 
+	_quest_progress, _increment_progress, _open_on_create)
 {
+	if (global.i_inv.current_quest.progress >= _quest_progress )
+	{
+		open = true;
+		exit;
+	}
+	
+	var _startx = camera_get_view_x(view_camera[0]);
+	var _starty = camera_get_view_y(view_camera[0]);
+	var _endx = camera_get_view_width(view_camera[0]);
+	var _endy = camera_get_view_height(view_camera[0]);
+	
+	
 	var _spawn = false;
 	var _entity = collision_rectangle(_startx, _starty, _endx, _endy,
 		obj_p_mob,
@@ -74,6 +86,11 @@ function scr_spawn_item_on_last_entity(_startx, _starty, _endx, _endy,
 		with (instance_create_layer(_itemposx, _itemposy, "Instances", _item))
 		{
 			z = 180;
+		}
+		
+		if (_increment_progress)
+		{
+			global.i_inv.current_quest.IncrementProgress();
 		}
 		
 		if (_open_on_create)
