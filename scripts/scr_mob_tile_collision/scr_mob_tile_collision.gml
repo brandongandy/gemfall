@@ -58,6 +58,18 @@ function scr_mob_tile_collision()
 		}
 	}
 	
+	// now check for player collision
+	if (h_speed != 0 && !_collisionX && !_entityCollisionX)
+	{
+		var _playerX = collision_rectangle(bbox_left, bbox_top, 
+			bbox_right, bbox_bottom, obj_player, false, true);
+		if (_playerX != noone)
+		{
+			h_speed = 0;
+			_entityCollisionX = true;
+		}
+	}
+	
 	if (!_collisionX) && (!_entityCollisionX)
 	{
 		x = _newX;
@@ -112,6 +124,18 @@ function scr_mob_tile_collision()
 		var _entity_top = collision_rectangle(bbox_left + 1, bbox_top + v_speed, bbox_right - 1, bbox_bottom - 1, obj_p_entity, false, true);
 		if (_entity_top != noone) &&
 			 (_entity_top.entity_collides)
+		{
+			v_speed = 0;
+			_entityCollisionY = true;
+		}
+	}
+	
+	// now check for player collision
+	if (v_speed != 0 && !_collisionY && !_entityCollisionY)
+	{
+		var _playerY = collision_rectangle(bbox_left, bbox_top, 
+			bbox_right, bbox_bottom, obj_player, false, true);
+		if (_playerY != noone)
 		{
 			v_speed = 0;
 			_entityCollisionY = true;
