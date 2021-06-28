@@ -70,7 +70,7 @@ inventory = array_create(9);
 
 for (i = 0; i < 9; i++)
 {
-	inventory[i] = instance_create_depth(0, 0, -10000, obj_inv_item);
+	inventory[i] = instance_create_depth(-16, -16, -10000, obj_inv_item);
 	inventory[i].persistent = true;
 }
 
@@ -89,7 +89,7 @@ gem_inventory = array_create(5);
 
 for (i = 0; i < 5; i++)
 {
-	gem_inventory[i] = instance_create_depth(0, 0, -10000, obj_inv_gem);
+	gem_inventory[i] = instance_create_depth(-16, -16, -10000, obj_inv_gem);
 	gem_inventory[i].persistent = true;
 }
 
