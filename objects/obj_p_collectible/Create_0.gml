@@ -7,7 +7,7 @@ flash = 1;
 spd = 0;
 z = 16;
 grav = 0.1;
-decay_time = 420;
+decay_time = 640;
 blink = false;
 
 bounce = 0;

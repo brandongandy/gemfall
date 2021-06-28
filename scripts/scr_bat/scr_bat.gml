@@ -9,12 +9,15 @@ function scr_bat_idle()
 		if (instance_exists(obj_player)) &&
 			(point_distance(x, y, obj_player.x, obj_player.y) <= mob_aggro_radius)
 		{
+			theta = 0;
+			zooming_in = true;
+		  flight_radius = 64;
+			//var _dir = point_direction(x, y, obj_player.x, obj_player.y);
 			// player's in the circle, let's get em
-			x_to = obj_player.x + lengthdir_x(flight_radius, theta);
-			y_to = obj_player.y + lengthdir_y(flight_radius, theta);
+			x_to = obj_player.x;
+			y_to = obj_player.y;
+			state_target = MOB_STATE.CHASE;
 			state = MOB_STATE.ATTACK;
-			target = obj_player;
-			z = 16;
 		}
 	}
 }
@@ -63,12 +66,6 @@ function scr_bat_wander()
 		h_speed = lengthdir_x(_speed_this_frame, dir);
 		v_speed = lengthdir_y(_speed_this_frame, dir);
 		
-		if (h_speed != 0)
-		{
-			// face us the right dir
-			image_xscale = sign(h_speed);
-		}
-		
 		// collision check
 		scr_mob_tile_collision();
 	}
@@ -108,11 +105,9 @@ function scr_bat_fly_to_point()
 	if (scr_mob_tile_collision() ||
 		_distance_to_go <= 0)
 	{
-		center_x = obj_player.x;
-		center_y = obj_player.y;
-		flight_radius = point_distance(x, y, obj_player.x, obj_player.y);
-		theta = point_direction(x, y, obj_player.x, obj_player.y) - 180;
-		state = MOB_STATE.CHASE;
+		center_x = x_to;
+		center_y = y_to;
+		state = state_target;
 	}
 }
 
@@ -129,7 +124,7 @@ function scr_bat_chase()
 	
 	if (zooming_in)
 	{
-		flight_radius = lerp(flight_radius, flight_radius - 1, 0.5);
+		flight_radius = lerp(flight_radius, flight_radius - 1, 0.125);
 		//flight_radius--;
 		//theta_speed -= 0.1;
 		
@@ -140,32 +135,33 @@ function scr_bat_chase()
 	}
 	else
 	{
-		flight_radius = lerp(flight_radius, flight_radius + 1, 0.5);
-		//theta_speed += 0.1;
-		if (flight_radius >= 64)
-		{
-			zooming_in = true;
-		}
+		state = MOB_STATE.IDLE;
 	}
 	
-	var _distance_to_go = point_distance(x, y, center_x, center_y);
-	dir = point_direction(x, y, center_x, center_y);
-	if (_distance_to_go > mob_speed)
+	x_to = center_x + lengthdir_x(flight_radius, theta);
+	y_to = center_y + lengthdir_y(flight_radius, theta);
+	
+	var _distance_to_go = point_distance(x, y, x_to, y_to);
+	dir = point_direction(x, y, x_to, y_to);
+	if (round(_distance_to_go) > round(mob_speed))
 	{
 		h_speed = lengthdir_x(mob_speed, dir);
 		v_speed = lengthdir_y(mob_speed, dir);
 	}
 	else
 	{
-		h_speed = lengthdir_x(_distance_to_go, dir);
-		v_speed = lengthdir_y(_distance_to_go, dir);
+		state = MOB_STATE.IDLE;
 	}
 	
-	//x = center_x + lengthdir_x(flight_radius, theta);
-	//y = center_y + lengthdir_y(flight_radius, theta);
 	
-	scr_mob_tile_collision();
+	if (scr_mob_tile_collision())
+	{
+		x_to = center_x;
+		y_to = center_y;
+		state_target = MOB_STATE.IDLE;
+		state = MOB_STATE.ATTACK;
+	}
 	
-	center_x = lerp(center_x, obj_player.x, 0.025);
-	center_y = lerp(center_y, obj_player.y, 0.025);
+	//center_x = lerp(center_x, obj_player.x, 0.025);
+	//center_y = lerp(center_y, obj_player.y, 0.025);
 }

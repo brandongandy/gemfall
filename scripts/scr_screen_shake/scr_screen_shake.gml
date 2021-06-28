@@ -5,6 +5,10 @@ function scr_screen_shake(_magnitude, _frames)
 {
 	with (global.i_camera)
 	{
+		if (state == "FOLLOW")
+		{
+			exit;
+		}
 		shake_enabled = true;
 		if (_magnitude > shake_remain)
 		{

@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+is_flying = true;
+
 // sprites
 image_speed = 0;
 sprite_move = spr_bat;
@@ -11,6 +13,7 @@ sprite_attack = spr_bat;
 sprite_hurt = spr_bat;
 
 state_wait_duration = 60;
+state_target = -1;
 
 // scripts
 mob_script[MOB_STATE.IDLE] = scr_bat_idle;

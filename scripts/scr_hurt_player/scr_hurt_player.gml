@@ -9,13 +9,13 @@ function scr_hurt_player(_direction, _force, _damage)
 		{
 			with (obj_player)
 			{
-				state = scr_player_state_bonk;
 				direction = _direction - 180;
 				move_distance_remaining = _force;
 				scr_screen_shake(2, 10);
 				flash = 0.7;
 				invulnerable = 60;
 				flash_shader = sha_red_flash;
+				state = scr_player_state_bonk;
 			}
 		}
 		else

@@ -2,10 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_mob_tile_collision()
 {
-	//var _collision = false;
-
 	// Horizontal Tiles
-	// horizontal movement
 	var _newX = x + h_speed;
 	var _collisionX = false;
 	if (h_speed > 0)
@@ -59,18 +56,18 @@ function scr_mob_tile_collision()
 	}
 	
 	// now check for player collision
-	if (h_speed != 0 && !_collisionX && !_entityCollisionX)
-	{
-		var _playerX = collision_rectangle(bbox_left, bbox_top, 
-			bbox_right, bbox_bottom, obj_player, false, true);
-		if (_playerX != noone)
-		{
-			h_speed = 0;
-			_entityCollisionX = true;
-		}
-	}
+	//if (h_speed != 0 && !_collisionX && !_entityCollisionX)
+	//{
+	//	var _playerX = collision_rectangle(bbox_left, bbox_top, 
+	//		bbox_right, bbox_bottom, obj_player, false, true);
+	//	if (_playerX != noone)
+	//	{
+	//		h_speed = 0;
+	//		_entityCollisionX = true;
+	//	}
+	//}
 	
-	if (!_collisionX) && (!_entityCollisionX)
+	if (!_collisionX && !_entityCollisionX)
 	{
 		x = _newX;
 	}
@@ -131,18 +128,19 @@ function scr_mob_tile_collision()
 	}
 	
 	// now check for player collision
-	if (v_speed != 0 && !_collisionY && !_entityCollisionY)
-	{
-		var _playerY = collision_rectangle(bbox_left, bbox_top, 
-			bbox_right, bbox_bottom, obj_player, false, true);
-		if (_playerY != noone)
-		{
-			v_speed = 0;
-			_entityCollisionY = true;
-		}
-	}
+	//if (v_speed != 0 && !_collisionY && !_entityCollisionY)
+	//{
+	//	var _playerY = collision_rectangle(bbox_left, bbox_top, 
+	//		bbox_right, bbox_bottom, obj_player, false, true);
+	//	if (_playerY != noone)
+	//	{
+	//		y = y - v_speed;
+	//		v_speed = 0;
+	//		_entityCollisionY = true;
+	//	}
+	//}
 	
-	if (!_collisionY) && (!_entityCollisionY)
+	if (!_collisionY && !_entityCollisionY)
 	{
 		y = _newY;
 	}	
@@ -198,7 +196,11 @@ function scr_tile_collide_at_points_mob(_tilemap)
 				}
 				break;
 			case 5:
+				_found = true;
+				break;
 			case 6:
+				_found = !is_flying; // skip if the mob is a flyer
+				break;
 			case 7:
 			case 8:
 			case 9:
