@@ -38,7 +38,7 @@ function calc_attack(_attack_hitbox)
 						hurt_mob(id, _weapon.damage, other.id, _weapon.knockback);
 					}
 				}
-			}
+			}			
 		}
 	}
 	

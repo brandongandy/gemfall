@@ -113,7 +113,6 @@ function scr_mob_tile_collision()
 		if (_entity_top != noone) &&
 			 (_entity_top.entity_collides)
 		{
-			
 			v_speed = 0;
 			_entityCollisionY = true;
 		}

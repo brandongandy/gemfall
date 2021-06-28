@@ -148,9 +148,24 @@ function scr_bat_chase()
 		}
 	}
 	
-	x = center_x + lengthdir_x(flight_radius, theta);
-	y = center_y + lengthdir_y(flight_radius, theta);
+	var _distance_to_go = point_distance(x, y, center_x, center_y);
+	dir = point_direction(x, y, center_x, center_y);
+	if (_distance_to_go > mob_speed)
+	{
+		h_speed = lengthdir_x(mob_speed, dir);
+		v_speed = lengthdir_y(mob_speed, dir);
+	}
+	else
+	{
+		h_speed = lengthdir_x(_distance_to_go, dir);
+		v_speed = lengthdir_y(_distance_to_go, dir);
+	}
 	
-	center_x = lerp(center_x, obj_player.x, 0.2);
-	center_y = lerp(center_y, obj_player.y, 0.2);
+	//x = center_x + lengthdir_x(flight_radius, theta);
+	//y = center_y + lengthdir_y(flight_radius, theta);
+	
+	scr_mob_tile_collision();
+	
+	center_x = lerp(center_x, obj_player.x, 0.025);
+	center_y = lerp(center_y, obj_player.y, 0.025);
 }
