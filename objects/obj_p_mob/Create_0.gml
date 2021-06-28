@@ -42,3 +42,5 @@ mob_script[MOB_STATE.ATTACK] = -1;
 mob_script[MOB_STATE.HURT] = scr_mob_hurt;
 mob_script[MOB_STATE.DIE] = scr_mob_die;
 mob_script[MOB_STATE.WAIT] = scr_mob_wait;
+
+coll_steps = 0;

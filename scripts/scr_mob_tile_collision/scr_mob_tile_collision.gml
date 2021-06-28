@@ -56,16 +56,36 @@ function scr_mob_tile_collision()
 	}
 	
 	// now check for player collision
-	//if (h_speed != 0 && !_collisionX && !_entityCollisionX)
-	//{
-	//	var _playerX = collision_rectangle(bbox_left, bbox_top, 
-	//		bbox_right, bbox_bottom, obj_player, false, true);
-	//	if (_playerX != noone)
-	//	{
-	//		h_speed = 0;
-	//		_entityCollisionX = true;
-	//	}
-	//}
+	if (h_speed != 0 && !_collisionX && !_entityCollisionX)
+	{
+		var _playerX = collision_rectangle(bbox_left + h_speed, bbox_top + 1, 
+			bbox_right + h_speed, bbox_bottom - 1, obj_player, false, true);
+		if (_playerX != noone)
+		{
+			h_speed = 0;
+			_entityCollisionX = true;
+			
+			var _can_hit = false;
+			with (obj_player)
+			{
+				if (move_distance_remaining <= 0)
+				{
+					_can_hit = true;
+				}
+			}
+
+			if (state == MOB_STATE.DIE)
+			{
+				_can_hit = false;
+				entity_collides = false;
+			}
+
+			if (_can_hit)
+			{
+				scr_hurt_player(point_direction(x, y, obj_player.x, obj_player.y), mob_force_touch, mob_damage_touch);	
+			}
+		}
+	}
 	
 	if (!_collisionX && !_entityCollisionX)
 	{
@@ -128,17 +148,36 @@ function scr_mob_tile_collision()
 	}
 	
 	// now check for player collision
-	//if (v_speed != 0 && !_collisionY && !_entityCollisionY)
-	//{
-	//	var _playerY = collision_rectangle(bbox_left, bbox_top, 
-	//		bbox_right, bbox_bottom, obj_player, false, true);
-	//	if (_playerY != noone)
-	//	{
-	//		y = y - v_speed;
-	//		v_speed = 0;
-	//		_entityCollisionY = true;
-	//	}
-	//}
+	if (v_speed != 0 && !_collisionY && !_entityCollisionY)
+	{
+		var _playerY = collision_rectangle(bbox_left + 1, bbox_top + v_speed, 
+			bbox_right - 1, bbox_bottom + v_speed, obj_player, false, true);
+		if (_playerY != noone)
+		{
+			v_speed = 0;
+			_entityCollisionY = true;
+			
+			var _can_hit = false;
+			with (obj_player)
+			{
+				if (move_distance_remaining <= 0)
+				{
+					_can_hit = true;
+				}
+			}
+
+			if (state == MOB_STATE.DIE)
+			{
+				_can_hit = false;
+				entity_collides = false;
+			}
+
+			if (_can_hit)
+			{
+				scr_hurt_player(point_direction(x, y, obj_player.x, obj_player.y), mob_force_touch, mob_damage_touch);	
+			}
+		}
+	}
 	
 	if (!_collisionY && !_entityCollisionY)
 	{
