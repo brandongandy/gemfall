@@ -104,57 +104,65 @@ for (var i = 1; i <= _total_hearts; i++)
 
 #region Mana
 
-draw_sprite(spr_bar_empty_bg,
-	0,
-	mana_bar_x,
-	mana_bar_y);
+if (draw_emerald)
+{
+	draw_sprite(spr_bar_empty_bg,
+		0,
+		mana_bar_x,
+		mana_bar_y);
 	
-draw_sprite_stretched(spr_bar_mana_g,
-	0,
-	mana_bar_x,
-	mana_bar_y,
-	mana_g_percent,
-	4);
+	draw_sprite_stretched(spr_bar_mana_g,
+		0,
+		mana_bar_x,
+		mana_bar_y,
+		mana_g_percent,
+		4);
 	
-draw_sprite(spr_bar_empty,
-	0,
-	mana_bar_x,
-	mana_bar_y);
+	draw_sprite(spr_bar_empty,
+		0,
+		mana_bar_x,
+		mana_bar_y);
+}
+
+if (draw_sapphire)
+{
+	draw_sprite(spr_bar_empty_bg,
+		0,
+		mana_bar_x,
+		mana_bar_y + 8);
 	
-draw_sprite(spr_bar_empty_bg,
-	0,
-	mana_bar_x,
-	mana_bar_y + 8);
+	draw_sprite_stretched(spr_bar_mana_b,
+		0,
+		mana_bar_x,
+		mana_bar_y + 8,
+		mana_b_percent,
+		4);
 	
-draw_sprite_stretched(spr_bar_mana_b,
-	0,
-	mana_bar_x,
-	mana_bar_y + 8,
-	mana_b_percent,
-	4);
+	draw_sprite(spr_bar_empty,
+		0,
+		mana_bar_x,
+		mana_bar_y + 8);
+}
+
+if (draw_ruby)
+{
+	draw_sprite(spr_bar_empty_bg,
+		0,
+		mana_bar_x,
+		mana_bar_y + 16);
 	
-draw_sprite(spr_bar_empty,
-	0,
-	mana_bar_x,
-	mana_bar_y + 8);
+	draw_sprite_stretched(spr_bar_mana_r,
+		0,
+		mana_bar_x,
+		mana_bar_y + 16,
+		mana_r_percent,
+		4);
 	
-	
-draw_sprite(spr_bar_empty_bg,
-	0,
-	mana_bar_x,
-	mana_bar_y + 16);
-	
-draw_sprite_stretched(spr_bar_mana_r,
-	0,
-	mana_bar_x,
-	mana_bar_y + 16,
-	mana_r_percent,
-	4);
-	
-draw_sprite(spr_bar_empty,
-	0,
-	mana_bar_x,
-	mana_bar_y + 16);
+	draw_sprite(spr_bar_empty,
+		0,
+		mana_bar_x,
+		mana_bar_y + 16);
+}
 
 #endregion
 

@@ -19,22 +19,37 @@ if (global.i_inv.player_money > 0)
 	}
 }
 
-var _keys = 1;
-if (_keys > 0)
+if (global.i_inv.current_quest.is_dungeon)
 {
-	if (_keys >= 10)
+	var _keys = global.i_inv.current_quest.keys;
+	if (_keys > 0)
 	{
-		key_count = string(_keys);
-	}
-	else
-	{
-		key_count = "0" + string(_keys);
+		if (_keys >= 10)
+		{
+			key_count = string(_keys);
+		}
+		else
+		{
+			key_count = "0" + string(_keys);
+		}
 	}
 }
 
-mana_g_percent = obj_inventory.mana[MANA_TYPE.EMERALD].Percent() * 30;
-mana_r_percent = obj_inventory.mana[MANA_TYPE.RUBY].Percent() * 30;
-mana_b_percent = obj_inventory.mana[MANA_TYPE.SAPPHIRE].Percent() * 30;
+if (global.i_inv.mana[MANA_TYPE.EMERALD].can_use)
+{
+	draw_emerald = true;
+	mana_g_percent = obj_inventory.mana[MANA_TYPE.EMERALD].Percent() * 30;
+}
+if (global.i_inv.mana[MANA_TYPE.RUBY].can_use)
+{
+	draw_ruby = true;
+	mana_r_percent = obj_inventory.mana[MANA_TYPE.RUBY].Percent() * 30;	
+}
+if (global.i_inv.mana[MANA_TYPE.SAPPHIRE].can_use)
+{
+	draw_sapphire = true;
+	mana_b_percent = obj_inventory.mana[MANA_TYPE.SAPPHIRE].Percent() * 30;	
+}
 
 #endregion
 

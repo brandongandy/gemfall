@@ -1,6 +1,7 @@
 // Scrip
 function Mana() constructor
 {
+	can_use = false;
 	max_mana = 100;
 	mana = 100;
 	

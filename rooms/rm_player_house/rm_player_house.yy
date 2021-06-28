@@ -266,8 +266,8 @@
     {"spriteId":null,"colour":4278190080,"x":0,"y":0,"htiled":false,"vtiled":false,"hspeed":0.0,"vspeed":0.0,"stretch":false,"animationFPS":15.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":true,"depth":800,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMRBackgroundLayer",},
   ],
   "inheritLayers": true,
-  "creationCodeFile": "${project_dir}/rooms/rm_parent/RoomCreationCode.gml",
-  "inheritCode": true,
+  "creationCodeFile": "${project_dir}/rooms/rm_player_house/RoomCreationCode.gml",
+  "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_6478ACF3","path":"rooms/rm_player_house/rm_player_house.yy",},
     {"name":"inst_19707132","path":"rooms/rm_player_house/rm_player_house.yy",},

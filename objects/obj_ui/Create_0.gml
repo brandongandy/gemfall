@@ -56,6 +56,9 @@ for (i = 0; i < 5; i++)
 
 #region Mana HUD
 
+draw_emerald = false;
+draw_ruby = false;
+draw_sapphire = false;
 mana_bar_x = xpos + 9;
 mana_bar_y = ypos + RESOLUTION_H + 11;
 mana_g_percent = 100;
