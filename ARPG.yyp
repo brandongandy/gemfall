@@ -226,6 +226,7 @@
     {"id":{"name":"spr_glow","path":"sprites/spr_glow/spr_glow.yy",},"order":19,},
     {"id":{"name":"scr_player_state_roll","path":"scripts/scr_player_state_roll/scr_player_state_roll.yy",},"order":4,},
     {"id":{"name":"spr_gem_siren","path":"sprites/spr_gem_siren/spr_gem_siren.yy",},"order":4,},
+    {"id":{"name":"scr_daycycle","path":"scripts/scr_daycycle/scr_daycycle.yy",},"order":27,},
     {"id":{"name":"spr_mario","path":"sprites/spr_mario/spr_mario.yy",},"order":0,},
     {"id":{"name":"spr_crystal_slime_attack","path":"sprites/spr_crystal_slime_attack/spr_crystal_slime_attack.yy",},"order":2,},
     {"id":{"name":"spr_slime_die","path":"sprites/spr_slime_die/spr_slime_die.yy",},"order":2,},
