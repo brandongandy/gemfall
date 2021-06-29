@@ -100,3 +100,9 @@ gem_inventory[3].gem = gems[GEM.SKYRIDER];
 gem_inventory[4].gem = gems[GEM.TRAVELER];
 
 #endregion
+
+#region Day Cycle
+
+daycycle = new DayData();
+
+#endregion

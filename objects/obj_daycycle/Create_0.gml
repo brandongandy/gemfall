@@ -1,13 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 depth = 0;
-seconds = 0;
-minutes = 0;
-hours = 0;
+seconds = global.i_inv.daycycle.seconds;
+minutes = global.i_inv.daycycle.minutes;
+hours = global.i_inv.daycycle.hours;
 
-day = 1;
-season = 1;
-year = 1;
+day = global.i_inv.daycycle.day;
+season = global.i_inv.daycycle.season;
+year = global.i_inv.daycycle.year;
 
 // seconds per step
 time_increment = 24;
