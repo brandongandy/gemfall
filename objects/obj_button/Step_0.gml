@@ -9,7 +9,16 @@ var _hover = point_in_rectangle(
 	y + height);
 var _click = _hover && mouse_check_button_released(mb_left);
 
-hover = lerp(hover, _hover, 0.1);
+if (_hover)
+{
+	background = 3;
+}
+else
+{
+	background = 0;
+}
+
+//hover = lerp(hover, _hover, 0.1);
 //y = lerp(y, ystart - _hover * 8, 0.1);
 
 if (_click && scr >= 0)

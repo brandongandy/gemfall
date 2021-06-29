@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if (!pause_menu)
 {
-	var _space = 6;
+	var _space = 10;
 	var _centerx = RESOLUTION_W / 2;
 	var _centery = RESOLUTION_H / 2;
 	var _button_width = 56;
