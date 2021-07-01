@@ -87,9 +87,9 @@ inventory[8].item = items[ITEM.POTION_HEALTH];
 
 gem_inventory = array_create(5);
 
-for (i = 0; i < 5; i++)
+for (i = 0; i < 10; i++)
 {
-	gem_inventory[i] = instance_create_depth(-16, -16, -10000, obj_inv_gem);
+	gem_inventory[i] = instance_create_depth(-16, -16, -9999, obj_inv_gem);
 	gem_inventory[i].persistent = true;
 }
 
@@ -98,6 +98,22 @@ gem_inventory[1].gem = gems[GEM.SCREAMING];
 gem_inventory[2].gem = gems[GEM.SIREN];
 gem_inventory[3].gem = gems[GEM.SKYRIDER];
 gem_inventory[4].gem = gems[GEM.TRAVELER];
+
+gem_inventory[5].gem = gems[GEM.STRENGTH];
+gem_inventory[6].gem = gems[GEM.STAMINA];
+gem_inventory[7].gem = gems[GEM.SPELLSLINGER];
+
+gem_inventory[8].gem = gems[GEM.ARCANE_STEEL];
+if (gems[GEM.VOIDSTEEL].owned)
+{
+	gem_inventory[8].gem = gems[GEM.VOIDSTEEL];
+}
+
+gem_inventory[9].gem = gems[GEM.SPELLGUARD];
+if (gems[GEM.STONEHEART].owned)
+{
+	gem_inventory[9].gem = gems[GEM.STONEHEART];
+}
 
 #endregion
 

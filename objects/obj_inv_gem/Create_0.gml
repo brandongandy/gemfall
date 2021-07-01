@@ -8,6 +8,7 @@ base_x = 0;
 base_y = 0;
 x_offset = 0;
 y_offset = 0;
+highlight = false;
 hover = false;
 
 gem = -1;

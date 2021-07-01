@@ -5,7 +5,12 @@ if (obj_ui.game_state == "IN_GAME")
 	exit;
 }
 
-if (hover)
+if (!gem.owned)
+{
+	exit;
+}
+
+if (highlight)
 {
 	draw_sprite_ext(sprite_index,
 		image_index,
@@ -22,4 +27,9 @@ if (hover)
 if (gem.owned)
 {
 	draw_sprite(spr_gems, gem.item_index, floor(x), floor(y));
+}
+
+if (hover)
+{
+	draw_gem_infobox(gem, x - 12, y);
 }

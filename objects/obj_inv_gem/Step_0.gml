@@ -3,33 +3,50 @@ if (obj_ui.game_state == "IN_GAME")
 	exit;
 }
 
+if (!gem.owned)
+{
+	exit;
+}
+
 base_x = obj_ui.xpos;
 base_y = obj_ui.ypos;
 x = base_x + x_offset;
 y = base_y + y_offset;
 
-if (point_in_rectangle(obj_ui.mouse_pos_x, obj_ui.mouse_pos_y,
-	bbox_left, bbox_top, bbox_right, bbox_bottom))
+if (obj_ui.game_state == "IN_INV")
 {
-	if (gem.owned)
+	if (point_in_rectangle(obj_ui.mouse_pos_x, obj_ui.mouse_pos_y,
+		bbox_left, bbox_top, bbox_right, bbox_bottom))
 	{
-	  hover = true;
-	
-		if (mouse_check_button_released(mb_left))
+		if (gem.owned)
 		{
-			gem.Equip();
+			highlight = true;
+		  hover = true;
+			depth = -10001;
+	
+			if (mouse_check_button_released(mb_left))
+			{
+				gem.Equip();
+			}
+		}
+	}
+	else
+	{
+		depth = -10000;
+		hover = false;
+		if (gem.owned &&
+			  obj_inventory.equipped_gem == gem)
+		{
+			highlight = true;
+		}
+		else
+		{
+			highlight = false;
 		}
 	}
 }
 else
 {
-	if (gem.owned &&
-		  obj_inventory.equipped_gem == gem)
-	{
-		hover = true;
-	}
-	else
-	{
-		hover = false;
-	}
+	hover = false;
+	highlight = false;
 }

@@ -4,6 +4,8 @@ function Gem(_item_index) constructor
 	owned = false;
 	mana_type = -1;
 	mana_cost = 0;
+	gem_name = "";
+	description = "";
 	
 	Use = function()
 	{
@@ -26,13 +28,16 @@ function Gem(_item_index) constructor
 
 function Verdigris(_item_index) : Gem(_item_index) constructor
 {
+	gem_name = "Verdigris";
+	description = "You feel a special power emanating from this oddly-hued gem. Just holding it lets you use the magic in other gems.";
 }
 
 function Exemplar(_item_index) : Gem(_item_index) constructor
 {
 	mana_type = MANA_TYPE.EMERALD;
 	mana_cost = 1;
-	owned = true;
+	gem_name = "Exemplar";
+	description = "Generates a burst of speed and agility, allowing you to dash through your enemies.";
 	
 	Use = function()
 	{
@@ -51,19 +56,28 @@ function Strength(_item_index) : Gem(_item_index) constructor
 {
 	mana_type = MANA_TYPE.RUBY;
 	mana_cost = 1;
+	gem_name = "Strength";
+	description = "This gem fills you with strength. You can lift heavy objects and hit enemies harder.";
+
+	Equip = function() { return false; }
 }
 
 function Stamina(_item_index) : Gem(_item_index) constructor
 {
 	mana_type = MANA_TYPE.SAPPHIRE;
 	mana_cost = 1;
+	gem_name = "Stamina";
+	description = "This gem greatly enhances your stamina, allowing you to brave deep waters and fast currents.";
+	
+	Equip = function() { return false; }
 }
 
 function Screaming(_item_index) : Gem(_item_index) constructor
 {
 	mana_type = MANA_TYPE.RUBY;
 	mana_cost = 5;
-	owned = true;
+	gem_name = "Screaming";
+	description = "Compresses the air around you and sends it out in a forceful shockwave, knocking back your enemies.";
 	
 	Use = function()
 	{
@@ -78,6 +92,8 @@ function Siren(_item_index) : Gem(_item_index) constructor
 {
 	mana_type = MANA_TYPE.EMERALD;
 	mana_cost = 1;
+	gem_name = "Siren";
+	description = "Creates a vortex of air that pulls enemies and other objects toward you.";
 	
 	Use = function()
 	{
@@ -92,6 +108,8 @@ function Skyrider(_item_index) : Gem(_item_index) constructor
 {
 	mana_type = MANA_TYPE.SAPPHIRE;
 	mana_cost = 10;
+	gem_name = "Skyrider";
+	description = "Lifts you gently into the air and lets you walk through the sky.";
 	
 	Use = function()
 	{
@@ -108,6 +126,8 @@ function Traveler(_item_index) : Gem(_item_index) constructor
 {
 	mana_type = MANA_TYPE.SAPPHIRE;
 	mana_cost = 1;
+	gem_name = "Traveler";
+	description = "Opens a gateway between two points in reality, allowing you to teleport to any place within sight.";
 	
 	Use = function()
 	{
@@ -126,22 +146,42 @@ function Traveler(_item_index) : Gem(_item_index) constructor
 
 function Spellslinger(_item_index) : Gem(_item_index) constructor
 {
+	gem_name = "Spellslinger";
+	description = "With the power of this gem, your mana sources fuse, allowing you to use any mana for any other gem.";
+	
+	Equip = function() { return false; }
 }
 
 function ArcaneSteel(_item_index) : Gem(_item_index) constructor
 {
+	gem_name = "Arcane Steel";
+	description = "Empowers your attacks so they cleave through monsters more easily, dealing much greater damage than before. (Attack+)";
+
+	Equip = function() { return false; }
 }
 
 function Voidsteel(_item_index) : Gem(_item_index) constructor
 {
+	gem_name = "Voidsteel";
+	description = "With the power of this gem it feels like your weapon can cut through anything. (Attack++)";
+	
+	Equip = function() { return false; }
 }
 
 function Spellguard(_item_index) : Gem(_item_index) constructor
 {
+	gem_name = "Spellguard";
+	description = "Surrounds you in a protective aura that softens the blows of your enemies. (Defense+);";
+	
+	Equip = function() { return false; }
 }
 
 function Stoneheart(_item_index) : Gem(_item_index) constructor
 {
+	gem_name = "Stoneheart";
+	description = "You can withstand even the harshest blows now, thanks to the invisible hard shell created by this gem. (Defense++)";
+	
+	Equip = function() { return false; }
 }
 
 // Scrip

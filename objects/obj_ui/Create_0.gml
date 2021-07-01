@@ -49,6 +49,14 @@ for (i = 0; i < 5; i++)
 	obj_inventory.gem_inventory[i].y_offset = 112;
 }
 
+// Passive gems
+for (i = 5; i < 10; i++)
+{
+	obj_inventory.gem_inventory[i].base_x = xpos;
+	obj_inventory.gem_inventory[i].base_y = ypos;
+	obj_inventory.gem_inventory[i].x_offset = 32 + (24 * (i - 5));
+	obj_inventory.gem_inventory[i].y_offset = 152;
+}
 
 // RGB gems
 
