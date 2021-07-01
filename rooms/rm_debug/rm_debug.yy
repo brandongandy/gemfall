@@ -20,11 +20,6 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"inheritCode":true,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":{"name":"inst_6478ACF3","path":"rooms/rm_parent/rm_parent.yy",},"frozen":false,"ignore":false,"inheritItemSettings":false,"x":128.0,"y":120.0,"resourceVersion":"1.0","name":"inst_6478ACF3","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_debug","path":"objects/obj_debug/obj_debug.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,"resourceVersion":"1.0","name":"inst_2B440512","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_camera_snap","path":"objects/obj_camera_snap/obj_camera_snap.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":320.0,"y":24.0,"resourceVersion":"1.0","name":"inst_3F8DA263","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[
-            {"propertyId":{"name":"chest_level","path":"objects/obj_chest/obj_chest.yy",},"objectId":{"name":"obj_chest","path":"objects/obj_chest/obj_chest.yy",},"value":"[QUEST.MAINQUEST, 1]","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-            {"propertyId":{"name":"is_locked","path":"objects/obj_chest/obj_chest.yy",},"objectId":{"name":"obj_chest","path":"objects/obj_chest/obj_chest.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-            {"propertyId":{"name":"entity_activate_args","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"[obj_arrow, 1, \"aaa\", QUEST.MAINQUEST, 2]","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-          ],"isDnd":false,"objectId":{"name":"obj_chest","path":"objects/obj_chest/obj_chest.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":176.0,"y":104.0,"resourceVersion":"1.0","name":"inst_6378D1B9","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":-300,"userdefinedDepth":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"gridX":8,"gridY":8,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":null,"x":0,"y":0,"tiles":{"SerialiseWidth":0,"SerialiseHeight":0,"TileSerialiseData":[
 ],},"visible":true,"depth":-200,"userdefinedDepth":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"ColUpper","tags":[],"resourceType":"GMRTileLayer",},
@@ -327,13 +322,12 @@
     {"spriteId":null,"colour":4278190080,"x":0,"y":0,"htiled":false,"vtiled":false,"hspeed":0.0,"vspeed":0.0,"stretch":false,"animationFPS":15.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":true,"depth":500,"userdefinedDepth":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMRBackgroundLayer",},
   ],
   "inheritLayers": false,
-  "creationCodeFile": "${project_dir}/rooms/rm_parent/RoomCreationCode.gml",
-  "inheritCode": true,
+  "creationCodeFile": "${project_dir}/rooms/rm_debug/RoomCreationCode.gml",
+  "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_6478ACF3","path":"rooms/rm_debug/rm_debug.yy",},
     {"name":"inst_2B440512","path":"rooms/rm_debug/rm_debug.yy",},
     {"name":"inst_3F8DA263","path":"rooms/rm_debug/rm_debug.yy",},
-    {"name":"inst_6378D1B9","path":"rooms/rm_debug/rm_debug.yy",},
   ],
   "inheritCreationOrder": true,
   "sequenceId": null,

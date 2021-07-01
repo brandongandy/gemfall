@@ -51,6 +51,11 @@ if (global.i_inv.mana[MANA_TYPE.SAPPHIRE].can_use)
 	mana_b_percent = obj_inventory.mana[MANA_TYPE.SAPPHIRE].Percent() * 30;	
 }
 
+if (global.current_room != -1)
+{
+	location_str = global.current_room;
+}
+
 #endregion
 
 
@@ -101,6 +106,7 @@ switch (game_state)
 		hud_heart_ypos = ypos + RESOLUTION_H + 8;
 		hud_money_ypos = ypos + RESOLUTION_H + 14;
 		mana_bar_y = ypos + RESOLUTION_H + 11;
+		location_y = ypos + 100;
 		
 		break;
 	}

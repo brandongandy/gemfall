@@ -14,6 +14,9 @@ function Item(_item_index) constructor
 	mana_cost = 0;
 	item_name = "";
 	description = "";
+	ruby_imbue_text = "This gem will have no effect on the equipped item.";
+	sapphire_imbue_text = "This gem will have no effect on the equipped item.";
+	emerald_imbue_text = "This gem will have no effect on the equipped item.";
 	
 	// empty Use function as a placeholder
 	Use = function() { return false; }
@@ -72,20 +75,20 @@ function Bomb(_item_index) : Item(_item_index) constructor
 	max_ammo = 20;
 	item_name = "Bombs";
 	description = "The blast from these bombs is so powerful, it can blow open walls.";
-	
+	ruby_imbue_text = "Bombs imbued with a Ruby will have a weaker explosion, but will leave flames behind that will burn anyone that walks over them.";
+	sapphire_imbue_text = "Bombs imbued with Sapphire will freeze any creature caught in the bomb's blast radius.";
+	owned = true;
 	Use = function()
 	{
 		with (obj_player)
 		{
 			if (global.i_lifted == noone)
 			{
-				if (ammo > 0)
+				if (other.SpendAmmo(1))
 				{
 					//show_debug_message("making bomb");
 					var _bomb = instance_create_layer(x, y, "Instances", obj_bomb);
 					scr_activate_liftable(_bomb);
-			
-					ammo--;
 				}
 			}
 		}
@@ -101,6 +104,9 @@ function Bow(_item_index) : Item(_item_index) constructor
 	owned = true;
 	item_name = "Bow";
 	description = "Dispatch your enemies from afar, as long as you have the arrows to shoot.";
+	ruby_imbue_text = "Arrows imbued with a Ruby will set monsters and other objects on fire when struck.";
+	sapphire_imbue_text = "Arrows imbued with Sapphire will temporarily freeze an enemy when struck.";
+	emerald_imbue_text = "The power of the Emerald will create a secondary arrow out of the first, shooting two arrows at once.";
 	
 	Use = function()
 	{
@@ -119,6 +125,10 @@ function Focus(_item_index) : Item(_item_index) constructor
 	uses_ammo = true;
 	item_name = "Focus";
 	description = "When imbued with power from a mana gem, the focus lets you channel that mana's purest essence.";
+	ruby_imbue_text = "The Ruby will ignite the space before you and set the ground on fire.";
+	sapphire_imbue_text = "The Sapphire will freeze the space before you. Any creature standing there will also be frozen.";
+	emerald_imbue_text = "The Emerald will summon a large block of dirt and vines before you. This block can be pushed and pulled.";
+	owned = true;
 }
 
 function PotionEmpty(_item_index) : Item(_item_index) constructor

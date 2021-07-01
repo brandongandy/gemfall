@@ -59,6 +59,13 @@ for (i = 5; i < 10; i++)
 }
 
 // RGB gems
+for (i = 0; i < 3; i++)
+{
+	obj_inventory.mana_inventory[i].base_x = xpos;
+	obj_inventory.mana_inventory[i].base_y = ypos;
+	obj_inventory.mana_inventory[i].x_offset = 124;
+	obj_inventory.mana_inventory[i].y_offset = 24 + (24 * i);
+}
 
 #endregion
 
@@ -79,6 +86,14 @@ mana_b_percent = 100;
 
 money_text = "000";
 key_count = "00";
+
+#endregion
+
+#region Info
+
+location_x = xpos + 158;
+location_y = ypos + 100;
+location_str = "";
 
 #endregion
 
