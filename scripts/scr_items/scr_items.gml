@@ -12,6 +12,8 @@ function Item(_item_index) constructor
 	owned = false;
 	mana_type = -1;
 	mana_cost = 0;
+	item_name = "";
+	description = "";
 	
 	// empty Use function as a placeholder
 	Use = function() { return false; }
@@ -68,6 +70,8 @@ function Bomb(_item_index) : Item(_item_index) constructor
 	knockback = 32;
 	uses_ammo = true;
 	max_ammo = 20;
+	item_name = "Bombs";
+	description = "The blast from these bombs is so powerful, it can blow open walls.";
 	
 	Use = function()
 	{
@@ -95,6 +99,8 @@ function Bow(_item_index) : Item(_item_index) constructor
 	ammo = 5;
 	max_ammo = 20;
 	owned = true;
+	item_name = "Bow";
+	description = "Dispatch your enemies from afar, as long as you have the arrows to shoot.";
 	
 	Use = function()
 	{
@@ -111,6 +117,8 @@ function Focus(_item_index) : Item(_item_index) constructor
 	// Its ammo is a Mana type, and its actions are based on the
 	// "Equipped" ammo.
 	uses_ammo = true;
+	item_name = "Focus";
+	description = "When imbued with power from a mana gem, the focus lets you channel that mana's purest essence.";
 }
 
 function PotionEmpty(_item_index) : Item(_item_index) constructor
@@ -121,24 +129,34 @@ function PotionEmpty(_item_index) : Item(_item_index) constructor
 function PotionHealth(_item_index) : Item(_item_index) constructor
 {
 	owned = true;
+	item_name = "Health Potion";
+	description = "If you're hurt, drink this. It will help.";
 }
 
 function PotionAntivenom(_item_index) : Item(_item_index) constructor
 {
 	owned = true;
+	item_name = "Antivenom Potion";
+	description = "Cures any kind of poison that might be ailing you.";
 }
 
 function PotionSpeed(_item_index) : Item(_item_index) constructor
 {
 	owned = true;
+	item_name = "Speed Potion";
+	description = "If you've got to go fast, drink this potion. Your enemies will never be able to keep up.";
 }
 
 function PotionSight(_item_index) : Item(_item_index) constructor
 {
 	owned = true;
+	item_name = "Sight Potion";
+	description = "Grants you special vision, letting you see through the darkest night.";
 }
 
 function PotionCharge(_item_index) : Item(_item_index) constructor
 {
 	owned = true;
+	item_name = "Charge Potion";
+	description = "A special blend that sends mana coursing through your body, recharging your mana gems.";
 }
