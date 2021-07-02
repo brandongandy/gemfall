@@ -1,6 +1,6 @@
 function scr_player_collision()
 {
-	if (state = scr_player_state_float || state = scr_player_state_bonk)
+	if (state = scr_player_state_float || invulnerable > 0)
 	{
 		return scr_check_player_height_collision(height_map, false);
 	}

@@ -33,7 +33,7 @@ function Verdigris(_item_index) : Gem(_item_index) constructor
 }
 
 function Exemplar(_item_index) : Gem(_item_index) constructor
-{owned = true;
+{
 	mana_type = MANA_TYPE.EMERALD;
 	mana_cost = 1;
 	gem_name = "Exemplar";
