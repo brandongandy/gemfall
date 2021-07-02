@@ -56,7 +56,12 @@ items[ITEM.POTION_ANTIVENOM] = new PotionAntivenom(ITEM.POTION_ANTIVENOM);
 items[ITEM.POTION_SPEED] = new PotionSpeed(ITEM.POTION_SPEED);
 items[ITEM.POTION_SIGHT] = new PotionSight(ITEM.POTION_SIGHT);
 items[ITEM.POTION_CHARGE] = new PotionCharge(ITEM.POTION_CHARGE);
+
+// non-inventory items - things you might own, but don't necessarily
+// "use"
 items[ITEM.SWORD] = new Sword(ITEM.SWORD);
+items[ITEM.SHIELD] = new Shield(ITEM.SHIELD);
+items[ITEM.HEART_CONTAINER] = new HeartContainer(ITEM.HEART_CONTAINER);
 
 #endregion
 
@@ -100,6 +105,19 @@ inventory[5].item = new PotionHealth(ITEM.POTION_HEALTH);
 inventory[6].item = items[ITEM.NONE];
 inventory[7].item = items[ITEM.NONE];
 inventory[8].item = items[ITEM.POTION_HEALTH];
+
+// equipment
+equipment = array_create(3);
+for (i = 0; i < 3; i++)
+{
+	equipment[i] = instance_create_depth(-16, -16, -10000, obj_inv_item);
+	equipment[i].persistent = true;
+}
+equipment[0].item = items[ITEM.SWORD];
+equipment[1].item = items[ITEM.NONE];
+equipment[2].item = items[ITEM.HEART_CONTAINER];
+
+// dungeon inv
 
 gem_inventory = array_create(5);
 

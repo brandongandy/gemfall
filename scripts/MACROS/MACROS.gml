@@ -23,6 +23,8 @@ enum ITEM
 	POTION_SIGHT,
 	POTION_CHARGE,
 	SWORD,
+	SHIELD,
+	HEART_CONTAINER,
 	TOTAL // not used as an item, but used for counting enum size
 }
 

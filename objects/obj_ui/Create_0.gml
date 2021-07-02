@@ -26,6 +26,8 @@ hud_heart_ypos = ypos + RESOLUTION_H + 8;
 item_rows = 3;
 item_columns = 3;
 
+deactivated = false;
+
 #region Item UI Handlers
 
 // Main inventory
@@ -65,6 +67,15 @@ for (i = 0; i < 3; i++)
 	obj_inventory.mana_inventory[i].base_y = ypos;
 	obj_inventory.mana_inventory[i].x_offset = 124;
 	obj_inventory.mana_inventory[i].y_offset = 24 + (24 * i);
+}
+
+// Equipment
+for (i = 0; i < 3; i++)
+{
+	obj_inventory.equipment[i].base_x = xpos;
+	obj_inventory.equipment[i].base_y = ypos;
+	obj_inventory.equipment[i].x_offset = 172 + (24 * (i));
+	obj_inventory.equipment[i].y_offset = 152;
 }
 
 #endregion

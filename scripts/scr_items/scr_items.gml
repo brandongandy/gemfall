@@ -64,7 +64,39 @@ function Sword(_item_index) : Item(_item_index) constructor
 {
 	damage = 2;
 	knockback = 32;
+	item_name = "Sword";
+	description = "Your brother's sword. You don't know why he left it behind, and you don't know what you would do without it.";
 	owned = true;
+	
+	Equip = function()
+	{
+		return false;
+	}
+}
+
+function Shield(_item_index) : Item(_item_index) constructor
+{
+	item_name = "Shield";
+	description = "Lorem ipsum dolor sit amet.";
+	
+	
+	Equip = function()
+	{
+		return false;
+	}
+}
+
+function HeartContainer(_item_index) : Item(_item_index) constructor
+{
+	owned = true;
+	item_name = "Heart Container";
+	description = "You don't know how this works, but filling this container with certain heart-shaped gems makes you feel more powerful.";
+	container_progress = 0;
+	
+	Equip = function()
+	{
+		return false;
+	}
 }
 
 function Bomb(_item_index) : Item(_item_index) constructor

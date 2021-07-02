@@ -63,8 +63,20 @@ switch (game_state)
 {
 	case "IN_GAME":
 	{
+		if (!deactivated)
+		{
+			instance_deactivate_object(obj_inv_gem);
+			instance_deactivate_object(obj_inv_mana);
+			instance_deactivate_object(obj_inv_item);
+			deactivated = true;
+		}
+		
 		if (obj_input.start)
 		{
+			instance_activate_object(obj_inv_gem);
+			instance_activate_object(obj_inv_mana);
+			instance_activate_object(obj_inv_item);
+			
 			scr_toggle_pause_game(undefined);
 			game_state = "INV_TRANSITION";
 		}
@@ -77,6 +89,7 @@ switch (game_state)
 	}
 	case "INV_TRANSITION":
 	{
+		deactivated = false;
 		menu_speed = 8;
 		
 		if (!inv_open)
