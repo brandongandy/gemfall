@@ -13,6 +13,22 @@ base_y = obj_ui.ypos;
 x = base_x + x_offset;
 y = base_y + y_offset;
 
+if (gem.mana < 100)
+{
+	if (gem.mana < 10)
+	{
+		mana_count_str = "x 0" + string(gem.mana);
+	}
+	else
+	{
+		mana_count_str = "x " + string(gem.mana);
+	}
+}
+else
+{
+	mana_count_str = "x" + string(gem.mana);
+}
+
 if (obj_ui.game_state == "IN_INV")
 {
 	if (point_in_rectangle(obj_ui.mouse_pos_x, obj_ui.mouse_pos_y,

@@ -27,6 +27,11 @@ if (highlight)
 if (gem.can_use)
 {
 	draw_sprite(spr_mana_gems, gem.item_index, floor(x), floor(y));
+	draw_sprite(spr_mana_drops, gem.item_index, floor(x) + 48, floor(y) - 4);
+	
+	draw_set_color($e3f6fd);
+	draw_text(floor(x) + 36, floor(y) - 2, "x100");
+	draw_set_color(c_white);
 }
 
 if (hover)

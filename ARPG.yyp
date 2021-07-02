@@ -157,6 +157,7 @@
     {"id":{"name":"obj_trigger","path":"objects/obj_trigger/obj_trigger.yy",},"order":0,},
     {"id":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},"order":2,},
     {"id":{"name":"spr_gem_skyrider","path":"sprites/spr_gem_skyrider/spr_gem_skyrider.yy",},"order":1,},
+    {"id":{"name":"spr_mana_drops","path":"sprites/spr_mana_drops/spr_mana_drops.yy",},"order":7,},
     {"id":{"name":"spr_crystal_slime_minion","path":"sprites/spr_crystal_slime_minion/spr_crystal_slime_minion.yy",},"order":1,},
     {"id":{"name":"sha_red_flash","path":"shaders/sha_red_flash/sha_red_flash.yy",},"order":1,},
     {"id":{"name":"scr_button","path":"scripts/scr_button/scr_button.yy",},"order":0,},

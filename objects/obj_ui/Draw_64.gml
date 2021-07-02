@@ -40,12 +40,14 @@ else
 	
 	if (game_state != "IN_GAME")
 	{
+		draw_set_color($e3f6fd);
 		draw_text_ext(
 			location_x, 
 			location_y, 
 			location_str,
 			10,
 			81);
+		draw_set_color(c_white);
 	}
 	
 	#endregion
