@@ -78,7 +78,7 @@ else
 			draw_sprite(
 				spr_gems,
 				obj_inventory.equipped_gem.item_index,
-				hud_equipped_xpos + 28,
+				hud_equipped_xpos + 24,
 				hud_equipped_ypos);
 		}
 	}
@@ -145,19 +145,19 @@ else
 		draw_sprite(spr_bar_empty_bg,
 			0,
 			mana_bar_x,
-			mana_bar_y + 8);
+			mana_bar_y + 6);
 	
 		draw_sprite_stretched(spr_bar_mana_b,
 			0,
 			mana_bar_x,
-			mana_bar_y + 8,
+			mana_bar_y + 6,
 			mana_b_percent,
 			4);
 	
 		draw_sprite(spr_bar_empty,
 			0,
 			mana_bar_x,
-			mana_bar_y + 8);
+			mana_bar_y + 6);
 	}
 
 	if (draw_ruby)
@@ -165,19 +165,19 @@ else
 		draw_sprite(spr_bar_empty_bg,
 			0,
 			mana_bar_x,
-			mana_bar_y + 16);
+			mana_bar_y + 12);
 	
 		draw_sprite_stretched(spr_bar_mana_r,
 			0,
 			mana_bar_x,
-			mana_bar_y + 16,
+			mana_bar_y + 12,
 			mana_r_percent,
 			4);
 	
 		draw_sprite(spr_bar_empty,
 			0,
 			mana_bar_x,
-			mana_bar_y + 16);
+			mana_bar_y + 12);
 	}
 
 	#endregion

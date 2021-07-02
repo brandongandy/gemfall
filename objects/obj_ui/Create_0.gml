@@ -12,13 +12,13 @@ view_height_half = camera_get_view_height(view_camera[0]) * 0.5;
 mouse_pos_x = 0;
 mouse_pos_y = 0;
 
-hud_money_xpos = xpos + 107;
-hud_money_ypos = ypos + RESOLUTION_H + 14;
-hud_key_xpos = xpos + 138;
-hud_key_ypos = ypos + RESOLUTION_H + 14;
+hud_money_xpos = xpos + 95;
+hud_money_ypos = ypos + RESOLUTION_H + 6;
+hud_key_xpos = xpos + 146;
+hud_key_ypos = ypos + RESOLUTION_H + 6;
 
 hud_equipped_xpos = xpos + 56;
-hud_equipped_ypos = ypos + RESOLUTION_H + 20; 
+hud_equipped_ypos = ypos + RESOLUTION_H + 11; 
 
 hud_heart_xpos =  xpos + 160;
 hud_heart_ypos = ypos + RESOLUTION_H + 8;
@@ -86,7 +86,7 @@ draw_emerald = false;
 draw_ruby = false;
 draw_sapphire = false;
 mana_bar_x = xpos + 9;
-mana_bar_y = ypos + RESOLUTION_H + 11;
+mana_bar_y = ypos + RESOLUTION_H + 9;
 mana_g_percent = 100;
 mana_r_percent = 100;
 mana_b_percent = 100;
