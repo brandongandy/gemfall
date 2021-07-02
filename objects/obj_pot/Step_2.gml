@@ -4,6 +4,15 @@
 // Inherit the parent event
 event_inherited();
 
+if (global.i_lifted != noone && global.i_lifted = self)
+{
+	if (show_shadow)
+	{
+		image_index++;
+		show_shadow = false;
+	}
+}
+
 if (thrown)
 {
 	var _hit_by_attack = ds_list_create();

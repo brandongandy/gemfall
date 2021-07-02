@@ -1,0 +1,9 @@
+/// @description Pick colors
+// You can write your code in this editor
+
+// Inherit the parent event
+event_inherited();
+
+image_speed = 0;
+image_index = choose(0, 2, 4, 6);
+show_shadow = true;

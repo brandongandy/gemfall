@@ -53,6 +53,11 @@ switch (room)
 		}
 	}
 	break;
+	case rm_dungeon_01_02:
+	{
+		obj_daycycle.force_draw = true;
+	}
+	break;
 	default:
 		break;
 }
