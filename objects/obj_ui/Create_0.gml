@@ -4,23 +4,24 @@ depth = -9999;
 game_state = "IN_GAME";
 inv_open = false;
 pause_menu = false;
-xpos = 0;
+xpos = 96;
 ypos = -RESOLUTION_H;
+xoffset = 0;
 view_width_half = camera_get_view_width(view_camera[0]) * 0.5;
 view_height_half = camera_get_view_height(view_camera[0]) * 0.5;
 
 mouse_pos_x = 0;
 mouse_pos_y = 0;
 
-hud_money_xpos = xpos + 95;
+hud_money_xpos = xoffset + 95;
 hud_money_ypos = ypos + RESOLUTION_H + 6;
-hud_key_xpos = xpos + 146;
+hud_key_xpos = xoffset + 122;
 hud_key_ypos = ypos + RESOLUTION_H + 6;
 
-hud_equipped_xpos = xpos + 56;
+hud_equipped_xpos = xoffset + 56;
 hud_equipped_ypos = ypos + RESOLUTION_H + 11; 
 
-hud_heart_xpos =  xpos + 160;
+hud_heart_xpos =  xoffset + 352;
 hud_heart_ypos = ypos + RESOLUTION_H + 8;
 
 item_rows = 3;
@@ -85,7 +86,7 @@ for (i = 0; i < 3; i++)
 draw_emerald = false;
 draw_ruby = false;
 draw_sapphire = false;
-mana_bar_x = xpos + 9;
+mana_bar_x = xoffset + 9;
 mana_bar_y = ypos + RESOLUTION_H + 9;
 mana_g_percent = 100;
 mana_r_percent = 100;

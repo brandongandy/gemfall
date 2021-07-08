@@ -3,8 +3,8 @@
 #macro COL_TILE 8
 #macro CARDINAL_DIR round(direction / 90)
 
-#macro RESOLUTION_W 256
-#macro RESOLUTION_H 224
+#macro RESOLUTION_W 448
+#macro RESOLUTION_H 240
 
 #macro TRANSITION_SPEED 0.04
 #macro TRANSITION_OUT 0

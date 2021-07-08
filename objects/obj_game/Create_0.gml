@@ -33,4 +33,4 @@ global.i_camera = instance_create_layer(0, 0, layer, obj_camera);
 // other
 global.previous_room = -1;
 
-room_goto(rm_dungeon_01_03);
+room_goto(rm_village_outskirts_upper);

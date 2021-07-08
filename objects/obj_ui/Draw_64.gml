@@ -26,7 +26,7 @@ else
 {
 	#region HUD
 
-	draw_sprite(spr_inv, 0, xpos, ypos);
+	draw_sprite(spr_inv, 0, xoffset, ypos);
 
 	#region Keys and Money
 
