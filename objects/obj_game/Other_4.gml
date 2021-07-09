@@ -49,11 +49,11 @@ switch (room)
 	{
 		if (!global.i_inv.items[ITEM.SWORD].owned)
 		{
-			instance_create_layer(392, 584, "Instances", obj_sword);
+			instance_create_layer(224, 336, "Instances", obj_sword);
 		}
 	}
 	break;
-	case rm_dungeon_01_02:
+	case rm_dungeon_01_02_ar:
 	{
 		obj_daycycle.force_draw = true;
 	}

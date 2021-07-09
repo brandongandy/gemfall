@@ -123,7 +123,7 @@
   "creationCodeFile": "${project_dir}/rooms/rm_start_cave_secret_01/RoomCreationCode.gml",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_6478ACF3","path":"rooms/rm_start_cave_secret_01/rm_start_cave_secret_01.yy",},
+    {"name":"inst_6478ACF3","path":"rooms/rm_start_cave_secret_01_ar/rm_start_cave_secret_01_ar.yy",},
   ],
   "inheritCreationOrder": true,
   "sequenceId": null,
@@ -147,11 +147,11 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "dungeon_01",
-    "path": "folders/Rooms/dungeon_01.yy",
+    "name": "dungeon_01_archive",
+    "path": "folders/Rooms/dungeon_01_archive.yy",
   },
   "resourceVersion": "1.0",
-  "name": "rm_start_cave_secret_01",
+  "name": "rm_start_cave_secret_01_ar",
   "tags": [],
   "resourceType": "GMRoom",
 }

@@ -20,7 +20,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":{"name":"inst_6478ACF3","path":"rooms/rm_parent/rm_parent.yy",},"frozen":false,"ignore":false,"inheritItemSettings":false,"x":128.0,"y":208.0,"resourceVersion":"1.0","name":"inst_6478ACF3","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_camera_snap","path":"objects/obj_camera_snap/obj_camera_snap.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":24.0,"y":8.0,"resourceVersion":"1.0","name":"inst_235046A","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
-            {"propertyId":{"name":"target_room","path":"objects/obj_room_exit/obj_room_exit.yy",},"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"value":"rm_start_cave_01","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"target_room","path":"objects/obj_room_exit/obj_room_exit.yy",},"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"value":"rm_start_cave_01_ar","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"target_dir","path":"objects/obj_room_exit/obj_room_exit.yy",},"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"target_y","path":"objects/obj_room_exit/obj_room_exit.yy",},"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"value":"120","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"target_x","path":"objects/obj_room_exit/obj_room_exit.yy",},"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"value":"24","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
@@ -28,7 +28,7 @@
         {"properties":[
             {"propertyId":{"name":"target_x","path":"objects/obj_room_exit/obj_room_exit.yy",},"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"value":"128","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"target_y","path":"objects/obj_room_exit/obj_room_exit.yy",},"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"value":"32","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-            {"propertyId":{"name":"target_room","path":"objects/obj_room_exit/obj_room_exit.yy",},"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"value":"rm_start_cave_04","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"target_room","path":"objects/obj_room_exit/obj_room_exit.yy",},"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"value":"rm_start_cave_04_ar","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":120.0,"y":216.0,"resourceVersion":"1.0","name":"inst_2D7336B3","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"entity_activate_args","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"[-1]","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
@@ -168,13 +168,13 @@
   "creationCodeFile": "${project_dir}/rooms/rm_start_cave_02/RoomCreationCode.gml",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_6478ACF3","path":"rooms/rm_start_cave_02/rm_start_cave_02.yy",},
-    {"name":"inst_235046A","path":"rooms/rm_start_cave_02/rm_start_cave_02.yy",},
-    {"name":"inst_5049F687","path":"rooms/rm_start_cave_02/rm_start_cave_02.yy",},
-    {"name":"inst_2D7336B3","path":"rooms/rm_start_cave_02/rm_start_cave_02.yy",},
-    {"name":"inst_45668F4C","path":"rooms/rm_start_cave_02/rm_start_cave_02.yy",},
-    {"name":"inst_754F53EB","path":"rooms/rm_start_cave_02/rm_start_cave_02.yy",},
-    {"name":"inst_6498782C","path":"rooms/rm_start_cave_02/rm_start_cave_02.yy",},
+    {"name":"inst_6478ACF3","path":"rooms/rm_start_cave_02_ar/rm_start_cave_02_ar.yy",},
+    {"name":"inst_235046A","path":"rooms/rm_start_cave_02_ar/rm_start_cave_02_ar.yy",},
+    {"name":"inst_5049F687","path":"rooms/rm_start_cave_02_ar/rm_start_cave_02_ar.yy",},
+    {"name":"inst_2D7336B3","path":"rooms/rm_start_cave_02_ar/rm_start_cave_02_ar.yy",},
+    {"name":"inst_45668F4C","path":"rooms/rm_start_cave_02_ar/rm_start_cave_02_ar.yy",},
+    {"name":"inst_754F53EB","path":"rooms/rm_start_cave_02_ar/rm_start_cave_02_ar.yy",},
+    {"name":"inst_6498782C","path":"rooms/rm_start_cave_02_ar/rm_start_cave_02_ar.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -198,11 +198,11 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "dungeon_01",
-    "path": "folders/Rooms/dungeon_01.yy",
+    "name": "dungeon_01_archive",
+    "path": "folders/Rooms/dungeon_01_archive.yy",
   },
   "resourceVersion": "1.0",
-  "name": "rm_start_cave_02",
+  "name": "rm_start_cave_02_ar",
   "tags": [],
   "resourceType": "GMRoom",
 }
