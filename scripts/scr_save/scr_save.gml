@@ -124,6 +124,10 @@ function load_game(_save_data)
 		{
 			equipped = items[_save_data.equipped.item_index];
 		}
+		else
+		{
+			equipped = -1;
+		}
 		
 		for (i = 0; i < array_length(gems); i++)
 		{
@@ -133,13 +137,20 @@ function load_game(_save_data)
 		{
 			equipped_gem = gems[_save_data.equipped_gem.item_index];
 		}
+		else
+		{
+			equipped_gem = -1;
+		}
 		
 		for (i = 0; i < array_length(inventory); i++)
 		{
 			inventory[i] = _save_data.inventory[i];
 		}
-		//inventory = _save_data.inventory;
-		gem_inventory = _save_data.gem_inventory;
+		
+		for (i = 0; i < array_length(gem_inventory); i++)
+		{
+			gem_inventory[i] = _save_data.gem_inventory[i];
+		}
 	}
 	
 	with (obj_daycycle)
@@ -152,6 +163,7 @@ function load_game(_save_data)
 		year = _save_data.daycycle.year;
 	}
 	
+	//obj_ui.draw_gui = true;
+	//scr_toggle_pause_game(false);
 	room_goto(rm_player_house);
-	obj_ui.draw_gui = true;
 }

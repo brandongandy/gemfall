@@ -33,6 +33,17 @@ if (!pause_menu)
 	_yy += (_button_height + _space);
 	
 	create_button(
+		_xx,
+		_yy,
+		_button_width,
+		_button_height,
+		"Main Menu",
+		btn_main_menu,
+		undefined);
+		
+	_yy += (_button_height + _space);
+	
+	create_button(
 		_xx, 
 		_yy, 
 		_button_width, 

@@ -22,7 +22,6 @@ function create_button(_x, _y, _width, _height, _text, _script, _script_args)
 function btn_resume()
 {
 	obj_input.pause = true;
-	show_debug_message("click click");
 }
 
 function btn_close_game()
@@ -35,10 +34,16 @@ function btn_save_game()
 	save_game();
 }
 
+function btn_main_menu()
+{
+	room_goto(rm_start_screen);
+}
+
 function btn_new_game()
 {
+	//obj_ui.draw_gui = true;
+	//scr_toggle_pause_game(false);
 	room_goto(rm_player_house);
-	obj_ui.draw_gui = true;
 }
 
 #region Start Screen
