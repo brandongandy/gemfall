@@ -6,7 +6,8 @@ create_button(
 	button_width, 
 	button_height, 
 	"Continue", 
-	btn_close_game);
+	btn_close_game,
+	undefined);
 		
 yy += (button_height + space);
 
@@ -14,7 +15,8 @@ create_button(xx, yy,
 	button_width,
 	button_height,
 	"Load Game",
-	btn_load_game);
+	btn_load_game,
+	undefined);
 		
 yy += (button_height + space);
 
@@ -22,7 +24,8 @@ create_button(xx, yy,
 	button_width,
 	button_height,
 	"New Game",
-	btn_new_game);
+	btn_new_game,
+	undefined);
 		
 yy += (button_height + space);
 
@@ -32,4 +35,5 @@ create_button(
 	button_width, 
 	button_height, 
 	"Exit Game", 
-	btn_close_game);
+	btn_close_game,
+	undefined);

@@ -38,7 +38,7 @@ function Exemplar(_item_index) : Gem(_item_index) constructor
 	mana_cost = 1;
 	gem_name = "Exemplar";
 	description = "Generates a burst of speed and agility, allowing you to dash through your enemies.";
-	
+	owned = true;
 	Use = function()
 	{
 		if (obj_inventory.mana[mana_type].Use(1))

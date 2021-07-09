@@ -16,7 +16,8 @@ if (!pause_menu)
 		_button_width, 
 		_button_height, 
 		"Resume", 
-		btn_resume);
+		btn_resume,
+		undefined);
 		
 	_yy += (_button_height + _space);
 		
@@ -26,7 +27,8 @@ if (!pause_menu)
 		_button_width, 
 		_button_height, 
 		"Save Game",
-		btn_save_game);
+		btn_save_game,
+		undefined);
 		
 	_yy += (_button_height + _space);
 	
@@ -36,6 +38,7 @@ if (!pause_menu)
 		_button_width, 
 		_button_height, 
 		"Exit Game",
-		btn_close_game);
+		btn_close_game,
+		undefined);
 	pause_menu = true;
 }

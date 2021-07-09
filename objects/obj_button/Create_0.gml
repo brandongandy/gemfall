@@ -11,3 +11,4 @@ background = 0;
 hover = 0;
 
 scr = -1;
+args = [-1];

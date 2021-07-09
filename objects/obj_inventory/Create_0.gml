@@ -1,9 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-save_id = 0;
+save_id = 2;
 
 // player health modifiers
-player_heart_pieces = 0;
+player_heart_pieces = 4;
 
 // player health - num hearts * 2
 player_health_max = 6 + (2 * player_heart_pieces);

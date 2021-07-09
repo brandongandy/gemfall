@@ -23,5 +23,5 @@ else
 
 if (_click && scr >= 0)
 {
-	script_execute(scr);
+	scr_execute_array(scr, args);
 }

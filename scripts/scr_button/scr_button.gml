@@ -1,6 +1,10 @@
 // Scrip
-function create_button(_x, _y, _width, _height, _text, _script)
+function create_button(_x, _y, _width, _height, _text, _script, _script_args)
 {
+	if (_script_args == undefined)
+	{
+		_script_args = [-1];
+	}
 	var _button = instance_create_layer(_x, _y, "Instances", obj_button);
 	
 	with (_button)
@@ -9,6 +13,7 @@ function create_button(_x, _y, _width, _height, _text, _script)
 		height = _height;
 		text = _text;
 		scr = _script;
+		args = _script_args;
 	}
 	
 	return _button;

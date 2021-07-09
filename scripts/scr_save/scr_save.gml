@@ -30,6 +30,7 @@ function save_game()
 			gems : gems,
 			inventory : inventory,
 			gem_inventory : gem_inventory,
+			mana_inventory : mana_inventory,
 			daycycle: _daycycle
 		}
 		array_push(_save_data, _save);
@@ -60,4 +61,97 @@ function load_game_data(_save_id)
 	{
 		return -1;
 	}
+}
+
+function load_game(_save_data)
+{
+	//var _sav = array_pop(_save_data);
+	with (obj_inventory)
+	{
+		save_id = _save_data.save_id;
+		player_heart_pieces = _save_data.player_heart_pieces;
+		player_health_max = 6 + (2 * player_heart_pieces);
+		player_health = _save_data.player_health;
+		
+		// iterating through the array should be sufficient for this
+		// since the values of the structs are initialized originally based on
+		// enum index, and this index matches the index inside the array
+		// unless someone manually changes the save file......
+		for (i = 0; i < array_length(mana); i++)
+		{
+			mana[i].can_use = _save_data.mana[i].can_use;
+			mana[i].mana = _save_data.mana[i].mana;
+		}
+		
+		//while (array_length(_save_data.mana) > 0)
+		//{
+		//	var _mana = array_pop(_save_data.mana);
+		//	switch (_mana.mana_type)
+		//	{
+		//		case MANA_TYPE.RUBY:
+		//			mana[MANA_TYPE.RUBY].can_use = _mana.can_use;
+		//			mana[MANA_TYPE.RUBY].mana = _mana.mana;
+		//			break;
+		//		case MANA_TYPE.SAPPHIRE:
+		//			mana[MANA_TYPE.SAPPHIRE].can_use = _mana.can_use;
+		//			mana[MANA_TYPE.SAPPHIRE].mana = _mana.mana;
+		//			break;
+		//		case MANA_TYPE.EMERALD:
+		//			mana[MANA_TYPE.EMERALD].can_use = _mana.can_use;
+		//			mana[MANA_TYPE.EMERALD].mana = _mana.mana;
+		//			break;
+		//		default:
+		//			break;
+		//	}
+		//}
+		//mana = _save_data.mana;
+		player_money = _save_data.player_money;
+		
+		for (i = 0; i < array_length(quests); i++)
+		{
+			quests[i].keys = _save_data.quests[i].keys;
+			quests[i].progress = _save_data.quests[i].progress;
+		}
+		current_quest = _save_data.current_quest;
+		
+		for (i = 0; i < array_length(items); i++)
+		{
+			items[i].ammo = _save_data.items[i].ammo;
+			items[i].max_ammo = _save_data.items[i].max_ammo;
+			items[i].owned = _save_data.items[i].owned;
+		}
+		if (_save_data.equipped != -1)
+		{
+			equipped = items[_save_data.equipped.item_index];
+		}
+		
+		for (i = 0; i < array_length(gems); i++)
+		{
+			gems[i].owned = _save_data.gems[i].owned;
+		}
+		if (_save_data.equipped_gem != -1)
+		{
+			equipped_gem = gems[_save_data.equipped_gem.item_index];
+		}
+		
+		for (i = 0; i < array_length(inventory); i++)
+		{
+			inventory[i] = _save_data.inventory[i];
+		}
+		//inventory = _save_data.inventory;
+		gem_inventory = _save_data.gem_inventory;
+	}
+	
+	with (obj_daycycle)
+	{
+		seconds = _save_data.daycycle.seconds;
+		minutes = _save_data.daycycle.minutes;
+		hours = _save_data.daycycle.hours;
+		day = _save_data.daycycle.day;
+		season = _save_data.daycycle.season;
+		year = _save_data.daycycle.year;
+	}
+	
+	room_goto(rm_player_house);
+	obj_ui.draw_gui = true;
 }
