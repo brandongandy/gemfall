@@ -1,5 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
+if (!draw_gui)
+{
+	mouse_pos_x = device_mouse_x_to_gui(0);
+	mouse_pos_y = device_mouse_y_to_gui(0);
+	exit;
+}
+
 #region Step Calculation
 // must be performed each step - for regular draw GUI stuff
 
@@ -19,7 +26,7 @@ if (global.i_inv.player_money > 0)
 	}
 }
 
-if (global.i_inv.current_quest.is_dungeon)
+if (global.i_inv.current_quest != -1 && global.i_inv.current_quest.is_dungeon)
 {
 	var _keys = global.i_inv.current_quest.keys;
 	if (_keys > 0)

@@ -10,15 +10,6 @@ obj_daycycle.force_draw = false;
 
 switch (room)
 {
-	case rm_start_screen:
-	{
-		create_button(10, 10,
-			56,
-			16,
-			"Start New Game",
-			btn_new_game);
-	}
-	break;
 	case rm_village_outskirts_upper:
 	{
 		if (global.i_inv.quests[QUEST.MAINQUEST].progress == 0)

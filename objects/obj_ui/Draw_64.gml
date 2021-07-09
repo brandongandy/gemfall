@@ -1,5 +1,11 @@
 /// @description Draw Player UI Stuff
+if (!draw_gui)
+{
+	exit;
+}
+
 surface_set_target(surf);
+
 draw_clear_alpha(c_black, 0);
 
 draw_set_font(font_text);

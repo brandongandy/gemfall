@@ -17,6 +17,7 @@
     {"id":{"name":"obj_stone_01","path":"objects/obj_stone_01/obj_stone_01.yy",},"order":20,},
     {"id":{"name":"obj_plant","path":"objects/obj_plant/obj_plant.yy",},"order":1,},
     {"id":{"name":"scr_player_state_inventory","path":"scripts/scr_player_state_inventory/scr_player_state_inventory.yy",},"order":9,},
+    {"id":{"name":"obj_start_screen","path":"objects/obj_start_screen/obj_start_screen.yy",},"order":5,},
     {"id":{"name":"spr_ruby","path":"sprites/spr_ruby/spr_ruby.yy",},"order":0,},
     {"id":{"name":"spr_dungeon_door","path":"sprites/spr_dungeon_door/spr_dungeon_door.yy",},"order":3,},
     {"id":{"name":"scr_secret_door","path":"scripts/scr_secret_door/scr_secret_door.yy",},"order":2,},

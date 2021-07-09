@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 depth = -9999;
+draw_gui = true;
 game_state = "IN_GAME";
 inv_open = false;
 pause_menu = false;

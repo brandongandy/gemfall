@@ -5,7 +5,7 @@ if (!pause_menu)
 	var _space = 10;
 	var _centerx = RESOLUTION_W / 2;
 	var _centery = RESOLUTION_H / 2;
-	var _button_width = 56;
+	var _button_width = 64;
 	var _button_height = 16;
 	var _xx = _centerx - _button_width / 2;
 	var _yy = _centery - (((_button_height + _space) * 3) / 2);

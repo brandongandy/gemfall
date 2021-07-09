@@ -11,6 +11,7 @@ scr_nine_slice_box_stretched(
 	background);
 //draw_rectangle(x, y, x + width, y + height, 0);
 
+draw_set_font(font_text);
 draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);

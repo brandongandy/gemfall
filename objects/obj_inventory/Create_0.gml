@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+save_id = 0;
 
 // player health modifiers
 player_heart_pieces = 0;
