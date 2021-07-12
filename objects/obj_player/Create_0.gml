@@ -23,7 +23,7 @@ image_speed = 0;
 // movement stuff
 h_speed = 0;
 v_speed = 0;
-walk_speed = 1.5;
+walk_speed = 2;
 roll_speed = walk_speed * 1.75;
 roll_distance = 52;
 bonk_distance = 40;

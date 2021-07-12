@@ -82,9 +82,9 @@ function scr_show_chest_item(_x, _y, _item, _message)
 		obj_player.next_state = scr_player_state_hold_item;
 		scr_player_act_animation(spr_player_lift, undefined);
 		scr_new_textbox(_message, 2);
-		obj_player.sprite_idle = spr_player_carry;
+		obj_player.sprite_idle = spr_player_hold_item;
 		obj_player.sprite_index = obj_player.sprite_idle;
-		global.held_item = instance_create_layer(_x, _y - 13, "Instances", obj_p_entity);
+		global.held_item = instance_create_layer(_x, _y - 32, "Instances", obj_p_entity);
 		with (global.held_item)
 		{
 			entity_shadow = false;

@@ -66,7 +66,6 @@ function Sword(_item_index) : Item(_item_index) constructor
 	knockback = 32;
 	item_name = "Sword";
 	description = "Your brother's sword. You don't know why he left it behind, and you don't know what you would do without it.";
-	owned = true;
 	
 	Equip = function()
 	{
@@ -88,7 +87,6 @@ function Shield(_item_index) : Item(_item_index) constructor
 
 function HeartContainer(_item_index) : Item(_item_index) constructor
 {
-	owned = true;
 	item_name = "Heart Container";
 	description = "You don't know how this works, but filling this container with certain heart-shaped gems makes you feel more powerful.";
 	container_progress = 0;
@@ -109,7 +107,7 @@ function Bomb(_item_index) : Item(_item_index) constructor
 	description = "The blast from these bombs is so powerful, it can blow open walls.";
 	ruby_imbue_text = "Bombs imbued with a Ruby will have a weaker explosion, but will leave flames behind that will burn anyone that walks over them.";
 	sapphire_imbue_text = "Bombs imbued with Sapphire will freeze any creature caught in the bomb's blast radius.";
-	owned = true;
+
 	Use = function()
 	{
 		with (obj_player)
@@ -133,7 +131,7 @@ function Bow(_item_index) : Item(_item_index) constructor
 	uses_ammo = true;
 	ammo = 5;
 	max_ammo = 20;
-	owned = true;
+
 	item_name = "Bow";
 	description = "Dispatch your enemies from afar, as long as you have the arrows to shoot.";
 	ruby_imbue_text = "Arrows imbued with a Ruby will set monsters and other objects on fire when struck.";
@@ -160,7 +158,7 @@ function Focus(_item_index) : Item(_item_index) constructor
 	ruby_imbue_text = "The Ruby will ignite the space before you and set the ground on fire.";
 	sapphire_imbue_text = "The Sapphire will freeze the space before you. Any creature standing there will also be frozen.";
 	emerald_imbue_text = "The Emerald will summon a large block of dirt and vines before you. This block can be pushed and pulled.";
-	owned = true;
+
 }
 
 function PotionEmpty(_item_index) : Item(_item_index) constructor

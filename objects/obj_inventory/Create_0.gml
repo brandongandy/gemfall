@@ -97,15 +97,15 @@ for (i = 0; i < 9; i++)
 }
 
 // TODO: Load from save.
-inventory[0].item = items[ITEM.BOMB];
-inventory[1].item = items[ITEM.BOW];
-inventory[2].item = items[ITEM.FOCUS];
+inventory[0].item = items[ITEM.NONE];
+inventory[1].item = items[ITEM.NONE];
+inventory[2].item = items[ITEM.NONE];
 inventory[3].item = items[ITEM.NONE];
 inventory[4].item = items[ITEM.NONE];
-inventory[5].item = new PotionHealth(ITEM.POTION_HEALTH);
+inventory[5].item = items[ITEM.NONE];
 inventory[6].item = items[ITEM.NONE];
 inventory[7].item = items[ITEM.NONE];
-inventory[8].item = items[ITEM.POTION_HEALTH];
+inventory[8].item = items[ITEM.NONE];
 
 // equipment
 equipment = array_create(3);

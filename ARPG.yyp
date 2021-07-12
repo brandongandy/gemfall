@@ -147,6 +147,7 @@
     {"id":{"name":"scr_player_act_animation","path":"scripts/scr_player_act_animation/scr_player_act_animation.yy",},"order":2,},
     {"id":{"name":"rm_start_cave_01","path":"rooms/rm_start_cave_01/rm_start_cave_01.yy",},"order":0,},
     {"id":{"name":"spr_plant","path":"sprites/spr_plant/spr_plant.yy",},"order":13,},
+    {"id":{"name":"spr_player_hold_item","path":"sprites/spr_player_hold_item/spr_player_hold_item.yy",},"order":12,},
     {"id":{"name":"scr_journal","path":"scripts/scr_journal/scr_journal.yy",},"order":3,},
     {"id":{"name":"obj_fall","path":"objects/obj_fall/obj_fall.yy",},"order":4,},
     {"id":{"name":"spr_player_fall","path":"sprites/spr_player_fall/spr_player_fall.yy",},"order":11,},
