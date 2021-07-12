@@ -28,3 +28,7 @@ shake_enabled = false;
 shake_length = 0;
 shake_magnitude = 0;
 shake_remain = 0;
+
+// for drawing
+bottom_y = y;
+indicator_y = y;

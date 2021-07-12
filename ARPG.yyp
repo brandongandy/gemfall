@@ -41,6 +41,7 @@
     {"id":{"name":"scr_entity_hit_destroy","path":"scripts/scr_entity_hit_destroy/scr_entity_hit_destroy.yy",},"order":7,},
     {"id":{"name":"spr_trigger","path":"sprites/spr_trigger/spr_trigger.yy",},"order":8,},
     {"id":{"name":"rm_start_screen","path":"rooms/rm_start_screen/rm_start_screen.yy",},"order":10,},
+    {"id":{"name":"spr_indicator","path":"sprites/spr_indicator/spr_indicator.yy",},"order":11,},
     {"id":{"name":"obj_inv_item","path":"objects/obj_inv_item/obj_inv_item.yy",},"order":1,},
     {"id":{"name":"scr_entity_utils","path":"scripts/scr_entity_utils/scr_entity_utils.yy",},"order":24,},
     {"id":{"name":"scr_CRT_init_shader","path":"scripts/scr_CRT_init_shader/scr_CRT_init_shader.yy",},"order":1,},

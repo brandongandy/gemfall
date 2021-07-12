@@ -2,7 +2,12 @@
 // You can write your code in this editor
 if (entity_shadow)
 {
-	draw_sprite(spr_shadow, 0, floor(x), floor(y));
+	draw_sprite(spr_shadow, 0, floor(x), bottom_y);
+}
+
+if (is_important)
+{
+	draw_sprite(spr_indicator, 0, floor(x), indicator_y);
 }
 
 if (flash != 0)
