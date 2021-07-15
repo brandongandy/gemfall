@@ -18,9 +18,9 @@ global.current_room = -1;
 surface_resize(application_surface, RESOLUTION_W, RESOLUTION_H);
 // player
 global.i_inv = instance_create_layer(0, 0, layer, obj_inventory);
+global.i_daycycle = instance_create_layer(0, 0, layer, obj_daycycle);
 global.i_ui = instance_create_layer(0, 0, layer, obj_ui);
 global.input = instance_create_layer(0, 0, layer, obj_input);
-global.i_daycycle = instance_create_layer(0, 0, layer, obj_daycycle);
 
 // instance ID of a lifted object
 global.i_lifted = noone;
@@ -33,4 +33,4 @@ global.i_camera = instance_create_layer(0, 0, layer, obj_camera);
 // other
 global.previous_room = -1;
 
-room_goto(rm_start_cave_01);
+room_goto(rm_start_screen);

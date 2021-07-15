@@ -70,7 +70,7 @@ if (!global.game_paused) && (active)
 		{
 			with (obj_player)
 			{
-				scr_player_act_animation(spr_player_fall, scr_fall_and_respawn);
+				scr_player_act_animation_one_dir(spr_player_fall, scr_fall_and_respawn);
 			}
 		}
 		

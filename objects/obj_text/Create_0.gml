@@ -1,4 +1,5 @@
 /// @description Creation
+depth = -9999;
 x1 = RESOLUTION_W / 2;
 y1 = RESOLUTION_H - 70;
 x2 = RESOLUTION_W / 2;

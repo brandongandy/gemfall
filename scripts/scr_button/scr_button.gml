@@ -43,7 +43,8 @@ function btn_new_game()
 {
 	//obj_ui.draw_gui = true;
 	//scr_toggle_pause_game(false);
-	room_goto(rm_player_house);
+	scr_room_transition(TRANSITION_TYPE.SLIDE, rm_player_house);
+	//room_goto(rm_player_house);
 }
 
 #region Start Screen

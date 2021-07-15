@@ -47,6 +47,7 @@ animation_end_script = -1;
 sprite_run = spr_player_run;
 sprite_roll = spr_player_roll;
 sprite_idle = spr_player;
+sprite_attack = spr_attack_01;
 local_frame = 0;
 
 // room transition handling

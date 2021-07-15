@@ -14,19 +14,34 @@ if (force_draw)
 		false);
 		
 	
+	gpu_set_blendmode(bm_subtract);
 	with (obj_player)
 	{
 		var _xpos = x + lengthdir_x(24, direction);
 		var _ypos = y + lengthdir_y(24, direction);
-		gpu_set_blendmode(bm_src_color);
 		draw_sprite_ext(spr_glow, 0, floor(_xpos - _vx), floor(_ypos - _vy),
 			1,
 			1,
 			0,
 			_color,
 			other.max_darkness);
-		gpu_set_blendmode(bm_normal);
 	}
+	
+	with (obj_light_source)
+	{
+		draw_sprite_ext(spr_glow, 0, x - _vx, y - _vy,
+			2 + random(0.05),
+			2 + random(0.05),
+			0,
+			_color,
+			other.max_darkness);
+	}
+	
+	if (instance_exists(obj_text))
+	{
+	
+	}
+	gpu_set_blendmode(bm_normal);
 	
 	draw_set_alpha(1);
 	surface_reset_target();

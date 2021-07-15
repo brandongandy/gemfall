@@ -38,10 +38,7 @@ switch (room)
 	break;
 	case rm_start_cave_01:
 	{
-		if (!global.i_inv.items[ITEM.SWORD].owned)
-		{
-			instance_create_layer(224, 336, "Instances", obj_sword);
-		}
+		obj_daycycle.force_draw = true;
 	}
 	break;
 	case rm_dungeon_01_02_ar:

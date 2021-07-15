@@ -3,7 +3,7 @@
 save_id = 2;
 
 // player health modifiers
-player_heart_pieces = 4;
+player_heart_pieces = 0;
 
 // player health - num hearts * 2
 player_health_max = 6 + (2 * player_heart_pieces);

@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (draw_daylight)
+if (draw_daylight || force_draw)
 {
 	if (!surface_exists(daycycle_surf))
 	{

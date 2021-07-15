@@ -10,7 +10,7 @@ function scr_player_state_jump()
 	{
 		if (jump_direction == 10)
 		{
-			_target_x = bbox_right + (COL_TILE * _iteration);
+			_target_x = bbox_right + sprite_width + (COL_TILE * _iteration);
 			_target_y = y;
 			move_distance_remaining = point_distance(bbox_right, y, _target_x, _target_y);
 			var _tile = tile_get_index(tilemap_get_at_pixel(height_map, _target_x, _target_y));
@@ -36,7 +36,7 @@ function scr_player_state_jump()
 		else if (jump_direction == 11)
 		{
 			_target_x = x;
-			_target_y = bbox_top - (COL_TILE * _iteration);
+			_target_y = bbox_top - sprite_height - (COL_TILE * _iteration);
 			move_distance_remaining = point_distance(x, bbox_top, _target_x, _target_y);
 			var _tile = tile_get_index(tilemap_get_at_pixel(height_map, _target_x, _target_y));
 			if (_tile >= 5 && _tile <= 12) // ignore walls and doors -- everything else is
@@ -60,7 +60,7 @@ function scr_player_state_jump()
 		}
 		else if (jump_direction == 12)
 		{
-			_target_x = bbox_left - (COL_TILE * _iteration);
+			_target_x = bbox_left - sprite_width - (COL_TILE * _iteration);
 			_target_y = y;
 			move_distance_remaining = point_distance(bbox_left, y, _target_x, _target_y);
 			var _tile = tile_get_index(tilemap_get_at_pixel(height_map, _target_x, _target_y));
@@ -86,7 +86,7 @@ function scr_player_state_jump()
 		else if (jump_direction == 9)
 		{
 			_target_x = x;
-			_target_y = bbox_bottom + (COL_TILE * _iteration + 1);
+			_target_y = bbox_bottom + sprite_height + (COL_TILE * _iteration + 1);
 			move_distance_remaining = point_distance(x, bbox_bottom, _target_x, _target_y);
 			var _tile = tile_get_index(tilemap_get_at_pixel(height_map, _target_x, _target_y));
 			if (_tile >= 5 && _tile <= 12) // ignore walls and doors -- everything else is
