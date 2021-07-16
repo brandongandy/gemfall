@@ -17,12 +17,12 @@ if (force_draw)
 	gpu_set_blendmode(bm_subtract);
 	with (obj_player)
 	{
-		var _xpos = x + lengthdir_x(24, direction);
-		var _ypos = y + lengthdir_y(24, direction);
-		draw_sprite_ext(spr_glow, 0, floor(_xpos - _vx), floor(_ypos - _vy),
+		var _xpos = x - sprite_get_xoffset(sprite_index) + sprite_width / 2;
+		var _ypos = y - sprite_get_yoffset( sprite_index) + sprite_height / 2;
+		draw_sprite_ext(spr_lamp, 0, floor(_xpos - _vx), floor(_ypos - _vy),
 			1,
 			1,
-			0,
+			direction - 270,
 			_color,
 			other.max_darkness);
 	}

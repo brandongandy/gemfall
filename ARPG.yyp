@@ -123,6 +123,7 @@
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},"order":16,},
     {"id":{"name":"spr_questy","path":"sprites/spr_questy/spr_questy.yy",},"order":1,},
     {"id":{"name":"rm_start_cave_02_ar","path":"rooms/rm_start_cave_02_ar/rm_start_cave_02_ar.yy",},"order":1,},
+    {"id":{"name":"spr_lamp","path":"sprites/spr_lamp/spr_lamp.yy",},"order":20,},
     {"id":{"name":"shd_CRT_shader","path":"shaders/shd_CRT_shader/shd_CRT_shader.yy",},"order":0,},
     {"id":{"name":"spr_turret_block","path":"sprites/spr_turret_block/spr_turret_block.yy",},"order":1,},
     {"id":{"name":"scr_drop_items","path":"scripts/scr_drop_items/scr_drop_items.yy",},"order":11,},

@@ -157,3 +157,9 @@ if (gems[GEM.STONEHEART].owned)
 daycycle = new DayData();
 
 #endregion
+
+#region Journal
+
+journal = init_journal();
+
+#endregion
