@@ -23,7 +23,7 @@ if (response_selected < _min)
 	response_selected = _max;
 }
 
-if (obj_player.key_activate)
+if (obj_input.button_a)
 {
 	var _message_length = string_length(text_message);
 	if (text_progress >= _message_length)

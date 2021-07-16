@@ -20,13 +20,39 @@ function init_journal()
 		journal[# i, JOURNAL_STAT.TEXT] = "??";
 	}
 	
+	journal[# 0, JOURNAL_STAT.NAME] = "Maru's Journal";
+	journal[# 0, JOURNAL_STAT.FOUND] = false;
+	journal[# 0, JOURNAL_STAT.TURNED_IN] = false;
+	journal[# 0, JOURNAL_STAT.TEXT] = 
+		"A strange comet just shot across the night sky. " + 
+		"It glowed in every color and popped and sparked " + 
+		"like a giant ember. Pieces of it fell to the earth. " + 
+		"One of them landed not far from here, to the East " + 
+		"toward Elder Yuchiq's home. I'm going to investigate " + 
+		"and make sure he is safe. If I'm still gone and you find this " + 
+		"note, sister, then it may not be safe outside. " + 
+		"Please wait for daylight before you come looking for me.";
+	
+	
 	return journal;
 }
 
-function scr_journal() constructor
+function pickup_journal(_journal_id)
 {
-	journal_id = 0;
-	found = false;
-	name = "";
-	text = "";
+	if (_journal_id < 0 || _journal_id > 100)
+	{
+		exit;
+	}
+	
+	global.i_inv.journal[# _journal_id, JOURNAL_STAT.FOUND] = true;
+	
+	scr_new_textbox(
+		"You found a journal entry! Open your inventory to read its contents.",
+		2);
+		
+	with (activate)
+	{
+		instance_destroy();
+	}
+	
 }

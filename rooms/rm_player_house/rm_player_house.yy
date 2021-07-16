@@ -24,6 +24,7 @@
             {"propertyId":{"name":"target_room","path":"objects/obj_room_exit/obj_room_exit.yy",},"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"value":"rm_village_outskirts_upper","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"target_dir","path":"objects/obj_room_exit/obj_room_exit.yy",},"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"value":"270","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"obj_room_exit","path":"objects/obj_room_exit/obj_room_exit.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":216.0,"y":232.0,"resourceVersion":"1.0","name":"inst_4925D1CD","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"obj_journal","path":"objects/obj_journal/obj_journal.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":232.0,"y":136.0,"resourceVersion":"1.0","name":"inst_B0903BC","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":-300,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":8,"gridY":8,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":{"name":"ts_col_height","path":"tilesets/ts_col_height/ts_col_height.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":56,"SerialiseHeight":30,"TileSerialiseData":[
 7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,
@@ -167,6 +168,7 @@
   "instanceCreationOrder": [
     {"name":"inst_6478ACF3","path":"rooms/rm_player_house/rm_player_house.yy",},
     {"name":"inst_4925D1CD","path":"rooms/rm_player_house/rm_player_house.yy",},
+    {"name":"inst_B0903BC","path":"rooms/rm_player_house/rm_player_house.yy",},
   ],
   "inheritCreationOrder": true,
   "sequenceId": null,

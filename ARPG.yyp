@@ -219,6 +219,7 @@
     {"id":{"name":"scr_player_state_gems","path":"scripts/scr_player_state_gems/scr_player_state_gems.yy",},"order":13,},
     {"id":{"name":"ts_8bit","path":"tilesets/ts_8bit/ts_8bit.yy",},"order":4,},
     {"id":{"name":"ts_tiles","path":"tilesets/ts_tiles/ts_tiles.yy",},"order":1,},
+    {"id":{"name":"obj_journal","path":"objects/obj_journal/obj_journal.yy",},"order":5,},
     {"id":{"name":"spr_cave_01","path":"sprites/spr_cave_01/spr_cave_01.yy",},"order":7,},
     {"id":{"name":"scr_items","path":"scripts/scr_items/scr_items.yy",},"order":6,},
     {"id":{"name":"scr_merge_number","path":"scripts/scr_merge_number/scr_merge_number.yy",},"order":22,},
