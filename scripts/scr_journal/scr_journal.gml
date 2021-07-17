@@ -46,9 +46,9 @@ function pickup_journal(_journal_id)
 	
 	global.i_inv.journal[# _journal_id, JOURNAL_STAT.FOUND] = true;
 	
-	scr_new_textbox(
-		"You found a journal entry! Open your inventory to read its contents.",
-		2);
+	scr_new_textbox_large(
+		global.i_inv.journal[# _journal_id, JOURNAL_STAT.TEXT],
+		0);
 		
 	with (activate)
 	{

@@ -32,6 +32,6 @@ if (responses[0] != -1) && (text_progress >= string_length(text_message))
 	}
 }
 
-draw_text_ext(x1 + 8, y1 + 8, _print, 12, RESOLUTION_W - (TILE_SIZE * 4) - 16);
+draw_text_ext(x1 + 8, y1 + 8, _print, 12, x2_target - x1_target - TILE_SIZE);
 draw_set_color(c_white);
-draw_text_ext(x1 + 8, y1 + 7, _print, 12, RESOLUTION_W - (TILE_SIZE * 4) - 16);
+draw_text_ext(x1 + 8, y1 + 7, _print, 12, x2_target - x1_target - TILE_SIZE);
