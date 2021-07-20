@@ -21,6 +21,7 @@ global.i_inv = instance_create_layer(0, 0, layer, obj_inventory);
 global.i_daycycle = instance_create_layer(0, 0, layer, obj_daycycle);
 global.i_ui = instance_create_layer(0, 0, layer, obj_ui);
 global.input = instance_create_layer(0, 0, layer, obj_input);
+global.i_journal = instance_create_layer(0, 0, layer, obj_journal);
 
 // instance ID of a lifted object
 global.i_lifted = noone;

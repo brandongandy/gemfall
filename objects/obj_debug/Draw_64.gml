@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-line_alpha ^= keyboard_check_pressed(vk_tab);
-global.debug ^= keyboard_check_pressed(vk_tab);
+line_alpha ^= keyboard_check_pressed(vk_ralt);
+global.debug ^= keyboard_check_pressed(vk_ralt);
 
 draw_set_alpha(line_alpha * 0.1);
 for (var i = 0; i < room_width >> BITSHIFT; ++i)
