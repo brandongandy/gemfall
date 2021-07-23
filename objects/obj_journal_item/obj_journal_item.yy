@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_journal",
-    "path": "sprites/spr_journal/spr_journal.yy",
+    "name": "spr_journal_item",
+    "path": "sprites/spr_journal_item/spr_journal_item.yy",
   },
   "solid": false,
   "visible": true,
@@ -21,19 +21,19 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "managers",
-    "path": "folders/Objects/managers.yy",
+    "name": "GUI",
+    "path": "folders/Objects/GUI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_journal",
+  "name": "obj_journal_item",
   "tags": [],
   "resourceType": "GMObject",
 }
