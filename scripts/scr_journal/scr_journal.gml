@@ -49,7 +49,7 @@ function pickup_journal(_journal_id)
 	scr_new_textbox_large(
 		global.i_inv.journal[# _journal_id, JOURNAL_STAT.TEXT],
 		0);
-		
+	
 	with (activate)
 	{
 		instance_destroy();

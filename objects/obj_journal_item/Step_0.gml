@@ -5,6 +5,16 @@ if (!global.i_journal.show_journal)
 	exit;
 }
 
+if (journal_id != -1 && !set_vars)
+{
+	journal_name = global.i_inv.journal[# journal_id, JOURNAL_STAT.NAME];
+	found = global.i_inv.journal[# journal_id, JOURNAL_STAT.FOUND];
+	turned_in = global.i_inv.journal[# journal_id, JOURNAL_STAT.TURNED_IN];
+	text = global.i_inv.journal[# journal_id, JOURNAL_STAT.TEXT];
+	
+	// only do once per instance, and skip to prevent too much work
+	set_vars = true;
+}
 
 if (point_in_rectangle(global.i_ui.mouse_pos_x,
 	global.i_ui.mouse_pos_y,
@@ -17,12 +27,18 @@ if (point_in_rectangle(global.i_ui.mouse_pos_x,
 		
 	if (mouse_check_button_released(mb_left))
 	{
-		with (obj_journal_item)
+		if (found)
 		{
-			selected = false;
+			obj_journal.selected_journal_text = text;
+			obj_journal.selected_journal_turned_in = turned_in;
+			obj_journal.selected_journal_name = journal_name;
 		}
-			
-		selected = true;
+		else
+		{
+			obj_journal.selected_journal_text = "";
+			obj_journal.selected_journal_turned_in = false;
+			obj_journal.selected_journal_name = "???";
+		}
 	}
 	else
 	{

@@ -6,3 +6,13 @@ if (!global.i_journal.show_journal)
 }
 
 draw_sprite(sprite_index, image_index, x, y);
+
+if (hover)
+{
+	var _name = journal_name;
+	if (!found)
+	{
+		_name = "???";
+	}
+	draw_journal_infobox(_name, x, y);
+}

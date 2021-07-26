@@ -17,6 +17,10 @@ else
 {
 	if (deactivated)
 	{
+		with (obj_journal_item)
+		{
+			set_vars = false;
+		}
 		instance_activate_object(obj_journal_item);
 		deactivated = false;
 	}
@@ -28,7 +32,6 @@ if (global.input.button_l2)
 	{
 		show_journal = !show_journal;
 		global.i_ui.draw_gui = !global.i_ui.draw_gui;
-		
 	}
 	
 	if (!show_journal)

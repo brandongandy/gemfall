@@ -206,3 +206,22 @@ function draw_mana_gem_infobox(_gem, _x, _y)
 	draw_set_color(c_white);
 	draw_set_font(font_text);
 }
+
+function draw_journal_infobox(_journal_name, _x, _y)
+{
+	// TODO: adjust width based on journal name
+	var _box_width = 96;
+	var _box_height = 24;
+	
+	scr_nine_slice_box_stretched(
+		spr_textbox_bg, 
+		_x, 
+		_y + 16, 
+		_x + _box_width, 
+		_y + 16 + _box_height, 
+		4);
+	
+	draw_set_color(c_white);
+	draw_text(_x + 6, _y + 20, _journal_name);
+	draw_set_color(c_white);
+}
