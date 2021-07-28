@@ -14,6 +14,12 @@ function save_game()
 	
 	with (obj_inventory)
 	{
+		var _jrnl = ds_grid_create(100, JOURNAL_STAT.TOTAL);
+		for (i = 0; i < 100; i++)
+		{
+			_jrnl[# i, JOURNAL_STAT.FOUND] = journal[# i, JOURNAL_STAT.FOUND];
+			_jrnl[# i, JOURNAL_STAT.TURNED_IN] = journal[# i, JOURNAL_STAT.TURNED_IN];
+		}
 		var _save =
 		{
 			save_date : _save_date,
@@ -31,7 +37,8 @@ function save_game()
 			inventory : inventory,
 			gem_inventory : gem_inventory,
 			mana_inventory : mana_inventory,
-			daycycle: _daycycle
+			daycycle: _daycycle,
+			journal: ds_grid_write(_jrnl)
 		}
 		array_push(_save_data, _save);
 	}
@@ -43,6 +50,7 @@ function save_game()
 	buffer_delete(_buffer);
 	
 	show_debug_message("Game saved: " + _json);
+	ds_grid_destroy(_jrnl);
 }
 
 function load_game_data(_save_id)
@@ -151,6 +159,13 @@ function load_game(_save_data)
 		{
 			gem_inventory[i] = _save_data.gem_inventory[i];
 		}
+		
+		var _jrnl = ds_grid_read(_save_data.journal);
+		for (i = 0; i < 100; i++)
+		{
+			journal[# i, JOURNAL_STAT.FOUND] = _jrnl[# i, JOURNAL_STAT.FOUND];
+			journal[# i, JOURNAL_STAT.TURNED_IN] = _jrnl[# i, JOURNAL_STAT.TURNED_IN];
+		}
 	}
 	
 	with (obj_daycycle)
@@ -162,6 +177,7 @@ function load_game(_save_data)
 		season = _save_data.daycycle.season;
 		year = _save_data.daycycle.year;
 	}
+	
 	
 	//obj_ui.draw_gui = true;
 	//scr_toggle_pause_game(false);
