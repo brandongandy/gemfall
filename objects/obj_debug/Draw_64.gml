@@ -19,6 +19,10 @@ draw_text(32, 150, "State: " + string(obj_player.state));
 draw_text(1, 180, "H: " + string(obj_player.player_height));
 draw_text(1, 160, "X: " + string(floor(obj_player.x)));
 draw_text(1, 170, "Y: " + string(floor(obj_player.y)));
+draw_text(96, 160, "BBOX Left: " + string(obj_player.bbox_left));
+draw_text(178, 160, "BBOX Right: " + string(obj_player.bbox_right));
+draw_text(96, 170, "BBOX Top: " + string(obj_player.bbox_top));
+draw_text(178, 170, "BBOX Bottom: " + string(obj_player.bbox_bottom));
 
 draw_text(32, 160, "R Mana: " + string(obj_inventory.mana[MANA_TYPE.RUBY].mana));
 draw_text(32, 170, "G Mana: " + string(obj_inventory.mana[MANA_TYPE.EMERALD].mana));

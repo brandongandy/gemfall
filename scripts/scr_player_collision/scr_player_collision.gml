@@ -82,8 +82,8 @@ function scr_check_player_height_collision(_collision_map, _mobs_collide)
 	if (v_speed > 0)
 	{
 		var _tile_bottom = scr_tile_collide_at_points_height(_collision_map,
-			[bbox_left + 1, bbox_bottom + 2],
-			[bbox_right - 1, bbox_bottom + 2]);
+			[bbox_left + 1, bbox_bottom + 1],
+			[bbox_right - 1, bbox_bottom + 1]);
 		if (_tile_bottom)
 		{
 			_newY = bbox_bottom & ~ (COL_TILE - 1);
@@ -95,8 +95,8 @@ function scr_check_player_height_collision(_collision_map, _mobs_collide)
 	else if (v_speed < 0)
 	{
 		var _tile_top = scr_tile_collide_at_points_height(_collision_map,
-			[bbox_left + 1, bbox_top - 2],
-			[bbox_right - 1, bbox_top - 2]);
+			[bbox_left + 1, bbox_top - 1],
+			[bbox_right - 1, bbox_top - 1]);
 		if (_tile_top)
 		{
 			_newY = bbox_top & ~ (COL_TILE - 1);
@@ -225,6 +225,11 @@ function scr_tile_collide_at_points_height(_tilemap)
 				default:
 					break;
 			}
+		}
+		
+		if (_found)
+		{
+			break;
 		}
 		
 		//if (_tile_index > player_height + 1)
