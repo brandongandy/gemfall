@@ -65,6 +65,9 @@ if (global.target_x != -1)
 // respawn
 start_x = x;
 start_y = y;
+target_x = -1;
+target_y = -1;
+jump_tile_found = false;
 
 // status effects
 status_effect = -1;

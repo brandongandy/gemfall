@@ -15,7 +15,7 @@ for (var i = 0; i < room_height >> BITSHIFT; ++i)
 }
 draw_set_alpha(1);
 
-draw_text(32, 150, "State: " + string(obj_player.state));
+draw_text(1, 150, "State: " + string(obj_player.state));
 draw_text(1, 180, "H: " + string(obj_player.player_height));
 draw_text(1, 160, "X: " + string(floor(obj_player.x)));
 draw_text(1, 170, "Y: " + string(floor(obj_player.y)));

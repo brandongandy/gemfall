@@ -28,8 +28,8 @@
   ],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"mob_aggro_radius","path":"objects/obj_p_mob/obj_p_mob.yy",},"objectId":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"value":"128","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"mob_attack_radius","path":"objects/obj_p_mob/obj_p_mob.yy",},"objectId":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"value":"128","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"mob_aggro_radius","path":"objects/obj_p_mob/obj_p_mob.yy",},"objectId":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"value":"256","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"mob_attack_radius","path":"objects/obj_p_mob/obj_p_mob.yy",},"objectId":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"value":"196","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"entity_shadow","path":"objects/obj_p_entity/obj_p_entity.yy",},"objectId":{"name":"obj_p_entity","path":"objects/obj_p_entity/obj_p_entity.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"mob_hp","path":"objects/obj_p_mob/obj_p_mob.yy",},"objectId":{"name":"obj_p_mob","path":"objects/obj_p_mob/obj_p_mob.yy",},"value":"10","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],

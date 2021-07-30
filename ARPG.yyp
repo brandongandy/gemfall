@@ -109,6 +109,7 @@
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"order":3,},
     {"id":{"name":"scr_skull_spider","path":"scripts/scr_skull_spider/scr_skull_spider.yy",},"order":0,},
     {"id":{"name":"sha_white_flash","path":"shaders/sha_white_flash/sha_white_flash.yy",},"order":0,},
+    {"id":{"name":"rm_start_cave_02","path":"rooms/rm_start_cave_02/rm_start_cave_02.yy",},"order":1,},
     {"id":{"name":"rm_start_cave_secret_01_ar","path":"rooms/rm_start_cave_secret_01_ar/rm_start_cave_secret_01_ar.yy",},"order":5,},
     {"id":{"name":"obj_p_collectible","path":"objects/obj_p_collectible/obj_p_collectible.yy",},"order":0,},
     {"id":{"name":"obj_spike_trap","path":"objects/obj_spike_trap/obj_spike_trap.yy",},"order":13,},
@@ -310,6 +311,7 @@
     {"roomId":{"name":"rm_dungeon_01_03_ar","path":"rooms/rm_dungeon_01_03_ar/rm_dungeon_01_03_ar.yy",},},
     {"roomId":{"name":"rm_player_house","path":"rooms/rm_player_house/rm_player_house.yy",},},
     {"roomId":{"name":"rm_start_cave_01","path":"rooms/rm_start_cave_01/rm_start_cave_01.yy",},},
+    {"roomId":{"name":"rm_start_cave_02","path":"rooms/rm_start_cave_02/rm_start_cave_02.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
