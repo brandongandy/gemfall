@@ -31,7 +31,7 @@ else
 
 if (obj_ui.game_state == "IN_INV")
 {
-	if (point_in_rectangle(obj_ui.mouse_pos_x, obj_ui.mouse_pos_y,
+	if (point_in_rectangle(global.i_mouse.pos_x, global.i_mouse.pos_y,
 		bbox_left, bbox_top, bbox_right, bbox_bottom))
 	{
 		if (gem.can_use)

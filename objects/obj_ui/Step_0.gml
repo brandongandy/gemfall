@@ -2,8 +2,6 @@
 // You can write your code in this editor
 if (!draw_gui)
 {
-	mouse_pos_x = device_mouse_x_to_gui(0);
-	mouse_pos_y = device_mouse_y_to_gui(0);
 	exit;
 }
 
@@ -132,8 +130,6 @@ switch (game_state)
 	}
 	case "IN_INV":
 	{
-		mouse_pos_x = device_mouse_x_to_gui(0);
-		mouse_pos_y = device_mouse_y_to_gui(0);
 		if (obj_input.start)
 		{
 			scr_toggle_pause_game(undefined);
@@ -143,8 +139,6 @@ switch (game_state)
 	}
 	case "PAUSE":
 	{
-		mouse_pos_x = device_mouse_x_to_gui(0);
-		mouse_pos_y = device_mouse_y_to_gui(0);
 		event_user(0);
 		if (obj_input.pause)
 		{

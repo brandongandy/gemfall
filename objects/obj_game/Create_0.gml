@@ -17,6 +17,7 @@ global.current_room = -1;
 
 surface_resize(application_surface, RESOLUTION_W, RESOLUTION_H);
 // player
+global.i_mouse = instance_create_layer(0, 0, layer, obj_mouse_cursor);
 global.i_inv = instance_create_layer(0, 0, layer, obj_inventory);
 global.i_daycycle = instance_create_layer(0, 0, layer, obj_daycycle);
 global.i_ui = instance_create_layer(0, 0, layer, obj_ui);
@@ -34,4 +35,6 @@ global.i_camera = instance_create_layer(0, 0, layer, obj_camera);
 // other
 global.previous_room = -1;
 
-room_goto(rm_debug);
+window_set_cursor(cr_none);
+
+room_goto(rm_start_screen);

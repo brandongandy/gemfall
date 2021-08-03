@@ -11,9 +11,6 @@ xoffset = 0;
 view_width_half = camera_get_view_width(view_camera[0]) * 0.5;
 view_height_half = camera_get_view_height(view_camera[0]) * 0.5;
 
-mouse_pos_x = 0;
-mouse_pos_y = 0;
-
 hud_money_xpos = xoffset + 95;
 hud_money_ypos = ypos + RESOLUTION_H + 6;
 hud_key_xpos = xoffset + 122;

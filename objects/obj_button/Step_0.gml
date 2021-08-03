@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 var _hover = point_in_rectangle(
-	global.i_ui.mouse_pos_x, 
-	global.i_ui.mouse_pos_y, 
+	global.i_mouse.pos_x, 
+	global.i_mouse.pos_y, 
 	x, 
 	y, 
 	x + width, 
