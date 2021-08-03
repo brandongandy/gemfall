@@ -10,6 +10,11 @@ obj_daycycle.force_draw = false;
 
 switch (room)
 {
+	case rm_start_screen:
+	{
+		global.i_mouse.draw_hand = true;
+	}
+	break;
 	case rm_village_outskirts_upper:
 	{
 		if (global.i_inv.quests[QUEST.MAINQUEST].progress == 0)

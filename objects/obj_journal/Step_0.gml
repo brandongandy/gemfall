@@ -11,6 +11,7 @@ if (!show_journal)
 	{
 		instance_deactivate_object(obj_journal_item);
 		deactivated = true;
+		global.i_mouse.draw_hand = false;
 	}
 }
 else
@@ -23,6 +24,7 @@ else
 		}
 		instance_activate_object(obj_journal_item);
 		deactivated = false;
+		global.i_mouse.draw_hand = true;
 	}
 }
 

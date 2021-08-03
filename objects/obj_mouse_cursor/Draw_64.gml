@@ -1,5 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
+if (!draw_hand)
+{
+	exit;
+}
+
 draw_sprite_ext(sprite_index,
 	image_index,
 	pos_x,

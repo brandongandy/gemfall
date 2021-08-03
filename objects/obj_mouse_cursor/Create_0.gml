@@ -8,3 +8,5 @@ pos_x = -1;
 pos_y = -1;
 animation_end = false;
 local_frame = 0;
+
+draw_hand = false;

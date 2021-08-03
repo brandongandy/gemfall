@@ -68,6 +68,8 @@ switch (game_state)
 {
 	case "IN_GAME":
 	{
+		global.i_mouse.draw_hand = false;
+		
 		if (!deactivated)
 		{
 			instance_deactivate_object(obj_inv_gem);
@@ -84,11 +86,13 @@ switch (game_state)
 			
 			scr_toggle_pause_game(undefined);
 			game_state = "INV_TRANSITION";
+			global.i_mouse.draw_hand = true;
 		}
 		if (obj_input.pause)
 		{
 			scr_toggle_pause_game(true);
 			game_state = "PAUSE";
+			global.i_mouse.draw_hand = true;
 		}
 		break;
 	}
