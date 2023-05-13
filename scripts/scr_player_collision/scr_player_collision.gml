@@ -47,6 +47,7 @@ function scr_check_player_height_collision(_collision_map, _mobs_collide)
 	// Horizontal Entity List
 	//_newX = x + h_speed;
 	var _mobCollisionX = false;
+	var _e = obj_p_entity;
 	if (_mobs_collide)
 	{
 		if (h_speed > 0)
@@ -56,6 +57,7 @@ function scr_check_player_height_collision(_collision_map, _mobs_collide)
 			{
 				h_speed = 0;
 				_mobCollisionX = true;
+				_e = _entity_right;
 			}
 		}
 		else if (h_speed < 0)
@@ -65,8 +67,14 @@ function scr_check_player_height_collision(_collision_map, _mobs_collide)
 			{
 				h_speed = 0;
 				_mobCollisionX = true;
+				_e = _entity_left;
 			}
 		}
+	}
+	
+	if (_mobCollisionX)
+	{
+		scr_hurt_player(point_direction(_e.x, _e.y, x, y), _e.mob_force_touch, _e.mob_damage_touch);	
 	}
 	
 	if (!_collisionX) && (!_mobCollisionX)
@@ -115,9 +123,10 @@ function scr_check_player_height_collision(_collision_map, _mobs_collide)
 			var _entity_bottom = collision_rectangle(bbox_left + 1, bbox_top + 1, bbox_right - 1, bbox_bottom + v_speed, obj_p_entity, false, true);
 			if (_entity_bottom != noone) && (_entity_bottom.entity_collides)
 			{
-				_newY = _entity_bottom.bbox_top - (bbox_bottom - bbox_top);
+				//_newY = _entity_bottom.bbox_top - (bbox_bottom - bbox_top);
 				v_speed = 0;
 				_mobCollisionY = true;
+				_e = _entity_bottom;
 			}
 		}
 		else
@@ -126,11 +135,16 @@ function scr_check_player_height_collision(_collision_map, _mobs_collide)
 			var _entity_top = collision_rectangle(bbox_left + 1, bbox_top + v_speed, bbox_right - 1, bbox_bottom - 1, obj_p_entity, false, true);
 			if (_entity_top != noone) && (_entity_top.entity_collides)
 			{
-				//show_debug_message("Ex: " + string(_entity_top.x) + ", Ey: " + string(_entity_top.y) + ", Px: , " + string(x) +"Py: " + string(y));
 				v_speed = 0;
 				_mobCollisionY = true;
+				_e = _entity_top;
 			}
 		}
+	}
+	
+	if (_mobCollisionY)
+	{
+		scr_hurt_player(point_direction(_e.x, _e.y, x, y), _e.mob_force_touch, _e.mob_damage_touch);	
 	}
 	
 	if (!_collisionY) && (!_mobCollisionY)
