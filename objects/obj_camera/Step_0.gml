@@ -6,8 +6,10 @@ switch (state)
 	{	
 		global.game_paused = true;
 		first_snap = true;
-		x += floor(obj_player.x - x);
-		y += floor(obj_player.y - y);
+		x = lerp(x, obj_player.x - y, 0.075);
+		y = lerp(y, obj_player.y - y, 0.075);
+		//x += floor(obj_player.x - x);
+		//y += floor(obj_player.y - y);
 		x = clamp(x, view_width_half, room_width - view_width_half);
 		y = clamp(y, view_height_half, room_height - view_height_half);
 		camera_set_view_pos(cam, x - view_width_half, y - view_height_half);
