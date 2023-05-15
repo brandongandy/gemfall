@@ -7,10 +7,13 @@ function scr_dialogue_responses(_response)
 		case 0:
 			break;
 		case 1:
-			scr_new_textbox("I know!", 2);
+			scr_new_textbox_large(
+				global.i_inv.journal[# global.found_journal_id, JOURNAL_STAT.TEXT],
+				0);
+			global.found_journal_id = -1;
 			break;
 		case 2:
-			scr_new_textbox_response("Neither did I!", 2, ["0:I am truly vexed.", "3:Then we should free each other."]);
+			global.found_journal_id = -1;
 			break;
 		case 3:
 			scr_new_textbox("Another day, perhaps.", 2);

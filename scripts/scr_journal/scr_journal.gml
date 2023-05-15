@@ -46,9 +46,11 @@ function pickup_journal(_journal_id)
 	
 	global.i_inv.journal[# _journal_id, JOURNAL_STAT.FOUND] = true;
 	
-	scr_new_textbox_large(
-		global.i_inv.journal[# _journal_id, JOURNAL_STAT.TEXT],
-		0);
+	global.found_journal_id = _journal_id;
+	scr_new_textbox_response("You found a piece of someone's journal! Press TAB to open "
+		+ "the journal screen. Would you like to read it now?",
+		1,
+		["1:Yes", "2:No"]);
 	
 	with (activate)
 	{
