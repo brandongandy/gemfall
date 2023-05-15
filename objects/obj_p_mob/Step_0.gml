@@ -12,4 +12,9 @@ if (!global.game_paused) && (active)
 	{
 		script_execute(mob_script[state]);
 	}
+	
+	if (entity_shadow)
+	{
+		bottom_y = floor(bbox_bottom);
+	}
 }
