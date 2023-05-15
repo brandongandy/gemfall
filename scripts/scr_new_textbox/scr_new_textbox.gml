@@ -69,20 +69,22 @@ function scr_new_textbox(_message, _background)
 function scr_new_textbox_large(_message, _background)
 {
 	var _obj;
+	var _is_large = false;
 	if (instance_exists(obj_text))
 	{
+		_is_large = true;
 		_obj = obj_text_queued;
 	}
 	else
 	{
-		_obj = obj_text;
+		_obj = obj_text_large;
 	}
 	with (instance_create_layer(0, 0, "Instances", _obj))
 	{
-		y1 = TILE_SIZE * 2;
-		y2 = RESOLUTION_H - y1;
-		x1_target = y1 * 2;
-		x2_target = RESOLUTION_W - x1_target;
+		if (_is_large)
+		{
+			is_large_textbox = true;
+		}
 		text_message = _message;
 		// other is the caller of this script
 		if (instance_exists(other))
