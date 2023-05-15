@@ -72,7 +72,7 @@ function scr_check_player_height_collision(_collision_map, _mobs_collide)
 		}
 	}
 	
-	if (_mobCollisionX)
+	if (_mobCollisionX && object_is_ancestor(_e, obj_p_mob))
 	{
 		scr_hurt_player(point_direction(_e.x, _e.y, x, y), _e.mob_force_touch, _e.mob_damage_touch);	
 	}
@@ -142,7 +142,7 @@ function scr_check_player_height_collision(_collision_map, _mobs_collide)
 		}
 	}
 	
-	if (_mobCollisionY)
+	if (_mobCollisionY && object_is_ancestor(_e, obj_p_mob))
 	{
 		scr_hurt_player(point_direction(_e.x, _e.y, x, y), _e.mob_force_touch, _e.mob_damage_touch);	
 	}
